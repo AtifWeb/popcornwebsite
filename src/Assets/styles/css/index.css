@@ -465,7 +465,7 @@
     width: 100%;
   }
   .volenteer-area > img{
-	display:"none" !important;
+	display:none !important;
 
 }
   .volenteer-area > p:nth-child(3) {

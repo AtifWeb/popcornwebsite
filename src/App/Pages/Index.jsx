@@ -11,8 +11,10 @@ import student from '../../Assets/img/student.jpg'
 import { HandleSliderMovement } from '../../Assets/js/HandleSliderMovement'
 import logo from '../../Assets/img/logo.svg'
 import kid from '../../Assets/img/kid.jpg'
+import { HandleCookiePopUp } from '../../Assets/js/handleCookiePopUp'
 function Index() {
     useEffect(()=>{
+        HandleCookiePopUp()
 
         HandleSliderMovement()
 
@@ -70,7 +72,8 @@ function Index() {
                     <i class="fas fa-times"></i>
                     </div>
                     </div>
-
+                    <div className="body-content">
+                        
                     <div className="presentation-area">
                         <h3>Cookie Settings</h3>
                         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid dolores ducimus, eligendi optio, obcaecati nulla blanditiis voluptate reprehenderit id veritatis ex tempora iusto, accusamus ut! Animi accusamus architecto odio consequatur eveniet, quam, sint temporibus, inventore est quis cupiditate vel minus quae eius repudiandae soluta. At debitis sed ullam quos dolore.</p>
@@ -80,18 +83,26 @@ function Index() {
                     <h3>Cookie Prefernece</h3>
                     <ul>
                         <li>
-                            <div className="presentation">
+                         <div className="head">
+                         <div className="presentation">
                             <div className="icon-wrapper">
-                            <i class="fas fa-plus"></i>
+                            <span className="horizontal"></span>
+                                <span className="vertical"></span>
                             </div>
                                 <p>Strictly necessory Cookies</p>
                             </div>
-                            <p>Always Active</p>
+                            <p className="active-cookie">Always Active</p>
+                         </div>
+                         <div className="body">
+                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto blanditiis amet explicabo tenetur, natus consequatur repellendus maxime deleniti ex laboriosam.</p>
+                         </div>
                         </li>
                         <li>
-                            <div className="presentation">
+                          <div className="head">
+                          <div className="presentation">
                             <div className="icon-wrapper">
-                            <i class="fas fa-plus"></i>
+                                <span className="horizontal"></span>
+                                <span className="vertical"></span>
                             </div>
                                 <p>Functional Cookies</p>
                             </div>
@@ -100,11 +111,17 @@ function Index() {
                             <label className="checkbox-wrapper" htmlFor="Functional">
                                 <span className="ball"></span>
                             </label>
+                          </div>
+                          <div className="body">
+                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto blanditiis amet explicabo tenetur, natus consequatur repellendus maxime deleniti ex laboriosam.</p>
+                         </div>
                         </li>
                         <li>
-                            <div className="presentation">
+                          <div className="head">
+                          <div className="presentation">
                             <div className="icon-wrapper">
-                            <i class="fas fa-plus"></i>
+                            <span className="horizontal"></span>
+                                <span className="vertical"></span>
                             </div>
                                 <p>Performance Cookies</p>
                             </div>
@@ -112,11 +129,17 @@ function Index() {
                             <label className="checkbox-wrapper" htmlFor="Performance">
                                 <span className="ball"></span>
                             </label>
+                          </div>
+                          <div className="body">
+                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto blanditiis amet explicabo tenetur, natus consequatur repellendus maxime deleniti ex laboriosam.</p>
+                         </div>
                         </li>
                         <li>
-                            <div className="presentation">
+                         <div className="head">
+                         <div className="presentation">
                             <div className="icon-wrapper">
-                            <i class="fas fa-plus"></i>
+                            <span className="horizontal"></span>
+                                <span className="vertical"></span>
                             </div>
                                 <p>Trageting Cookies</p>
                             </div>
@@ -124,15 +147,22 @@ function Index() {
                             <label className="checkbox-wrapper" htmlFor="Trageting">
                                 <span className="ball"></span>
                             </label>
+                         </div>
+                         <div className="body">
+                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto blanditiis amet explicabo tenetur, natus consequatur repellendus maxime deleniti ex laboriosam.</p>
+                         </div>
                         </li>
                     </ul>
+
+                
+                    </div>
+                    </div>
 
                     <div className="confirm-choice">
                         <button>
                             Confirm my Choices
                         </button>
                         </div>
-                    </div>
                 
      
                 </div>
@@ -155,7 +185,7 @@ function Index() {
             <div className="support-case-section">
                 <h1 style={{textAlign:"center",color:"#4D4D4D"}}>Support Causes you care about</h1>
                 <div className="top-navigation-area">
-                    <div className="icon-wrapper left">
+                    <div className="icon-wrapper disable left">
                     <i class="fas fa-chevron-left"></i>
                     </div>
                     <div className="reel-wrapper">
@@ -165,6 +195,12 @@ function Index() {
                             <h3 style={StyleSheet.reelH3}>Shelter</h3>
                             <h3 style={StyleSheet.reelH3}>Kiva U.S</h3>
                             <h3 style={StyleSheet.reelH3}>Refugees</h3>
+                            <h3 style={StyleSheet.reelH3}>Refugees</h3>
+                            <h3 style={StyleSheet.reelH3}>Agriculture</h3>
+                            <h3 style={StyleSheet.reelH3}>Education</h3>
+                            <h3 style={StyleSheet.reelH3}>Technology</h3>
+                            <h3 style={StyleSheet.reelH3}>Health</h3>
+                            
                         </div>
                     </div>
 
@@ -175,7 +211,7 @@ function Index() {
                 </div>
 
                 <div className="request-navigation-area" style={{width:"85%",margin:"2rem auto"}}>
-                <div className="icon-wrapper left">
+                <div className="icon-wrapper disable left">
                     <i class="fas fa-chevron-left"></i>
                     </div>
             
@@ -295,7 +331,7 @@ const StyleSheet={
     },
     Mainheading:{
         color:"#474747",
-        fontSize:'4rem'
+        fontSize:'3.2rem'
     },
     Span:{
         display:"block",
@@ -303,6 +339,7 @@ const StyleSheet={
     },
     reelH3:{
         width:"20%",
+        minWidth:"20%",
         fontWeight:"500",
         textAlign:"center",
         padding:".5rem 0rem",

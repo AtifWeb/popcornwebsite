@@ -228,6 +228,17 @@ function Index() {
                         <IndexCard img={nature_3126513_1920}  title="Miguel Antonio" subtitle="only 47 minutes left" desc="A loan of $525 helps to improve his tomato greenhouse and acquire an irrigation machine." meternow="20" totalgo="120" />
                         <IndexCard img={nature_3126513_1920}  title="Miguel Antonio" subtitle="only 47 minutes left" desc="A loan of $525 helps to improve his tomato greenhouse and acquire an irrigation machine." meternow="20" totalgo="120" />
                       </div>
+
+                      <div className="cards-wrap">
+                      <IndexCard img={nature_3126513_1920}  title="Miguel Antonio" subtitle="only 47 minutes left" desc="A loan of $525 helps to improve his tomato greenhouse and acquire an irrigation machine." meternow="20" totalgo="120" />
+                        <IndexCard img={nature_3126513_1920}  title="Miguel Antonio" subtitle="only 47 minutes left" desc="A loan of $525 helps to improve his tomato greenhouse and acquire an irrigation machine." meternow="20" totalgo="120" />
+                       <div className="card-wrapper link-box" style={{padding:"3rem 1.5rem"}}>
+                           <Link style={{   boxShadow:"0 0.65rem 0.875rem 0.4375rem rgb(153 153 153 / 10%)",borderRadius:"10px"}}>
+                           View all loans to women
+                           </Link>
+                       </div>
+                      </div>
+
                        
 
                     </div>

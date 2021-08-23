@@ -263,6 +263,9 @@ function Index() {
 
                         <div className="presentation">
                             <h3>Make an Account</h3>
+                            <p>
+                            Browse by category and find an entrepreneur to support.
+                            </p>
                         </div>
                     </div>
                     <div className="step">
@@ -270,6 +273,8 @@ function Index() {
 
                         <div className="presentation">
                             <h3>Find an Opportunity</h3>
+                            <p>Help fund a loan with
+as little as $25.</p>
                         </div>
                     </div>
                     <div className="step">
@@ -277,6 +282,7 @@ function Index() {
 
                         <div className="presentation">
                             <h3>Register your interest</h3>
+                            <p>Kiva borrowers have a 96% repayment rate historically.</p>
                         </div>
                     </div>
                     <div className="step">
@@ -284,6 +290,7 @@ function Index() {
 
                         <div className="presentation">
                             <h3>Volunteer</h3>
+                            <p>Relend your money or withdraw your funds.</p>
                         </div>
                     </div>
                 </div>
@@ -294,13 +301,13 @@ function Index() {
             {/* Community Area */}
 
             <div className="community-section" style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
-            <h1 style={{textAlign:"center",color:"#4D4D4D",fontSize:"2.5rem"}}>What our landing community thinks</h1>
+            <h1 style={{textAlign:"center",color:"#4D4D4D"}} className="landing-heading">What our landing community thinks</h1>
             <div className="community-cards-wrapper">
                 <CommunityCard />
                 <CommunityCard />
             </div>
 
-            <h1 style={{marginTop:"30px",fontWeight:400}}>Make a load today</h1>
+            <h1 style={{marginTop:"30px",fontWeight:400}} className="make-loan-heading">Make a load today !</h1>
             <Link  style={{...StyleSheet.button,marginTop:20}}>Find an opportunity</Link>
             </div>
 

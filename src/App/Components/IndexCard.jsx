@@ -8,7 +8,8 @@ const StyleSheet={
         fontSize: "1rem",
         cursor: "pointer",
         marginTop:"15px",
-        width:"100%"
+        width:"100%",
+        fontWeight:"600"
     },
     SubTitle:{
         color: "rgb(156, 156, 156)",

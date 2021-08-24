@@ -175,7 +175,7 @@ function Index() {
                 <video src={LoanVideo} autoPlay muted controls style={{width:"100%"}}></video>
                 <div className="presentation">
                     <h1  style={StyleSheet.Mainheading}>Connecting people<span style={StyleSheet.Span}>with purpose</span></h1>
-                    <Link  style={StyleSheet.button}>Find an opportunity</Link>
+                    <Link class="first-section-button">Find an opportunity</Link>
                 </div>
             </div>
 

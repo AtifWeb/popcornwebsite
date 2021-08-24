@@ -539,6 +539,10 @@
   .video-section {
     grid-template-columns: 1fr;
   }
+  .video-section video {
+    width: 80% !important;
+    margin: 0rem auto;
+  }
   .steps-area {
     grid-template-columns: 1fr;
     grid-gap: 2rem;

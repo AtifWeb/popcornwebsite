@@ -314,17 +314,42 @@ as little as $25.</p>
 
             {/* volenteer area */}
             <div className="volenteer-area">
-                <h1>VolunteerMatch<br/>
-recruiting solutions for nonprofits</h1>
-<p>Get connected to qualified volunteers when and where you need them.</p>
-<p>With more volunteers and more volunteer
-opportunities than any other service,
-VolunteerMatch is how good people and
-good causes get connected.</p>
-
-        <Link  style={{...StyleSheet.button,marginTop:60}}>Get Started</Link>
+            <h1>Cyber <br/>Volunteer for nonprofits.</h1>
 
         <img src={kid} alt="" />
+            </div>
+
+            <ul >
+                <li>
+                    <div className="icon-wrapper">
+                        <img src="https://images.ctfassets.net/j0p9a6ql0rn7/7hfs4sFAAKYTSnaaVJF9ET/d97263a88b53779c2de62f465e20c9e4/piggy2x.png?w=65&h=64&fm=webp&q=80" alt="" />
+                        <p>
+                        Our community has funded over <b>$1.6 billion in loans</b>.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div className="icon-wrapper">
+                        <img src="https://images.ctfassets.net/j0p9a6ql0rn7/RSuALqEgjABfxd5VW1HKH/a05eb47bb7a762afe111ba9e176483c8/dollar2x.png?w=65&h=64&fm=webp&q=80" alt="" />
+                        <p>
+                        Kiva borrowers have a  <b>96% repayment rate</b>.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div className="icon-wrapper">
+                        <img src="https://images.ctfassets.net/j0p9a6ql0rn7/1FyQ1lX43xsIoOTi6fwj2L/cce03c18332bf24b924a03f6abc1469d/world2x.png?w=65&h=64&fm=webp&q=80" alt="" />
+                        <p>
+                        The Kiva community spans <b>77 countries</b> and <b>1.9M lenders.</b>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+            {/* get started button */}
+
+            <div className="button-wrapper">
+                <a href="#">Get Started</a>
             </div>
 
 

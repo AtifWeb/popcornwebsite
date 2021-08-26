@@ -186,38 +186,45 @@ function Index() {
                 <h1 style={{textAlign:"center",color:"#4D4D4D"}}>Support Causes you care about</h1>
                 <div className="top-navigation-area">
                     <div className="icon-wrapper disable left">
-                    <i class="fas fa-chevron-left"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 202.23 391.319">
+  <path id="Path_64095" data-name="Path 64095" d="M271.456,383.791l157.3-194.7,44.921,44.927L353.863,383.808,473.686,533.619l-44.944,46.795Z" transform="translate(-271.456 -189.095)" fill="#fff"/>
+</svg>
+
                     </div>
                     <div className="reel-wrapper">
                         <div className="reel first-reel"style={StyleSheet.reel}>
-                            <h3 style={StyleSheet.reelH3}className="active" >Women</h3>
-                            <h3 style={StyleSheet.reelH3} >Covid 19</h3>
-                            <h3 style={StyleSheet.reelH3}>Shelter</h3>
-                            <h3 style={StyleSheet.reelH3}>Kiva U.S</h3>
-                            <h3 style={StyleSheet.reelH3}>Refugees</h3>
-                            <h3 style={StyleSheet.reelH3}>Refugees</h3>
-                            <h3 style={StyleSheet.reelH3}>Agriculture</h3>
-                            <h3 style={StyleSheet.reelH3}>Education</h3>
-                            <h3 style={StyleSheet.reelH3}>Technology</h3>
-                            <h3 style={StyleSheet.reelH3}>Health</h3>
+                            <h3 style={StyleSheet.reelH3}className="active" id="top-nav-1" >Women</h3>
+                            <h3 style={StyleSheet.reelH3}  id="top-nav-2">Covid 19</h3>
+                            <h3 style={StyleSheet.reelH3} id="top-nav-3">Shelter</h3>
+                            <h3 style={StyleSheet.reelH3} id="top-nav-4">Kiva U.S</h3>
+                            <h3 style={StyleSheet.reelH3} id="top-nav-5">Refugees</h3>
+                            <h3 style={StyleSheet.reelH3} id="top-nav-6">Refugees</h3>
+                            <h3 style={StyleSheet.reelH3} id="top-nav-7">Agriculture</h3>
+                            <h3 style={StyleSheet.reelH3} id="top-nav-8">Education</h3>
+                            <h3 style={StyleSheet.reelH3} id="top-nav-9">Technology</h3>
+                            <h3 style={StyleSheet.reelH3} id="top-nav-10">Health</h3>
                             
                         </div>
                     </div>
 
                     <div className="icon-wrapper right">
-                    <i class="fas fa-chevron-right"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 202.23 391.319">
+  <path id="Path_64095" data-name="Path 64095" d="M271.456,383.791l157.3-194.7,44.921,44.927L353.863,383.808,473.686,533.619l-44.944,46.795Z" transform="translate(-271.456 -189.095)" fill="#fff"/>
+</svg>
                     </div>
 
                 </div>
 
-                <div className="request-navigation-area" style={{width:"85%",margin:"2rem auto"}}>
+                <div className="request-navigation-area " style={{width:"85%",margin:"2rem auto"}}>
                 <div className="icon-wrapper disable left">
-                    <i class="fas fa-chevron-left"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 202.23 391.319">
+  <path id="Path_64095" data-name="Path 64095" d="M271.456,383.791l157.3-194.7,44.921,44.927L353.863,383.808,473.686,533.619l-44.944,46.795Z" transform="translate(-271.456 -189.095)" fill="#fff"/>
+</svg>
                     </div>
             
-                <div className="reel-wrapper" style={{}}>
+                <div className="reel-wrapper">
                     <div className="reel second-reel" style={StyleSheet.requestNavigationAreaReel}>
-                      <div className="cards-wrap">
+                      <div className="cards-wrap ">
                       <IndexCard img={nature_3126513_1920}  title="Miguel Antonio" subtitle="only 47 minutes left" desc="A loan of $525 helps to improve his tomato greenhouse and acquire an irrigation machine." meternow="20" totalgo="120" />
                         <IndexCard img={nature_3126513_1920}  title="Miguel Antonio" subtitle="only 47 minutes left" desc="A loan of $525 helps to improve his tomato greenhouse and acquire an irrigation machine." meternow="20" totalgo="120" />
                         <IndexCard img={nature_3126513_1920}  title="Miguel Antonio" subtitle="only 47 minutes left" desc="A loan of $525 helps to improve his tomato greenhouse and acquire an irrigation machine." meternow="20" totalgo="120" />
@@ -229,7 +236,7 @@ function Index() {
                         <IndexCard img={nature_3126513_1920}  title="Miguel Antonio" subtitle="only 47 minutes left" desc="A loan of $525 helps to improve his tomato greenhouse and acquire an irrigation machine." meternow="20" totalgo="120" />
                       </div>
 
-                      <div className="cards-wrap">
+                      <div className="cards-wrap ">
                       <IndexCard img={nature_3126513_1920}  title="Miguel Antonio" subtitle="only 47 minutes left" desc="A loan of $525 helps to improve his tomato greenhouse and acquire an irrigation machine." meternow="20" totalgo="120" />
                         <IndexCard img={nature_3126513_1920}  title="Miguel Antonio" subtitle="only 47 minutes left" desc="A loan of $525 helps to improve his tomato greenhouse and acquire an irrigation machine." meternow="20" totalgo="120" />
                        <div className="card-wrapper link-box" style={{padding:"3rem 1.5rem"}}>
@@ -245,7 +252,9 @@ function Index() {
 
                 </div>
                 <div className="icon-wrapper right">
-                    <i class="fas fa-chevron-right"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 202.23 391.319">
+  <path id="Path_64095" data-name="Path 64095" d="M271.456,383.791l157.3-194.7,44.921,44.927L353.863,383.808,473.686,533.619l-44.944,46.795Z" transform="translate(-271.456 -189.095)" fill="#fff"/>
+</svg>
                     </div>
                 </div>
             </div>
@@ -374,7 +383,8 @@ const StyleSheet={
     },
     Mainheading:{
         color:"#474747",
-        fontSize:'3.2rem'
+        fontSize:'3.2rem',
+        fontWeight:"500"
     },
     Span:{
         display:"block",

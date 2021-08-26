@@ -57,7 +57,7 @@ function IndexCard({img,title,subtitle,desc,meternow,totalgo}) {
             <p className="description">
             {desc}
 
-            <a href="#" >Read more</a>
+            <a href="#" style={{color:"#F85220"}}>Read more</a>
             </p>
 
          

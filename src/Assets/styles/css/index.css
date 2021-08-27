@@ -273,14 +273,14 @@
   padding-top: 3rem !important;
 }
 .video-section a {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: rgb(234, 108, 57);
-  color: rgb(255, 255, 255);
-  margin-top: 20px;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 1.3rem;
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: #ea6c39;
+    color: #fff;
+    margin-top: 50px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 .MainPage .top-navigation-area {
   width: 60%;

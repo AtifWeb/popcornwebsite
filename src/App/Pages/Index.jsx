@@ -215,7 +215,7 @@ function Index() {
 
                 </div>
 
-                <div className="request-navigation-area " style={{width:"85%",margin:"2rem auto"}}>
+                <div className="request-navigation-area " style={{margin:"2rem auto"}}>
                 <div className="icon-wrapper disable left">
                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 202.23 391.319">
   <path id="Path_64095" data-name="Path 64095" d="M271.456,383.791l157.3-194.7,44.921,44.927L353.863,383.808,473.686,533.619l-44.944,46.795Z" transform="translate(-271.456 -189.095)" fill="#fff"/>

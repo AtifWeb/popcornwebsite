@@ -11,6 +11,9 @@ if(isTouch==0){
     document.querySelector(".request-navigation-area").classList.add("touch");
 }
 
+
+console.log(document.querySelector(".first-reel").offsetWidth)
+
 })
 window.addEventListener("load",(event)=>{
     let isTouch='ontouchstart' in window || navigator.maxTouchPoints
@@ -29,6 +32,8 @@ let setMobileView=false
     let FirstReel=0
     let SecondReel=0
     let setMobileViewSecondReel=false
+    let Sizebelow550=false;
+    let CurrentActiveOption=1;
 
     let ArrowsLeft=document.querySelectorAll(".icon-wrapper.left")
     let ArrowsRight=document.querySelectorAll(".icon-wrapper.right")
@@ -40,6 +45,9 @@ let setMobileView=false
 
         if(window.innerWidth<1200){
             setMobileViewSecondReel=true
+        }
+        if(window.innerWidth<550){
+            Sizebelow550=true
         }
     })
 
@@ -78,6 +86,12 @@ let setMobileView=false
 
         SecondReel=0
         document.querySelector(".second-reel").style.transform="translateX(0)"
+
+        if(window.innerWidth<550){
+            Sizebelow550=true
+        }
+        CurrentActiveOption=1
+        
     })
 
 
@@ -97,11 +111,83 @@ ArrowsRight.forEach(element => {
         }
       }
    }else{
-    if(FirstReel>-1050){
+    if(document.querySelector(`#top-nav-${CurrentActiveOption}`).textContent!="Technology"){
         if(Reel.classList.contains("first-reel")){
             e.target.parentNode.firstElementChild.classList.remove("disable")
-            FirstReel=FirstReel-150     
+            
+           if(window.innerWidth<460){
+            
+            if(FirstReel>-400){
+                FirstReel=FirstReel-100     
+            Reel.style.transform=`translateX(${FirstReel}%)`
+            
+            }
+            if(FirstReel<-300){
+                e.target.classList.add("disable")
+            }  
+            
+           }else if (window.innerWidth<550){
+          
+            if(FirstReel==-750){
+              FirstReel=FirstReel-270  
+            }else{
+              FirstReel=FirstReel-150     
+            }
+          console.log(FirstReel)
+         if(FirstReel>-1050){
+          Reel.style.transform=`translateX(${FirstReel}px)`
+          
+          }
+          if(FirstReel<-800){
+              e.target.classList.add("disable")
+          }
+          
+             }else if (window.innerWidth<635){
+            if(FirstReel==-750){
+                FirstReel=FirstReel-290  
+              }else{
+                FirstReel=FirstReel-150     
+              }
+              console.log(FirstReel)
+           if(FirstReel>-1050){
             Reel.style.transform=`translateX(${FirstReel}px)`
+            
+            }
+            if(FirstReel<-800){
+                e.target.classList.add("disable")
+            }
+           }else if (window.innerWidth<735){
+            if(FirstReel==-750){
+                FirstReel=FirstReel-220  
+              }else{
+                FirstReel=FirstReel-150     
+              }
+            
+           if(FirstReel>-1050){
+            Reel.style.transform=`translateX(${FirstReel}px)`
+            
+            }
+            if(FirstReel<-800){
+                e.target.classList.add("disable")
+            }
+           }
+           else if (window.innerWidth<800){
+            if(FirstReel==-750){
+                FirstReel=FirstReel-180  
+              }else{
+                FirstReel=FirstReel-150     
+              }
+            console.log(FirstReel)
+           if(FirstReel>-1050){
+            Reel.style.transform=`translateX(${FirstReel}px)`
+            
+            }
+            if(FirstReel<-800){
+                e.target.classList.add("disable")
+            }
+           }
+
+           CurrentActiveOption++
         }
       }
    }
@@ -153,7 +239,7 @@ ArrowsRight.forEach(element => {
 }else{
     if(Reel.classList.contains("first-reel")){
       
-        if(FirstReel<-900){
+        if(document.querySelector(`#top-nav-${CurrentActiveOption}`).textContent=="Technology"){
             
             e.target.classList.add("disable")
            }
@@ -168,6 +254,7 @@ ArrowsLeft.forEach(element => {
     element.addEventListener("click",(e)=>{
         let Reel=e.target.parentNode.querySelector(".reel");
         if(setMobileView==false){
+        
         if(FirstReel<0){
             if(Reel.classList.contains("first-reel")){
                 e.target.parentNode.lastElementChild.classList.remove("disable")
@@ -176,33 +263,95 @@ ArrowsLeft.forEach(element => {
                 e.target.classList.remove("disable")
             }
         }}else{
+           console.log(FirstReel)
+         
             if(FirstReel<0){
+              
                 if(Reel.classList.contains("first-reel")){
                     e.target.parentNode.firstElementChild.classList.remove("disable")
-                    FirstReel=FirstReel+150     
-                    Reel.style.transform=`translateX(${FirstReel}px)`
+                    if(window.innerWidth<470){
+            
+                        if(FirstReel!=0){
+                            FirstReel=FirstReel+100     
+                        Reel.style.transform=`translateX(${FirstReel}%)`
+                        
+                        }
+                        if(FirstReel>-300){
+                            e.target.classList.add("disable")
+                        }  
+                        
+                       }else if (window.innerWidth<550){
+          
+                        if(FirstReel==-1020){
+                          FirstReel=FirstReel+270  
+                        }else{
+                          FirstReel=FirstReel+150     
+                        }
+                        if(FirstReel<=0){
+                        
+                            Reel.style.transform=`translateX(${FirstReel}px)`
+                          }
+                          if(FirstReel==0){
+                            e.target.classList.add("disable")
+                          }
+                      
+                         }else if (window.innerWidth<635){
+                        if(FirstReel==-1040){
+                            FirstReel=FirstReel+290  
+                          }else{
+                            FirstReel=FirstReel+150     
+                          }
+                      
+                          if(FirstReel<=0){
+                        
+                            Reel.style.transform=`translateX(${FirstReel}px)`
+                          }
+                          if(FirstReel==0){
+                            e.target.classList.add("disable")
+                          }
+                       }else if (window.innerWidth<735){
+                        if(FirstReel==-970){
+                            FirstReel=FirstReel+220  
+                          }else{
+                            FirstReel=FirstReel+150     
+                          }
+                       
+                          if(FirstReel<=0){
+                        
+                            Reel.style.transform=`translateX(${FirstReel}px)`
+                          }
+                          if(FirstReel==0){
+                            e.target.classList.add("disable")
+                          }
+                         
+                       }
+                       else if (window.innerWidth<800){
+                    
+                        if(FirstReel==-930){
+                            FirstReel=FirstReel+180  
+                          }else{
+                            FirstReel=FirstReel+150     
+                          }
+                        
+                          if(FirstReel<=0){
+                        
+                            Reel.style.transform=`translateX(${FirstReel}px)`
+                          }
+                          if(FirstReel==0){
+                            e.target.classList.add("disable")
+                          }
+                         
+                      
+                       }
+            
+                CurrentActiveOption--
                 }
               }
            }
-
-      
-          
-            if(setMobileView==false){
-        if(Reel.classList.contains("first-reel")){
-            if(FirstReel==0){
-            e.target.classList.add("disable")
-            }
-        }}  else{
-            if(Reel.classList.contains("first-reel")){
-              
-                if(FirstReel==0){
-                    
-                    e.target.classList.add("disable")
-                   }
-              
-             }
-        }
-
+           if(setMobileView==true){
+           document.querySelector(".top-navigation-area .right").classList.remove("disable")
+           }
+   
       
         
           if(setMobileViewSecondReel==false){
@@ -220,12 +369,12 @@ ArrowsLeft.forEach(element => {
             SecondReel=SecondReel+330
             Reel.style.transform=`translateX(${SecondReel}px)`
             e.target.classList.remove("disable")
+         
         }  
     }
     }
 
-console.log("second reel",SecondReel)
-
+console.log(Reel)
     if(setMobileViewSecondReel==false){
     if(Reel.classList.contains("second-reel")){
         if(SecondReel==0){
@@ -233,11 +382,25 @@ console.log("second reel",SecondReel)
         e.target.classList.add("disable")
         }
     }}else{
+        if(Reel.classList.contains("second-reel")){
         if(SecondReel==0){
         
             e.target.classList.add("disable")
             }
+        }
     }
+
+
+       console.log(e.target)
+          
+    if(setMobileView==false){
+              
+        if(Reel.classList.contains("first-reel")){
+            if(FirstReel==0){
+                
+            e.target.classList.add("disable")
+            }
+        }} 
 
    
     })

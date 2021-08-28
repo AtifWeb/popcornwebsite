@@ -128,13 +128,14 @@ ArrowsRight.forEach(element => {
             
            }else if (window.innerWidth<550){
           
+        
+          
+         if(FirstReel>-900){
             if(FirstReel==-750){
-              FirstReel=FirstReel-270  
-            }else{
-              FirstReel=FirstReel-150     
-            }
-          console.log(FirstReel)
-         if(FirstReel>-1050){
+                FirstReel=FirstReel-270  
+              }else{
+                FirstReel=FirstReel-150     
+              }
           Reel.style.transform=`translateX(${FirstReel}px)`
           
           }
@@ -143,13 +144,14 @@ ArrowsRight.forEach(element => {
           }
           
              }else if (window.innerWidth<635){
+          
+             
+           if(FirstReel>-900){
             if(FirstReel==-750){
                 FirstReel=FirstReel-290  
               }else{
                 FirstReel=FirstReel-150     
               }
-              console.log(FirstReel)
-           if(FirstReel>-1050){
             Reel.style.transform=`translateX(${FirstReel}px)`
             
             }
@@ -157,13 +159,14 @@ ArrowsRight.forEach(element => {
                 e.target.classList.add("disable")
             }
            }else if (window.innerWidth<735){
+          
+            
+           if(FirstReel>-900){
             if(FirstReel==-750){
                 FirstReel=FirstReel-220  
               }else{
                 FirstReel=FirstReel-150     
               }
-            
-           if(FirstReel>-1050){
             Reel.style.transform=`translateX(${FirstReel}px)`
             
             }
@@ -172,14 +175,16 @@ ArrowsRight.forEach(element => {
             }
            }
            else if (window.innerWidth<800){
+           
+            console.log(FirstReel)
+           if(FirstReel>-900){
             if(FirstReel==-750){
                 FirstReel=FirstReel-180  
               }else{
                 FirstReel=FirstReel-150     
               }
-            console.log(FirstReel)
-           if(FirstReel>-1050){
             Reel.style.transform=`translateX(${FirstReel}px)`
+       
             
             }
             if(FirstReel<-800){
@@ -187,7 +192,8 @@ ArrowsRight.forEach(element => {
             }
            }
 
-           CurrentActiveOption++
+           console.log(CurrentActiveOption)
+               CurrentActiveOption++
         }
       }
    }

@@ -250,6 +250,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 <TextField   className="address" id="postcode" onChange={HandleSecondStepText}  label="PostCode" variant="outlined" style={{width:"100%"}} type="text"/>
 <TextField   className="address" id="town"  onChange={HandleSecondStepText}  label="Town/City" variant="outlined" style={{width:"100%"}} type="text"/>
 </div>
+<div className="country-select select-box">
 <FormControl className={classes.formControl}>
 <InputLabel htmlFor="age-native-simple">Country/Region</InputLabel>
         <Select
@@ -262,12 +263,14 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 
         </Select>
       </FormControl>
+</div>
 
 <div className="grid-col-3">
 <div className="day-wrapper" style={{marginTop:16}}>
 <TextField   className="Day" onChange={HandleSecondStepText}  id="Day" label="Day" variant="outlined" style={{width:"100%"}} type="text"/>
 <small style={{fontSize:12,color:"#7F7A7B"}}>Your birthday</small>
 </div>
+<div className="Month-select select-box">
 <FormControl className={classes.formControl}>
 <InputLabel htmlFor="age-native-simple">Month</InputLabel>
         <Select
@@ -279,6 +282,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
           <option value="empty">Empty</option>
         </Select>
       </FormControl>
+      </div>
       <TextField  onChange={HandleSecondStepText}   className="address" id="year" label="Year" variant="outlined" style={{width:"100%",marginTop:16}} type="text"/>
 
 </div>

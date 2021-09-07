@@ -233,14 +233,14 @@ nav {
 }
 
 /* select box */
-.makeStyles-formControl-1 .MuiInput-root {
+.select-box .MuiInput-root {
   position: relative !important;
   border: 1px solid rgba(0, 0, 0, 0.23) !important;
   height: 48px !important;
   border-radius: 5px !important;
   padding: 0rem 1rem !important;
 }
-.makeStyles-formControl-1 {
+.select-box .MuiFormControl-root {
   width: 100% !important;
   margin: 0px !important;
 }
@@ -260,7 +260,7 @@ nav {
 
   border-bottom-right-radius: 5px;
 }
-.step-2 .makeStyles-formControl-1 .MuiInputLabel-animated {
+.step-2 .select-box .MuiInputLabel-animated {
   left: 13px;
   top: 8px;
 }

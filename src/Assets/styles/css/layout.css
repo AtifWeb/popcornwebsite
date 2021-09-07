@@ -234,14 +234,14 @@ nav {
 
 /* select box */
 .makeStyles-formControl-1 .MuiInput-root {
-  position: relative;
-  border: 1px solid rgba(0, 0, 0, 0.23);
-  height: 48px;
-  border-radius: 5px;
-  padding: 0rem 1rem;
+  position: relative !important;
+  border: 1px solid rgba(0, 0, 0, 0.23) !important;
+  height: 48px !important;
+  border-radius: 5px !important;
+  padding: 0rem 1rem !important;
 }
 .makeStyles-formControl-1 {
-  width: 100%;
+  width: 100% !important;
   margin: 0px !important;
 }
 .MuiInput-underline:before {
@@ -270,7 +270,7 @@ nav {
 .create-account-label {
   background-color: #f85220 !important;
   color: #fff !important;
-  border-radius: 5pxx;
+  border-radius: 5px;
 }
 .create-account-label.disable {
   pointer-events: none;

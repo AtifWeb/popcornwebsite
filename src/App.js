@@ -6,13 +6,14 @@ import './Assets/styles/css/layout.css'
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Index from "./App/Pages/Index";
 import SignIn from "./App/Pages/SignIn";
+import Signup from "./App/Pages/Signup";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Switch>
           <Route path="/" exact>
-            <SignIn />
+            <Signup />
           </Route>
 
           

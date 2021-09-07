@@ -21,6 +21,11 @@ nav {
 .dflex-justify-center {
   justify-content: center;
 }
+.grid-col-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
 .sidebar {
   background-color: #f8f9fa;
   padding: 0.7rem 0.8rem;
@@ -180,6 +185,113 @@ nav {
 .Footer > p.copy-right {
   margin-top: 10px;
 }
+
+/* custom checkbox */
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+}
+.checkbox-wrapper > * {
+  cursor: pointer;
+}
+.checkbox-wrapper input:checked + label {
+  background-color: #f85220;
+  border-color: #f85220;
+}
+.checkbox-wrapper input:checked + label i {
+  color: #fff;
+}
+
+.checkbox-wrapper .custom-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checkbox-wrapper .custom-checkbox:nth-child(2) {
+  margin-right: 15px;
+
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ddd;
+}
+.checkbox-wrapper .custom-checkbox i {
+  font-size: 12px;
+  color: #fff;
+}
+
+/* password bars */
+.bars {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  grid-gap: 5px;
+}
+.bars > * {
+  min-height: 5px;
+  background-color: #ddd;
+  border-radius: 99px;
+}
+
+/* select box */
+.makeStyles-formControl-1 .MuiInput-root {
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.23);
+  height: 48px;
+  border-radius: 5px;
+  padding: 0rem 1rem;
+}
+.makeStyles-formControl-1 {
+  width: 100%;
+  margin: 0px !important;
+}
+.MuiInput-underline:before {
+  border-bottom: none !important;
+}
+.step-2 {
+  display: none;
+}
+.result-wrapper {
+  border: 1px solid #000;
+  border-top: none;
+  padding: 0.5rem 1rem;
+  padding-bottom: 0.8rem;
+  display: none;
+  border-bottom-left-radius: 5px;
+
+  border-bottom-right-radius: 5px;
+}
+.step-2 .makeStyles-formControl-1 .MuiInputLabel-animated {
+  left: 13px;
+  top: 8px;
+}
+.step-2 .MuiInputLabel-animated + div select:focus {
+  background-color: transparent;
+}
+.create-account-label {
+  background-color: #f85220 !important;
+  color: #fff !important;
+  border-radius: 5pxx;
+}
+.create-account-label.disable {
+  pointer-events: none;
+  background-color: #e0e0e0 !important;
+  color: #b0b0b0 !important;
+}
+.expand-address {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  display: none;
+}
+.expand-address.active {
+  display: grid;
+}
+.expand-address > * {
+  grid-column: span 2;
+}
+.expand-address > *:nth-child(3),
+.expand-address > *:nth-child(4) {
+  grid-column: span 1;
+}
 @media screen and (max-width: 800px) {
   .Header .header-content > img {
     width: 150px;
@@ -241,8 +353,25 @@ nav {
     grid-template-columns: 1fr 1fr;
   }
 }
+@media screen and (max-width: 430px) {
+  .grid-col-3 {
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+  }
+  .day-wrapper small {
+    display: none;
+  }
+}
 @media screen and (max-width: 400px) {
   .Footer .top-area {
     grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 350px) {
+  .expand-address {
+    grid-template-columns: 1fr;
+  }
+  .expand-address > * {
+    grid-column: span 1 !important;
   }
 }

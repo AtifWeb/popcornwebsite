@@ -19,7 +19,8 @@
   border: 1px solid #ddd;
   padding: 2rem 2rem;
 }
-.SignIn .body-area form > p:first-child {
+.SignIn .body-area form > p:first-child,
+.SignUp .body-area form > p:nth-child(2) {
   text-align: center;
   font-size: 1.5rem;
   line-height: 2.25rem;
@@ -188,6 +189,14 @@ input[type="password"]::-ms-reveal {
   .SignIn .body-area form {
     width: 90%;
   }
+  .SignIn .body-area form .question-mark-answer {
+    left: 60%;
+    transform: translate(-60%, -115%);
+  }
+  .arrow {
+    left: 60%;
+    transform: translateX(-60%) rotate(-45deg);
+  }
 }
 @media screen and (max-width: 410px) {
   .SignIn .body-area form .button-wrapper .MuiButton-containedPrimary {
@@ -198,19 +207,67 @@ input[type="password"]::-ms-reveal {
   .SignIn .body-area form .button-wrapper a:first-child {
     font-size: 13px;
   }
+
+  .SignIn .body-area form .question-mark-answer {
+    left: 75%;
+    transform: translate(-75%, -115%);
+  }
+  .arrow {
+    left: 75%;
+    transform: translateX(-75%) rotate(-45deg);
+  }
 }
+
 @media screen and (max-width: 338px) {
   .SignIn .body-area form .button-wrapper a:first-child {
     padding: 0px !important;
+  }
+}
+@media screen and (max-width: 318px) {
+  .SignIn .body-area form .question-mark-answer {
+    width: 210px;
+  }
+  .arrow {
+    left: 75%;
+    transform: translateX(-75%) rotate(-45deg);
   }
 }
 @media screen and (min-height: 1000px) {
   .SignIn .sign-in-header {
     position: absolute;
     width: 100%;
+    top: 0;
+  }
+  .SignIn {
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
   }
   .SignIn .body-area {
-    height: 100vh;
     align-items: center;
+  }
+}
+@media screen and (min-height: 1000px) and (min-width: 1000px) {
+  .SignIn .body-area form > p:first-child {
+    font-size: 2rem;
+    line-height: 40px;
+  }
+  .SignIn .body-area form > .helper {
+    font-size: 20px;
+  }
+  .SignIn .body-area form .button-wrapper a:first-child,
+  .SignIn
+    .body-area
+    form
+    .remember-me-wrapper
+    .custom-checkbox-container
+    label {
+    font-size: 20px;
+  }
+  .SignIn .body-area form .button-wrapper .MuiButton-containedPrimary {
+    font-style: 30px;
   }
 }

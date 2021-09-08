@@ -100,28 +100,31 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
             
         }
 
-        document.querySelector(`#bar-1`).style.backgroundColor="#6E2F39"
+       
 
 if(PasswordLength<password.length){
     console.log("forward")
     console.log(password.length)
+    if(password.length<4){
+        document.querySelector(`#bar-1`).style.backgroundColor="#BC756B"
+    }
     if(password.length==4){
         StepSize=2
-        document.querySelector(`#bar-1`).style.backgroundColor="#6E2F39"
-        document.querySelector(`#bar-2`).style.backgroundColor="#E6C565"
+        document.querySelector(`#bar-1`).style.backgroundColor="#DEC193"
+        document.querySelector(`#bar-2`).style.backgroundColor="#DEC193"
         
     }
     if(password.length==8){
         StepSize=3
-        document.querySelector(`#bar-1`).style.backgroundColor="#6E2F39"
-        document.querySelector(`#bar-2`).style.backgroundColor="#E6C565"
-        document.querySelector(`#bar-3`).style.backgroundColor="#799DBF"
+        document.querySelector(`#bar-1`).style.backgroundColor="#7299C5"
+        document.querySelector(`#bar-2`).style.backgroundColor="#7299C5"
+        document.querySelector(`#bar-3`).style.backgroundColor="#7299C5"
     }
     if(password.length>12){
-        document.querySelector(`#bar-1`).style.backgroundColor="#6E2F39"
-        document.querySelector(`#bar-2`).style.backgroundColor="#E6C565"
-        document.querySelector(`#bar-3`).style.backgroundColor="#799DBF"
-        document.querySelector(`#bar-4`).style.backgroundColor="#137412"
+        document.querySelector(`#bar-1`).style.backgroundColor="#7AB89E"
+        document.querySelector(`#bar-2`).style.backgroundColor="#7AB89E"
+        document.querySelector(`#bar-3`).style.backgroundColor="#7AB89E"
+        document.querySelector(`#bar-4`).style.backgroundColor="#7AB89E"
     }
 }else{
     console.log(password.length)
@@ -133,6 +136,7 @@ if(PasswordLength<password.length){
     }
     if(password.length<=4&&password.length>2){
         StepSize=1
+        document.querySelector(`#bar-1`).style.backgroundColor="#BC756B"
         document.querySelector(`#bar-4`).style.backgroundColor="#ddd"
         document.querySelector(`#bar-3`).style.backgroundColor="#ddd"
         document.querySelector(`#bar-2`).style.backgroundColor="#ddd"
@@ -140,12 +144,17 @@ if(PasswordLength<password.length){
 
     if(password.length<=8&&password.length>4){
         StepSize=2
+        document.querySelector(`#bar-1`).style.backgroundColor="#DEC193"
         document.querySelector(`#bar-4`).style.backgroundColor="#ddd"
         document.querySelector(`#bar-3`).style.backgroundColor="#ddd"
+        document.querySelector(`#bar-2`).style.backgroundColor="#DEC193"
         
     }
     if(password.length>8&&password.length<12){
+        document.querySelector(`#bar-1`).style.backgroundColor="#7299C5"
         document.querySelector(`#bar-4`).style.backgroundColor="#ddd"
+        document.querySelector(`#bar-3`).style.backgroundColor="#7299C5"
+        document.querySelector(`#bar-2`).style.backgroundColor="#7299C5"
     }
 }
 

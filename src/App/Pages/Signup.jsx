@@ -1,6 +1,6 @@
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../Assets/img/logo.svg'
 import '../../Assets/styles/css/Signin.css'
@@ -24,8 +24,16 @@ const useStyles = makeStyles((theme) => ({
 
 function Signup() {
     const classes=useStyles()
+    const [FirstName,setFirstName]=useState()
+    const [LastName,setLastName]=useState()
   
 useEffect(()=>{
+    document.querySelector("#fname").addEventListener("change",(e)=>{
+        setFirstName(e.target.value)
+    })
+    document.querySelector("#lname").addEventListener("change",(e)=>{
+        setLastName(e.target.value)
+    })
 
 },[])
     const HandleNext=e=>{
@@ -146,8 +154,9 @@ useEffect(()=>{
                 <form action="">
                     <p className="create-account-message" >Create a new account below <br/>
 or <Link>sign in</Link></p>
-<p className="welcom-message" style={{display:"none"}}>welcome to Cyber Volunteers</p>
+<p className="welcom-message" style={{display:"none"}}>{FirstName} {LastName} welcome to Cyber Volunteers</p>
 <p className="helper">Create a new Cyber Volunteers account.</p>
+
 
 
 <div className="input-collection" >

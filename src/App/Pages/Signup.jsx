@@ -159,7 +159,7 @@ or <Link>sign in</Link></p>
 
 
 
-<div className="input-collection" style={{display:"none"}}>
+<div className="input-collection" >
 <TextField
 onBlur={CheckIsValid}
 onFocus={RemoveMessages}

@@ -261,7 +261,7 @@ nav {
   border-bottom: none !important;
 }
 .step-2 {
-  /* display: none; */
+ display: none;
 }
 .result-wrapper {
   border: 1px solid #000;

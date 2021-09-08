@@ -43,6 +43,8 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
             e.target.nextElementSibling.style.borderBottomRightRadius="5px"
          if(e.target.value.length>0){
             AddressStreet=e.target.value
+            
+            document.querySelector(".address").style.display="none"
             document.querySelector(".expand-address").classList.add("active")
             
          }else{
@@ -56,7 +58,9 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
 
         if(e.target.id=="address"){
             AddressStreet=e.target.value
-           
+           document.querySelector(".result-wrapper .typing-start-result").style.display="block"
+            
+           document.querySelector(".result-wrapper > p").style.display="none"
             
         }else if (e.target.id=="address1"){
             Address1=e.target.value
@@ -134,7 +138,7 @@ if(PasswordLength<password.length){
         document.querySelector(`#bar-2`).style.backgroundColor="#ddd"
         document.querySelector(`#bar-1`).style.backgroundColor="#ddd"
     }
-    if(password.length<=4&&password.length>2){
+    if(password.length<=4&&password.length>0){
         StepSize=1
         document.querySelector(`#bar-1`).style.backgroundColor="#BC756B"
         document.querySelector(`#bar-4`).style.backgroundColor="#ddd"

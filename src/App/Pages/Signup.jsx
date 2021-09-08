@@ -159,7 +159,7 @@ or <Link>sign in</Link></p>
 
 
 
-<div className="input-collection" >
+<div className="input-collection" style={{display:"none"}}>
 <TextField
 onBlur={CheckIsValid}
 onFocus={RemoveMessages}
@@ -221,7 +221,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 
 <div className="checkbox-wrapper" style={{marginBottom:20}}>
     <input type="checkbox" name="" id="show-password-checkbox" style={{display:"none"}} />
-    <label htmlFor="show-password-checkbox" className="custom-checkbox" onClick={ShowPasswords}>
+    <label htmlFor="show-password-checkbox" className="custom-checkbox custom-checkbox-box" onClick={ShowPasswords}>
     <i class="fas fa-check"></i>
     </label>
     <label htmlFor="show-password-checkbox" className="custom-checkbox-line"onClick={ShowPasswords}>
@@ -250,13 +250,21 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 
 <div className="result-wrapper">
     <p>e.g. "Lahore Pakistan"</p>
+    <div className="typing-start-result" style={{display:"none"}}>
+       <div className="row">
+       <h5>Atif Asim</h5>
+        <small>Pakistan</small>
+       </div>
+
+       <Link to="#" style={{display:"block",color:"#F85220",fontSize:"15px",textAlign:"center",borderTop:'1px solid #ddd',padding:"10px 0px"}}>Enter address manually</Link>
+    </div>
 </div>
 
 
 <div className="expand-address" style={{marginTop:20}}>
 <TextField   className="address" id="address1" onChange={HandleSecondStepText}  label="Address Line 1" variant="outlined" style={{width:"100%"}} type="text"/>
 <TextField   className="address" id="address2"onChange={HandleSecondStepText}   label="Address Line 2" variant="outlined" style={{width:"100%"}} type="text"/>
-<TextField   className="address" id="postcode" onChange={HandleSecondStepText}  label="PostCode" variant="outlined" style={{width:"100%"}} type="text"/>
+<TextField   className="address" id="postcode" onChange={HandleSecondStepText}  label="Postcode" variant="outlined" style={{width:"100%"}} type="text"/>
 <TextField   className="address" id="town"  onChange={HandleSecondStepText}  label="Town/City" variant="outlined" style={{width:"100%"}} type="text"/>
 </div>
 <div className="country-select select-box">
@@ -298,12 +306,15 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 
 <div className="checkbox-wrapper" style={{marginBottom:20,marginTop:16}}>
     <input type="checkbox" name="" onChange={HandleSecondStepText}  id="AggrementCheckbox" style={{display:"none"}} />
-    <label htmlFor="AggrementCheckbox" className="custom-checkbox" onClick={ShowPasswords} style={{minWidth:20}}>
+   <label>
+
+   <label htmlFor="AggrementCheckbox" className="custom-checkbox custom-checkbox-box" onClick={ShowPasswords} style={{minWidth:20}}>
     <i class="fas fa-check"></i>
     </label>
-    <label htmlFor="AggrementCheckbox" className="custom-checkbox-line"onClick={ShowPasswords} style={{fontSize:13,color:"#7F7A7B",fontWeight:600}}>
+    <label htmlFor="AggrementCheckbox" className="custom-checkbox-line"onClick={ShowPasswords} style={{fontSize:13,color:"rgb(116, 112, 113)",fontWeight:600}}>
             By creating an account you agree that you've read and agree with the terms of service and privacy policy
     </label>
+   </label>
 </div>  
 
 

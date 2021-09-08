@@ -194,31 +194,44 @@ nav {
 .checkbox-wrapper > * {
   cursor: pointer;
 }
-.checkbox-wrapper input:checked + label {
+.checkbox-wrapper input:checked + .custom-checkbox-box,
+.checkbox-wrapper input:checked + label > .custom-checkbox-box {
   background-color: #f85220;
   border-color: #f85220;
 }
-.checkbox-wrapper input:checked + label i {
+.checkbox-wrapper input:checked + .custom-checkbox-box i,
+.checkbox-wrapper input:checked + label > .custom-checkbox-box i {
   color: #fff;
 }
 
-.checkbox-wrapper .custom-checkbox {
+.checkbox-wrapper > label {
+  display: flex;
+  align-items: center;
+  cursor: pointer !important;
+}
+.checkbox-wrapper > label > * {
+  cursor: pointer;
+}
+.checkbox-wrapper .custom-checkbox-box {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.checkbox-wrapper .custom-checkbox:nth-child(2) {
+.checkbox-wrapper .custom-checkbox-box {
   margin-right: 15px;
 
   width: 20px;
   height: 20px;
   border: 1px solid #ddd;
 }
-.checkbox-wrapper .custom-checkbox i {
+.checkbox-wrapper .custom-checkbox-box i {
   font-size: 12px;
   color: #fff;
 }
-
+.checkbox-wrapper > label .custom-checkbox-box + label:hover {
+  color: rgb(105, 102, 103) !important;
+  /* color: rgb(116, 112, 113); */
+}
 /* password bars */
 .bars {
   display: grid;
@@ -248,17 +261,30 @@ nav {
   border-bottom: none !important;
 }
 .step-2 {
-  display: none;
+  /* display: none; */
 }
 .result-wrapper {
   border: 1px solid #000;
   border-top: none;
-  padding: 0.5rem 1rem;
-  padding-bottom: 0.8rem;
+
+  padding-bottom: 0.2rem;
   display: none;
   border-bottom-left-radius: 5px;
 
   border-bottom-right-radius: 5px;
+}
+.result-wrapper p {
+  padding: 0.5rem 1rem;
+}
+.result-wrapper .row {
+  padding: 0.5rem 1rem;
+}
+.result-wrapper .row h5 {
+  font-size: 15px;
+  font-weight: 600;
+}
+.result-wrapper .row small {
+  color: #b0b0b0;
 }
 .step-2 .select-box .MuiInputLabel-animated {
   left: 13px;

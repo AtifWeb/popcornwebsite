@@ -251,7 +251,11 @@ nav {
   border: 1px solid rgba(0, 0, 0, 0.23) !important;
   height: 48px !important;
   border-radius: 5px !important;
-  padding: 0rem 1rem !important;
+  padding: 0rem 0rem !important;
+}
+.select-box .MuiInput-root select {
+  padding-left: 1rem !important;
+  height: 100%;
 }
 .select-box .MuiFormControl-root {
   width: 100% !important;
@@ -294,12 +298,12 @@ nav {
   left: 13px;
   top: 8px;
 }
-.step-2 .select-box label.active {
+.step-2 .select-box label {
   background-color: #fff;
-  top: 10px;
+  top: 10px !important;
   left: 8px;
   z-index: 2222;
-  padding: 0rem 0.5rem;
+  padding: 0rem 0.2rem;
 }
 .step-2 .MuiInputLabel-animated + div select:focus {
   background-color: transparent;

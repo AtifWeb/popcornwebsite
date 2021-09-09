@@ -25,10 +25,15 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
     let city=""
     let checkbhoxAggrement="off"
 
+    
+
+
     const HandleSecondStepValidation=()=>{
+        let CountrySelect=document.querySelector("#country-select");
+        let MonthSelect=document.querySelector("#month-select");
+        let AddressLine1Value=document.querySelector("#address1");
         
-        
-        if(AddressStreet!=""&&Address1!=""&&country!=""&&postcode!=""&&day!=""&&month!=""&&year!=""&&city!=""&&checkbhoxAggrement!="off"){
+        if(AddressStreet!=""&&AddressLine1Value.value!=""&&postcode!=""&&day!=""&&CountrySelect.value!=""&&year!=""&&MonthSelect.value!=""&&checkbhoxAggrement!="off"){
             document.querySelector(".create-account-label").classList.remove("disable")
         }else{
             document.querySelector(".create-account-label").classList.add("disable")
@@ -45,8 +50,7 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
           
          if(e.target.value.length>0){
             AddressStreet=e.target.value
-            console.log(label)
-            console.log(BorderElement)
+          
             label.style.color="#000"
             BorderElement.style.borderColor="#000"
             // document.querySelector(".expand-address").classList.add("active")
@@ -91,7 +95,7 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
         }else if (e.target.id=="month-select"){
             month=e.target.value
         }else if (e.target.id=="AggrementCheckbox"){
-            console.log(e.target.checked)
+     
             if(e.target.checked==true){
                 checkbhoxAggrement="on"
             }else{
@@ -121,8 +125,7 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
        
 
 if(PasswordLength<password.length){
-    console.log("forward")
-    console.log(password.length)
+  
     if(password.length<4){
         document.querySelector(`#bar-1`).style.backgroundColor="#BC756B"
     }
@@ -145,7 +148,7 @@ if(PasswordLength<password.length){
         document.querySelector(`#bar-4`).style.backgroundColor="#7AB89E"
     }
 }else{
-    console.log(password.length)
+   
     if(password.length==0){
         document.querySelector(`#bar-4`).style.backgroundColor="#ddd"
         document.querySelector(`#bar-3`).style.backgroundColor="#ddd"

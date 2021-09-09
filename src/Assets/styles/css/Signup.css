@@ -6,7 +6,7 @@
   border: 1px solid rgba(0, 0, 0, 0.23) !important;
   height: 48px !important;
   border-radius: 5px !important;
-  padding: 0rem 1rem !important;
+  padding: 0rem 0rem !important;
 }
 .select-box .MuiFormControl-root {
   width: 100% !important;

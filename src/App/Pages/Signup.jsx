@@ -4,7 +4,7 @@ import React,{useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../Assets/img/logo.svg'
 import '../../Assets/styles/css/Signin.css'
-
+import {countries,months} from '../../Assets/js/Utils'
 import { HandleEmailValidation ,HandlePasswordValidation,HandleTextValidation,HandleConfirmPasswordValidation,HandleSecondStepText,HandleSecondStepOnBlur} from '../../Assets/js/ValidationSignUp';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
@@ -43,7 +43,7 @@ useEffect(()=>{
         
         let location=e.target.querySelector("small");
         let Address1=document.querySelector("#address1");
-        document.querySelector(".address").style.display="none"
+        document.querySelector(".address-wrapper").style.display="none"
         document.querySelector(".result-wrapper").style.display="none"
         document.querySelector(".expand-address").classList.add("active")
         Address1.value=location.textContent
@@ -92,15 +92,16 @@ useEffect(()=>{
 
     const HandleSelectOnFocus=e=>{
         let Label=e.target.parentNode.previousElementSibling;
-        Label.classList.add("active")
+        
+        Label.setAttribute("id","active")
+        console.log(Label)
     }
     const HandleSelectOnBlur=e=>{
         
-        let Label=e.target.parentNode.previousElementSibling;
-        console.log(Label)
-        if(e.target.value!=""){
-            Label.classList.remove("active")
-        }
+        // let Label=e.target.parentNode.previousElementSibling;
+        // if(e.target.value!=""){
+        //     Label.classList.remove("active")
+        // }
     }
     const CheckIsValid=e=>{
         let BorderElement=e.target.nextElementSibling;
@@ -183,7 +184,7 @@ useEffect(()=>{
                 <form action="">
                     <p className="create-account-message" >Create a new account below <br/>
 or <Link>sign in</Link></p>
-<p className="welcom-message" style={{display:"none"}}>{FirstName} {LastName} welcome to Cyber Volunteers</p>
+<p className="welcom-message" style={{display:'none'}}>{FirstName} {LastName} welcome to Cyber Volunteers</p>
 <p className="helper">Create a new Cyber Volunteers account.</p>
 
 
@@ -271,13 +272,18 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 
 
 <div className="step-2">
+<div style={{position:"relative"}} className="address-wrapper">
 <TextField   className="address" id="address" onFocus={e=>{
         e.target.nextElementSibling.style.borderBottomLeftRadius=0
         e.target.nextElementSibling.style.borderBottomRightRadius=0
     document.querySelector(".result-wrapper").style.display="block"
     }} onBlur={HandleSecondStepOnBlur} onChange={HandleSecondStepText} label="Enter you street address" variant="outlined" style={{width:"100%",marginTop:20}} type="text"/>
+    <small style={{    fontSize: "12px",
+    color:" rgb(127, 122, 123)",position:"absolute",width:"100%",left:"0%",bottom:"-18px"}}>Cyber Volunteers is only available in the UK</small>
 
-<div className="result-wrapper">
+    </div>
+
+<div className="result-wrapper" style={{position:"relative",zIndex:2222,backgroundColor:"#fff"}}>
     <p>e.g. “SW12 7EU” or “64 London Road”</p>
     <div className="typing-start-result" style={{display:"none"}}>
        <div className="row">
@@ -288,7 +294,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
        <Link to="#" onClick={e=>{
            e.preventDefault();
                 
-           document.querySelector(".address").style.display="none"
+           document.querySelector(".address-wrapper").style.display="none"
            document.querySelector(".result-wrapper").style.display="none"
            document.querySelector(".expand-address").classList.add("active")
 
@@ -305,18 +311,19 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 <TextField   className="address" id="postcode" onChange={HandleSecondStepText}  label="Postcode" variant="outlined" style={{width:"100%"}} type="text"/>
 <TextField   className="address" id="town"  onChange={HandleSecondStepText}  label="Town/City" variant="outlined" style={{width:"100%"}} type="text"/>
 </div>
-<div className="country-select select-box">
+<div className="country-select select-box" style={{marginTop:20}}>
 <FormControl className={classes.formControl}>
 <InputLabel htmlFor="age-native-simple">Country/Region</InputLabel>
         <Select
           native
           onChange={HandleSecondStepText} 
           id="country-select"
-          onBlue={HandleSelectOnBlur}
+          onBlur={HandleSelectOnBlur}
           onFocus={HandleSelectOnFocus}
         >
-          <option aria-label="None" value="" />
-          <option value="empty">Empty</option>
+          {countries.map(Eachcountry=>(
+                <option value={Eachcountry.code}>{Eachcountry.name}</option>
+            ))}
 
         </Select>
       </FormControl>
@@ -335,8 +342,11 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
           onChange={HandleSecondStepText} 
           id="month-select"
         >
-          <option aria-label="None" value="" />
-          <option value="empty">Empty</option>
+            {months.map(EachMonth=>(
+                <option value={EachMonth}>{EachMonth}</option>
+            ))}
+          
+          
         </Select>
       </FormControl>
       </div>

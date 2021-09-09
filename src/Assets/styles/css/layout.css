@@ -261,7 +261,7 @@ nav {
   border-bottom: none !important;
 }
 .step-2 {
- display: none;
+  display: none;
 }
 .result-wrapper {
   border: 1px solid #000;
@@ -289,6 +289,13 @@ nav {
 .step-2 .select-box .MuiInputLabel-animated {
   left: 13px;
   top: 8px;
+}
+.step-2 .select-box label.Mui-focused {
+  background-color: #fff;
+  top: 10px;
+  left: 8px;
+  z-index: 2222;
+  padding: 0rem 0.5rem;
 }
 .step-2 .MuiInputLabel-animated + div select:focus {
   background-color: transparent;

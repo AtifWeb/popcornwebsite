@@ -33,22 +33,30 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
         }else{
             document.querySelector(".create-account-label").classList.add("disable")
         }
+
     }
 
     export const HandleSecondStepOnBlur=(e)=>{
-        
+        let label=e.target.parentNode.previousElementSibling;
+        let BorderElement=e.target.nextElementSibling
+      
         if(e.target.id=="address"){
-            document.querySelector(".result-wrapper").style.display="none"
-            e.target.nextElementSibling.style.borderBottomLeftRadius="5px"
-            e.target.nextElementSibling.style.borderBottomRightRadius="5px"
+           
+          
          if(e.target.value.length>0){
             AddressStreet=e.target.value
-            
-            document.querySelector(".address").style.display="none"
-            document.querySelector(".expand-address").classList.add("active")
+            console.log(label)
+            console.log(BorderElement)
+            label.style.color="#000"
+            BorderElement.style.borderColor="#000"
+            // document.querySelector(".expand-address").classList.add("active")
             
          }else{
-            document.querySelector(".expand-address").classList.remove("active")
+            label.style.color="rgba(0, 0, 0, 0.54)"
+            BorderElement.style.borderColor="rgba(0, 0, 0, 0.23)"
+            e.target.nextElementSibling.style.borderBottomLeftRadius="5px"
+            e.target.nextElementSibling.style.borderBottomRightRadius="5px"
+            document.querySelector(".result-wrapper").style.display="none"
         }
     }
     }
@@ -60,7 +68,13 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
             AddressStreet=e.target.value
            document.querySelector(".result-wrapper .typing-start-result").style.display="block"
             
-           document.querySelector(".result-wrapper > p").style.display="none"
+           if(e.target.value==0){
+            document.querySelector(".result-wrapper > p").style.display="block"
+            document.querySelector(".result-wrapper > div").style.display="none"
+           }else{
+            document.querySelector(".result-wrapper > p").style.display="none"
+            document.querySelector(".result-wrapper > div").style.display="block"
+           }
             
         }else if (e.target.id=="address1"){
             Address1=e.target.value

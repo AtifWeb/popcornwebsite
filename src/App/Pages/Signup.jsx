@@ -28,12 +28,28 @@ function Signup() {
     const [LastName,setLastName]=useState()
   
 useEffect(()=>{
+
+    console.log(document.querySelector(".typing-start-result .row"))
+
+
+
     document.querySelector("#fname").addEventListener("change",(e)=>{
         setFirstName(e.target.value)
     })
     document.querySelector("#lname").addEventListener("change",(e)=>{
         setLastName(e.target.value)
     })
+    document.querySelector(".typing-start-result .row").addEventListener("click",(e)=>{
+        
+        let location=e.target.querySelector("small");
+        let Address1=document.querySelector("#address1");
+        document.querySelector(".address").style.display="none"
+        document.querySelector(".result-wrapper").style.display="none"
+        document.querySelector(".expand-address").classList.add("active")
+        Address1.value=location.textContent
+        
+    })
+
 
 },[])
     const HandleNext=e=>{
@@ -72,6 +88,19 @@ useEffect(()=>{
         HelperElement.textContent=""
         NotCorrect.style.display="none"
 
+    }
+
+    const HandleSelectOnFocus=e=>{
+        let Label=e.target.parentNode.previousElementSibling;
+        Label.classList.add("active")
+    }
+    const HandleSelectOnBlur=e=>{
+        
+        let Label=e.target.parentNode.previousElementSibling;
+        console.log(Label)
+        if(e.target.value!=""){
+            Label.classList.remove("active")
+        }
     }
     const CheckIsValid=e=>{
         let BorderElement=e.target.nextElementSibling;
@@ -159,7 +188,7 @@ or <Link>sign in</Link></p>
 
 
 
-<div className="input-collection" >
+<div className="input-collection">
 <TextField
 onBlur={CheckIsValid}
 onFocus={RemoveMessages}
@@ -249,14 +278,23 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
     }} onBlur={HandleSecondStepOnBlur} onChange={HandleSecondStepText} label="Enter you street address" variant="outlined" style={{width:"100%",marginTop:20}} type="text"/>
 
 <div className="result-wrapper">
-    <p>e.g. "Lahore Pakistan"</p>
+    <p>e.g. “SW12 7EU” or “64 London Road”</p>
     <div className="typing-start-result" style={{display:"none"}}>
        <div className="row">
        <h5>Atif Asim</h5>
         <small>Pakistan</small>
        </div>
 
-       <Link to="#" style={{display:"block",color:"#F85220",fontSize:"15px",textAlign:"center",borderTop:'1px solid #ddd',padding:"10px 0px"}}>Enter address manually</Link>
+       <Link to="#" onClick={e=>{
+           e.preventDefault();
+                
+           document.querySelector(".address").style.display="none"
+           document.querySelector(".result-wrapper").style.display="none"
+           document.querySelector(".expand-address").classList.add("active")
+
+
+           
+       }} style={{display:"block",color:"#F85220",fontSize:"15px",textAlign:"center",borderTop:'1px solid #ddd',padding:"10px 0px"}}>Enter address manually</Link>
     </div>
 </div>
 
@@ -274,6 +312,8 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
           native
           onChange={HandleSecondStepText} 
           id="country-select"
+          onBlue={HandleSelectOnBlur}
+          onFocus={HandleSelectOnFocus}
         >
           <option aria-label="None" value="" />
           <option value="empty">Empty</option>

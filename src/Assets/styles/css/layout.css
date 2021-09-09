@@ -278,6 +278,10 @@ nav {
 }
 .result-wrapper .row {
   padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.result-wrapper .row > * {
+  pointer-events: none;
 }
 .result-wrapper .row h5 {
   font-size: 15px;
@@ -290,7 +294,7 @@ nav {
   left: 13px;
   top: 8px;
 }
-.step-2 .select-box label.Mui-focused {
+.step-2 .select-box label.active {
   background-color: #fff;
   top: 10px;
   left: 8px;

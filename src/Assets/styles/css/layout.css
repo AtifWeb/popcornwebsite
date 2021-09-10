@@ -431,6 +431,9 @@ nav {
   .expand-address > * {
     grid-column: span 1 !important;
   }
+  .SignIn .body-area form > p:first-child > br {
+    display: none !important;
+  }
 }
 @media screen and (max-width: 300px) {
   .available-message {

@@ -253,6 +253,9 @@ nav {
   border-radius: 5px !important;
   padding: 0rem 0rem !important;
 }
+.select-box .MuiInput-underline:after {
+  border-bottom: none !important;
+}
 .select-box .MuiInput-root select {
   padding-left: 1rem !important;
   height: 100%;

@@ -184,7 +184,7 @@ useEffect(()=>{
                 <form action="" autoComplete="off"> 
                     <p className="create-account-message" >Create a new account below <br/>
 or <Link>sign in</Link></p>
-<p className="welcom-message" style={{display:'none'}}>{FirstName} {LastName} welcome to Cyber Volunteers</p>
+<p className="welcom-message" style={{display:'none'}}>{FirstName} welcome to Cyber Volunteers</p>
 <p className="helper">Create a new Cyber Volunteers account.</p>
 
 

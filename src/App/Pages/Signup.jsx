@@ -181,7 +181,7 @@ useEffect(()=>{
                 <img src={logo} alt="" />
             </div>
             <div className="body-area">
-                <form action="">
+                <form action="" autoComplete="off"> 
                     <p className="create-account-message" >Create a new account below <br/>
 or <Link>sign in</Link></p>
 <p className="welcom-message" style={{display:'none'}}>{FirstName} {LastName} welcome to Cyber Volunteers</p>
@@ -189,7 +189,7 @@ or <Link>sign in</Link></p>
 
 
 
-<div className="input-collection">
+<div className="input-collection" style={{display:"none"}}>
 <TextField
 onBlur={CheckIsValid}
 onFocus={RemoveMessages}
@@ -321,6 +321,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
           onBlur={HandleSelectOnBlur}
           onFocus={HandleSelectOnFocus}
         >
+             {/* <option value="null"  style={{display:"none"}}></option> */}
           {countries.map(Eachcountry=>(
                 <option value={Eachcountry.code}>{Eachcountry.name}</option>
             ))}

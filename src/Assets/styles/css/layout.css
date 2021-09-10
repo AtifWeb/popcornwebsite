@@ -265,7 +265,7 @@ nav {
   border-bottom: none !important;
 }
 .step-2 {
-  display: none;
+  /* display: none; */
 }
 .result-wrapper {
   border: 1px solid #000;
@@ -395,10 +395,6 @@ nav {
   }
 }
 @media screen and (max-width: 430px) {
-  .grid-col-3 {
-    grid-template-columns: 1fr;
-    grid-gap: 0px;
-  }
   .day-wrapper small {
     display: none;
   }

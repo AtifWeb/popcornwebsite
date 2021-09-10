@@ -257,6 +257,9 @@ nav {
   padding-left: 1rem !important;
   height: 100%;
 }
+.select-box .jss1 {
+  min-width: 100% !important;
+}
 .select-box .MuiFormControl-root {
   width: 100% !important;
   margin: 0px !important;

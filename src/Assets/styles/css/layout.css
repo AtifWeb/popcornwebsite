@@ -194,12 +194,12 @@ nav {
 .checkbox-wrapper > * {
   cursor: pointer;
 }
-.checkbox-wrapper input:checked + .custom-checkbox-box,
+.checkbox-wrapper input:checked + label .custom-checkbox-box,
 .checkbox-wrapper input:checked + label > .custom-checkbox-box {
   background-color: #f85220;
   border-color: #f85220;
 }
-.checkbox-wrapper input:checked + .custom-checkbox-box i,
+.checkbox-wrapper input:checked + label .custom-checkbox-box i,
 .checkbox-wrapper input:checked + label > .custom-checkbox-box i {
   color: #fff;
 }
@@ -218,7 +218,7 @@ nav {
   justify-content: center;
 }
 .checkbox-wrapper .custom-checkbox-box {
-  margin-right: 15px;
+  margin-right: 10px;
 
   width: 20px;
   height: 20px;
@@ -268,8 +268,9 @@ nav {
   border-bottom: none !important;
 }
 .step-2 {
-  /* display: none; */
+  display: none;
 }
+
 .result-wrapper {
   border: 1px solid #000;
   border-top: none;

@@ -130,7 +130,7 @@ useEffect(()=>{
             }else{
                 HelperElement.textContent="Please enter the password"
                 if(e.target.id=="password"){
-                    e.target.parentNode.parentNode.nextElementSibling.style.display="none"
+                    // e.target.parentNode.parentNode.nextElementSibling.style.display="none"
                 }
             }
             
@@ -189,7 +189,7 @@ or <Link>sign in</Link></p>
 
 
 
-<div className="input-collection" style={{display:"none"}}>
+<div className="input-collection" >
 <TextField
 onBlur={CheckIsValid}
 onFocus={RemoveMessages}
@@ -251,12 +251,16 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 
 <div className="checkbox-wrapper" style={{marginBottom:20}}>
     <input type="checkbox" name="" id="show-password-checkbox" style={{display:"none"}} />
-    <label htmlFor="show-password-checkbox" className="custom-checkbox custom-checkbox-box" onClick={ShowPasswords}>
+    <label htmlFor="show-password-checkbox" id="forget-password-wrapper" onClick={ShowPasswords}>
+    <label htmlFor="show-password-checkbox" className="custom-checkbox custom-checkbox-box show-password-label" >
     <i class="fas fa-check"></i>
+
+    
     </label>
-    <label htmlFor="show-password-checkbox" className="custom-checkbox-line"onClick={ShowPasswords}>
-            Show password
+    <p> Show password</p>
+
     </label>
+
 </div>  
 
 <div className="button-wrapper">

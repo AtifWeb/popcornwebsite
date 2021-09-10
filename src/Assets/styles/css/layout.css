@@ -434,7 +434,7 @@ nav {
 }
 @media screen and (max-width: 300px) {
   .available-message {
-    bottom: -35% !important;
+    bottom: -45% !important;
   }
 
   .country-select {

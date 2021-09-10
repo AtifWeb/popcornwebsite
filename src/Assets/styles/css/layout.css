@@ -288,6 +288,9 @@ nav {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
+.result-wrapper .row:hover {
+  background-color: #f4f4f3;
+}
 .result-wrapper .row > * {
   pointer-events: none;
 }

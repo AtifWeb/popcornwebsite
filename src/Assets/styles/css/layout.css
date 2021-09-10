@@ -406,6 +406,9 @@ nav {
   .day-wrapper small {
     display: none;
   }
+  .SignIn .body-area form {
+    padding: 2rem 1rem !important;
+  }
 }
 @media screen and (max-width: 400px) {
   .Footer .top-area {

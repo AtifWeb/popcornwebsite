@@ -283,7 +283,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
     document.querySelector(".result-wrapper").style.display="block"
     }} onBlur={HandleSecondStepOnBlur} onChange={HandleSecondStepText} label="Enter you street address" variant="outlined" style={{width:"100%",marginTop:20}} type="text"/>
     <small style={{    fontSize: "12px",
-    color:" rgb(127, 122, 123)",position:"absolute",width:"100%",left:"0%",bottom:"-18px"}}>Cyber Volunteers is only available in the UK</small>
+    color:" rgb(127, 122, 123)",position:"absolute",width:"100%",left:"0%"}} className="available-message">Cyber Volunteers is only available in the UK</small>
 
     </div>
 
@@ -315,7 +315,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 <TextField   className="address" id="postcode" autocomplete="off" onChange={HandleSecondStepText}  label="Postcode" variant="outlined" style={{width:"100%"}} type="text"/>
 <TextField   className="address" id="town" autocomplete="off" onChange={HandleSecondStepText}  label="Town/City" variant="outlined" style={{width:"100%"}} type="text"/>
 </div>
-<div className="country-select select-box" autocomplete="off" style={{marginTop:20}}>
+<div className="country-select select-box" autocomplete="off">
 <FormControl className={classes.formControl}>
 <InputLabel htmlFor="age-native-simple">Country/Region</InputLabel>
         <Select

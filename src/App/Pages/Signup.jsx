@@ -291,8 +291,11 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
     <p>e.g. “SW12 7EU” or “64 London Road”</p>
     <div className="typing-start-result" style={{display:"none"}}>
        <div className="row">
-       <h5>Atif Asim</h5>
+      <div className="left-presentation">
+      <h5>Atif Asim</h5>
         <small>Pakistan</small>
+      </div>
+      <p>75 results</p>
        </div>
 
        <Link to="#" class="manual-address"onClick={e=>{

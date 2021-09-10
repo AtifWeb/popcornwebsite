@@ -127,7 +127,7 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
 if(PasswordLength<password.length){
   
     if(password.length<4){
-        document.querySelector(`#bar-1`).style.backgroundColor="#e00000"
+        document.querySelector(`#bar-1`).style.backgroundColor="#f63b3b"
     }
     if(password.length==4){
         StepSize=2
@@ -157,7 +157,7 @@ if(PasswordLength<password.length){
     }
     if(password.length<=4&&password.length>0){
         StepSize=1
-        document.querySelector(`#bar-1`).style.backgroundColor="#e00000"
+        document.querySelector(`#bar-1`).style.backgroundColor="#f63b3b"
         document.querySelector(`#bar-4`).style.backgroundColor="#ddd"
         document.querySelector(`#bar-3`).style.backgroundColor="#ddd"
         document.querySelector(`#bar-2`).style.backgroundColor="#ddd"

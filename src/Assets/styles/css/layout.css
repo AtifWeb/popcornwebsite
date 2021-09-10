@@ -290,6 +290,15 @@ nav {
 .result-wrapper .row {
   padding: 0.5rem 1rem;
   cursor: pointer;
+  display: flex;
+  align-items: flex-start !important;
+  justify-content: space-between;
+}
+.result-wrapper .row > p {
+  margin: 0 !important;
+  padding: 0 !important;
+  color: #8f8f8f;
+  font-size: 13px;
 }
 .result-wrapper .row:hover,
 .manual-address:hover {
@@ -301,6 +310,7 @@ nav {
 .result-wrapper .row h5 {
   font-size: 15px;
   font-weight: 600;
+  color: #e46464;
 }
 .result-wrapper .row small {
   color: #b0b0b0;

@@ -193,7 +193,7 @@ or <Link>sign in</Link></p>
 <TextField
 onBlur={CheckIsValid}
 onFocus={RemoveMessages}
-
+autocomplete="off"
 onChange={HandleTextValidation}
 id="fname" label="First name" variant="outlined" style={{width:"100%"}}/>
 <span className="helping-text text-helper" style={{marginBottom:"10px",display:"inline-block",marginTop:7,fontSize:13,paddingLeft:12,color:"#F65B4E"}}></span>
@@ -201,7 +201,7 @@ id="fname" label="First name" variant="outlined" style={{width:"100%"}}/>
 <TextField
 onBlur={CheckIsValid}
 onFocus={RemoveMessages}
-
+autocomplete="off"
 onChange={HandleTextValidation}
 id="lname" label="Last name" variant="outlined" style={{width:"100%"}}/>
 <span className="helping-text text-helper" style={{marginBottom:"10px",display:"inline-block",marginTop:7,fontSize:13,paddingLeft:12,color:"#F65B4E"}}></span>
@@ -277,7 +277,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 
 <div className="step-2">
 <div style={{position:"relative"}} className="address-wrapper">
-<TextField   className="address" id="address" onFocus={e=>{
+<TextField   className="address" autocomplete="off" id="address" onFocus={e=>{
         e.target.nextElementSibling.style.borderBottomLeftRadius=0
         e.target.nextElementSibling.style.borderBottomRightRadius=0
     document.querySelector(".result-wrapper").style.display="block"
@@ -310,18 +310,19 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 
 
 <div className="expand-address" style={{marginTop:20}}>
-<TextField   className="address" id="address1" onChange={HandleSecondStepText}  label="Address Line 1" variant="outlined" style={{width:"100%"}} type="text"/>
-<TextField   className="address" id="address2"onChange={HandleSecondStepText}   label="Address Line 2" variant="outlined" style={{width:"100%"}} type="text"/>
-<TextField   className="address" id="postcode" onChange={HandleSecondStepText}  label="Postcode" variant="outlined" style={{width:"100%"}} type="text"/>
-<TextField   className="address" id="town"  onChange={HandleSecondStepText}  label="Town/City" variant="outlined" style={{width:"100%"}} type="text"/>
+<TextField   className="address" id="address1" autocomplete="off" onChange={HandleSecondStepText}  label="Address Line 1" variant="outlined" style={{width:"100%"}} type="text"/>
+<TextField   className="address" id="address2" autocomplete="off" onChange={HandleSecondStepText}   label="Address Line 2" variant="outlined" style={{width:"100%"}} type="text"/>
+<TextField   className="address" id="postcode" autocomplete="off" onChange={HandleSecondStepText}  label="Postcode" variant="outlined" style={{width:"100%"}} type="text"/>
+<TextField   className="address" id="town" autocomplete="off" onChange={HandleSecondStepText}  label="Town/City" variant="outlined" style={{width:"100%"}} type="text"/>
 </div>
-<div className="country-select select-box" style={{marginTop:20}}>
+<div className="country-select select-box" autocomplete="off" style={{marginTop:20}}>
 <FormControl className={classes.formControl}>
 <InputLabel htmlFor="age-native-simple">Country/Region</InputLabel>
         <Select
           native
           onChange={HandleSecondStepText} 
           id="country-select"
+          autocomplete="off"
           onBlur={HandleSelectOnBlur}
           onFocus={HandleSelectOnFocus}
         >

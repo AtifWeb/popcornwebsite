@@ -288,7 +288,8 @@ nav {
   padding: 0.5rem 1rem;
   cursor: pointer;
 }
-.result-wrapper .row:hover {
+.result-wrapper .row:hover,
+.manual-address:hover {
   background-color: #f4f4f3;
 }
 .result-wrapper .row > * {

@@ -295,7 +295,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
         <small>Pakistan</small>
        </div>
 
-       <Link to="#" onClick={e=>{
+       <Link to="#" class="manual-address"onClick={e=>{
            e.preventDefault();
                 
            document.querySelector(".address-wrapper").style.display="none"

@@ -226,7 +226,7 @@ id="email" label="Email" variant="outlined" style={{width:"100%"}}/>
         <span className="bar" id="bar-3"></span>
         <span className="bar" id="bar-4"></span>
     </div>
-    <p style={{fontSize:12,marginTop:10}}>Password Strength: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem 
+    <p style={{fontSize:12,marginTop:10}} className="passwordStrength">Password Strength: Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem 
 ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 </div>
     
@@ -361,7 +361,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 
 <div className="checkbox-wrapper" style={{marginBottom:20,marginTop:16}}>
     <input type="checkbox" name="" onChange={HandleSecondStepText}  id="AggrementCheckbox" style={{display:"none"}} />
-   <label>
+   <label htmlFor="AggrementCheckbox">
 
    <label htmlFor="AggrementCheckbox" className="custom-checkbox custom-checkbox-box" onClick={ShowPasswords} style={{minWidth:20}}>
     <i class="fas fa-check"></i>

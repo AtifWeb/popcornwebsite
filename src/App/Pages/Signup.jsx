@@ -46,6 +46,8 @@ useEffect(()=>{
         document.querySelector(".address-wrapper").style.display="none"
         document.querySelector(".result-wrapper").style.display="none"
         document.querySelector(".expand-address").classList.add("active")
+        document.querySelector(".country-select").style.marginTop='-10px'
+
         Address1.value=location.textContent
         
     })
@@ -70,6 +72,7 @@ useEffect(()=>{
         })
     }
     const RemoveMessages=e=>{
+        
         let BorderElement=e.target.nextElementSibling;
         let Label=e.target.parentNode.previousElementSibling;
         let HelperElement=""
@@ -85,7 +88,13 @@ useEffect(()=>{
 
         BorderElement.style.border="1px solid rgba(0, 0, 0, 0.23)"
         Label.style.color="rgba(0, 0, 0, 0.23)"
-        HelperElement.textContent=""
+
+        if(e.target.id!="Day"){
+            
+            HelperElement.textContent=""
+            
+        }
+        
         NotCorrect.style.display="none"
 
     }
@@ -110,6 +119,8 @@ useEffect(()=>{
         let email = /^([a-zA-Z\d\.-]+)@([a-z\d-]+)\.([a-z]{1,8})(\.[a-z]{1,8})?(\.[a-z]{1,8})?$/;
         let password = /^[\d\w\$#@&%!^*-]{8,26}$/i;
         let HelperElement=""
+
+
         if(e.target.id=='password'){
             HelperElement=e.target.parentNode.parentNode.nextElementSibling.nextElementSibling
 
@@ -124,10 +135,15 @@ useEffect(()=>{
         if (e.target.value==""){
             BorderElement.style.border="1px solid red"
             Label.style.color="red"
+
+            if(e.target.id!="password"||e.target.id!="email"){
+
+                HelperElement.style.display="inline-block"
+            }
            
             if(HelperElement.classList[1]=="email-helper"){
                 HelperElement.textContent="Please enter the email"
-            }else{
+            }else if(HelperElement.classList[1]=="a"){
                 HelperElement.textContent="Please enter the password"
                 if(e.target.id=="password"){
                     // e.target.parentNode.parentNode.nextElementSibling.style.display="none"
@@ -135,10 +151,16 @@ useEffect(()=>{
             }
             
         }else{
+            if(e.target.id=="Day"){
+
+     HelperElement.textContent="Your birthday"
+     HelperElement.style.color="rgb(127, 122, 123);"
+        }else{
+                   
             Label.style.color="#000"
             BorderElement.style.border="1px solid #000"
             HelperElement.textContent=""
-          
+        }
         }
 
 
@@ -163,7 +185,31 @@ useEffect(()=>{
             HelperElement.textContent="Invalid Password";
         }else if (ElementId=="ConfirmPassword"){
             HelperElement.textContent="Invalid Confirm Password";
+        }else if (ElementId=="address1"){
+            HelperElement.textContent="Invalid Adress 1";
+            HelperElement.parentNode.style.marginBottom="10px"
+        }else if (ElementId=="address2"){
+            HelperElement.textContent="Invalid Adress 2";
+            HelperElement.parentNode.style.marginBottom="10px"
         }
+        else if (ElementId=="postcode"){
+            HelperElement.textContent="Invalid postcode";
+            
+        }
+        else if (ElementId=="town"){
+            HelperElement.textContent="Invalid town";
+            
+        }
+        else if (ElementId=="Day"){
+            HelperElement.textContent="Invalid day";
+            HelperElement.style.color="rgb(246, 91, 78);"
+            
+        }
+        else if (ElementId=="year"){
+            HelperElement.textContent="Invalid year";
+            
+        }
+
         
         
      }
@@ -304,7 +350,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
            document.querySelector(".address-wrapper").style.display="none"
            document.querySelector(".result-wrapper").style.display="none"
            document.querySelector(".expand-address").classList.add("active")
-
+           document.querySelector(".country-select").style.marginTop='-10px'
 
            
        }} style={{display:"block",color:"#F85220",fontSize:"15px",textAlign:"center",borderTop:'1px solid #ddd',padding:"10px 0px"}}>Enter address manually</Link>
@@ -313,10 +359,26 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 
 
 <div className="expand-address" style={{marginTop:20}}>
-<TextField   className="address" id="address1" autocomplete="off" onChange={HandleSecondStepText}  label="Address Line 1" variant="outlined" style={{width:"100%"}} type="text"/>
-<TextField   className="address" id="address2" autocomplete="off" onChange={HandleSecondStepText}   label="Address Line 2" variant="outlined" style={{width:"100%"}} type="text"/>
-<TextField   className="address" id="postcode" autocomplete="off" onChange={HandleSecondStepText}  label="Postcode" variant="outlined" style={{width:"100%"}} type="text"/>
-<TextField   className="address" id="town" autocomplete="off" onChange={HandleSecondStepText}  label="Town/City" variant="outlined" style={{width:"100%"}} type="text"/>
+<div className="text-field-wrapper">
+<TextField   className="address" id="address1" autocomplete="off" onChange={HandleSecondStepText} onBlur={CheckIsValid}
+onFocus={RemoveMessages} label="Address Line 1" variant="outlined" style={{width:"100%"}} type="text"/>
+<span className="helping-text password-helper" style={{display:"inline-block",marginTop:7,fontSize:13,paddingLeft:12,color:"#F65B4E"}} ></span>
+</div>
+<div  className="text-field-wrapper">
+<TextField   onBlur={CheckIsValid}
+onFocus={RemoveMessages} className="address" id="address2" autocomplete="off" onChange={HandleSecondStepText}   label="Address Line 2" variant="outlined" style={{width:"100%"}} type="text"/>
+<span className="helping-text password-helper" style={{display:"inline-block",marginTop:7,fontSize:13,paddingLeft:12,color:"#F65B4E"}} ></span>
+</div>
+<div className="text-field-wrapper">
+<TextField onBlur={CheckIsValid}
+onFocus={RemoveMessages}  className="address" id="postcode" autocomplete="off" onChange={HandleSecondStepText}  label="Postcode" variant="outlined" style={{width:"100%"}} type="text"/>
+<span className="helping-text password-helper" style={{display:"inline-block",marginTop:7,fontSize:13,paddingLeft:12,color:"#F65B4E"}} ></span>
+</div>
+<div className="text-field-wrapper">
+<TextField  onBlur={CheckIsValid}
+onFocus={RemoveMessages}  className="address" id="town" autocomplete="off" onChange={HandleSecondStepText}  label="Town/City" variant="outlined" style={{width:"100%"}} type="text"/>
+<span className="helping-text password-helper" style={{display:"inline-block",marginTop:7,fontSize:13,paddingLeft:12,color:"#F65B4E"}} ></span>
+</div>
 </div>
 <div className="country-select select-box" autocomplete="off">
 <FormControl className={classes.formControl}>
@@ -340,7 +402,8 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 
 <div className="grid-col-3">
 <div className="day-wrapper" style={{marginTop:16}}>
-<TextField   className="Day" onChange={HandleSecondStepText}  id="Day" label="Day" variant="outlined" style={{width:"100%"}} type="text"/>
+<TextField  onBlur={CheckIsValid}
+onFocus={RemoveMessages}   className="Day" onChange={HandleSecondStepText}  id="Day" label="Day" variant="outlined" style={{width:"100%"}} type="text"/>
 <small style={{fontSize:12,color:"#7F7A7B"}}>Your birthday</small>
 </div>
 <div className="Month-select select-box">
@@ -359,8 +422,11 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
         </Select>
       </FormControl>
       </div>
-      <TextField  onChange={HandleSecondStepText}   className="address" id="year" label="Year" variant="outlined" style={{width:"100%",marginTop:16}} type="text"/>
-
+<div className="text-field-wrapper">
+<TextField  onBlur={CheckIsValid}
+onFocus={RemoveMessages} onChange={HandleSecondStepText}   className="address" id="year" label="Year" variant="outlined" style={{width:"100%",marginTop:16}} type="text"/>
+<span className="helping-text password-helper" style={{display:"inline-block",marginTop:7,fontSize:13,paddingLeft:12,color:"#F65B4E"}} ></span>
+</div>
 </div>
 
 <div className="checkbox-wrapper" style={{marginBottom:20,marginTop:16}}>

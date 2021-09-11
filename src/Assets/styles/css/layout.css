@@ -273,6 +273,15 @@ nav {
 .step-2 {
   display: none;
 }
+.error-message {
+  display: inline-block;
+  margin-top: 3px;
+  font-size: 13px;
+  padding-left: 12px;
+  color: rgb(246, 91, 78);
+  margin-bottom: 10px;
+  display: none;
+}
 
 .result-wrapper {
   border: 1px solid #000;
@@ -340,7 +349,7 @@ nav {
 }
 .expand-address {
   grid-template-columns: 1fr 1fr;
-  grid-gap: 16px;
+  grid-column-gap: 16px;
   display: none;
 }
 .expand-address.active {
@@ -354,7 +363,7 @@ nav {
   grid-column: span 1;
 }
 .country-select {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .available-message {
   bottom: -18%;

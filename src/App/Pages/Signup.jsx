@@ -151,14 +151,15 @@ useEffect(()=>{
             }
             
         }else{
+            Label.style.color="#000"
+            BorderElement.style.border="1px solid #000"
             if(e.target.id=="Day"){
 
      HelperElement.textContent="Your birthday"
      HelperElement.style.color="rgb(127, 122, 123);"
         }else{
                    
-            Label.style.color="#000"
-            BorderElement.style.border="1px solid #000"
+          
             HelperElement.textContent=""
         }
         }
@@ -202,7 +203,8 @@ useEffect(()=>{
         }
         else if (ElementId=="Day"){
             HelperElement.textContent="Invalid day";
-            HelperElement.style.color="rgb(246, 91, 78);"
+            
+            HelperElement.style.color="rgb(246, 91, 78)"
             
         }
         else if (ElementId=="year"){

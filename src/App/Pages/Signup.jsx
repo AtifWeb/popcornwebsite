@@ -143,7 +143,7 @@ useEffect(()=>{
            
             if(HelperElement.classList[1]=="email-helper"){
                 HelperElement.textContent="Please enter the email"
-            }else if(HelperElement.classList[1]=="a"){
+            }else if(HelperElement.classList[1]=="password-helper"){
                 HelperElement.textContent="Please enter the password"
                 if(e.target.id=="password"){
                     // e.target.parentNode.parentNode.nextElementSibling.style.display="none"
@@ -263,7 +263,7 @@ id="email" label="Email" variant="outlined" style={{width:"100%"}}/>
     
 
     
-    <TextField  onBlur={CheckIsValid} className="password" onChange={HandlePasswordValidation} id="password" label="Password" variant="outlined" style={{width:"100%"}} type="password" onFocus={RemoveMessages}/>
+    <TextField  onBlur={CheckIsValid} className="password" onChange={HandlePasswordValidation} id="password" label="Password" variant="outlined" style={{width:"100%"}} type="password"  onFocus={RemoveMessages}/>
 
     <div className="password-ui-strong" style={{marginTop:10}}>
     <div className="bars" style={{marginBottom:5}}>
@@ -327,7 +327,8 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
         e.target.nextElementSibling.style.borderBottomLeftRadius=0
         e.target.nextElementSibling.style.borderBottomRightRadius=0
     document.querySelector(".result-wrapper").style.display="block"
-    }} onBlur={HandleSecondStepOnBlur} onChange={HandleSecondStepText} label="Enter you street address" variant="outlined" style={{width:"100%",marginTop:20}} type="text"/>
+    }} onBlur={HandleSecondStepOnBlur} onChange={HandleSecondStepText} 
+    label="Enter you street address" variant="outlined" style={{width:"100%",marginTop:20}} type="text"/>
     <small style={{    fontSize: "12px",
     color:" rgb(127, 122, 123)",position:"absolute",width:"100%",left:"0%"}} className="available-message">Cyber Volunteers is only available in the UK</small>
 

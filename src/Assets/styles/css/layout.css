@@ -271,7 +271,7 @@ nav {
   border-bottom: none !important;
 }
 .step-2 {
-  display: none;
+  /* display: none; */
 }
 .error-message {
   display: inline-block;
@@ -366,7 +366,7 @@ nav {
   margin-top: 10px;
 }
 .available-message {
-  bottom: -18%;
+  bottom: -20%;
 }
 @media screen and (max-width: 800px) {
   .Header .header-content > img {

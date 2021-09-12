@@ -237,7 +237,7 @@ or <Link>sign in</Link></p>
 
 
 
-<div className="input-collection" >
+<div className="input-collection" style={{display:"none"}} >
 <TextField
 onBlur={CheckIsValid}
 onFocus={RemoveMessages}
@@ -416,9 +416,17 @@ onFocus={RemoveMessages}   className="Day" onChange={HandleSecondStepText}  id="
           native
           onChange={HandleSecondStepText} 
           id="month-select"
+          value="January"
         >
             {months.map(EachMonth=>(
-                <option value={EachMonth}>{EachMonth}</option>
+                <>
+                <p>Some</p>
+                <option value={EachMonth}>
+              
+                    {EachMonth}
+                    
+                    </option>
+                </>
             ))}
           
           

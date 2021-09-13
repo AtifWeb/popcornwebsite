@@ -9,6 +9,9 @@ nav {
 input:-webkit-autofill {
   -webkit-background-clip: text !important;
 }
+body {
+  background-color: red;
+}
 .burger-icon {
   display: none;
 }

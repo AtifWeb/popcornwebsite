@@ -6,6 +6,9 @@ ul,
 nav {
   list-style: none;
 }
+input:-webkit-autofill {
+  -webkit-background-clip: text !important;
+}
 .burger-icon {
   display: none;
 }

@@ -237,7 +237,7 @@ or <Link>sign in</Link></p>
 
 
 
-<div className="input-collection" style={{display:"none"}} >
+<div className="input-collection">
 <TextField
 onBlur={CheckIsValid}
 onFocus={RemoveMessages}
@@ -394,7 +394,7 @@ onFocus={RemoveMessages}  className="address" id="town" autocomplete="off" onCha
           onBlur={HandleSelectOnBlur}
           onFocus={HandleSelectOnFocus}
         >
-             {/* <option value="null"  style={{display:"none"}}></option> */}
+       <option disabled selected value="" style={{display:"none"}}></option>
           {countries.map(Eachcountry=>(
                 <option value={Eachcountry.code}>{Eachcountry.name}</option>
             ))}
@@ -416,17 +416,18 @@ onFocus={RemoveMessages}   className="Day" onChange={HandleSecondStepText}  id="
           native
           onChange={HandleSecondStepText} 
           id="month-select"
-          value="January"
+         
         >
+              <option disabled selected value="" style={{display:"none"}}></option>
             {months.map(EachMonth=>(
-                <>
-                <p>Some</p>
+        
+        
                 <option value={EachMonth}>
               
                     {EachMonth}
                     
                     </option>
-                </>
+        
             ))}
           
           

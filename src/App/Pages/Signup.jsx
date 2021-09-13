@@ -101,6 +101,10 @@ useEffect(()=>{
         if (ElementId=="address1"||ElementId=="address2"||ElementId=="postcode"||ElementId=="town"){
             HelperElement.parentNode.style.marginBottom="0px" 
         }
+        if(e.target.id=="passsword"||e.target.id=="email"||e.target.id=="fname"||e.target.id=="lname"||e.target.id=="fname"){
+            HelperElement.style.marginBottom="10px"
+        }
+
 
   
         NotCorrect.style.display="none"
@@ -145,6 +149,11 @@ useEffect(()=>{
             BorderElement.style.border="1px solid red"
             Label.style.color="red"
 
+
+            if(e.target.id=="passsword"||e.target.id=="email"||e.target.id=="fname"||e.target.id=="lname"||e.target.id=="fname"){
+                HelperElement.style.marginBottom="20px"
+            }
+
             if(e.target.id!="password"||e.target.id!="email"){
 
                 HelperElement.style.display="inline-block"
@@ -152,10 +161,11 @@ useEffect(()=>{
            
             if(HelperElement.classList[1]=="email-helper"){
                 HelperElement.textContent="Please enter the email"
+               
             }else if(HelperElement.classList[1]=="password-helper"){
                 HelperElement.textContent="Please enter the password"
                 if(e.target.id=="password"){
-                    
+      
                 }
             }
             

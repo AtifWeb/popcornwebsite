@@ -94,11 +94,18 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
             city=e.target.value
         }else if (e.target.id=="country-select"){
             country=e.target.value
+           
+            let BorderElement=e.target.parentNode;
+            BorderElement.style.border="1px solid #000 "
+
         
         }else if (e.target.id=="Day"){
             day=e.target.value
         }else if (e.target.id=="month-select"){
             month=e.target.value
+            let BorderElement=e.target.parentNode;
+            BorderElement.style.border="1px solid #000 "
+
         }else if (e.target.id=="AggrementCheckbox"){
      
             if(e.target.checked==true){
@@ -229,7 +236,7 @@ PasswordLength=password.length
 
     export const HandlePasswordValidation=e=>{
       
-      let HelperElement=e.target.parentNode.parentNode.nextElementSibling.nextElementSibling
+      let HelperElement=e.target.parentNode.parentNode.nextElementSibling
       password=e.target.value
     
           HelperElement.textContent=""

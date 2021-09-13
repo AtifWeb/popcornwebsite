@@ -46,7 +46,8 @@ useEffect(()=>{
         document.querySelector(".address-wrapper").style.display="none"
         document.querySelector(".result-wrapper").style.display="none"
         document.querySelector(".expand-address").classList.add("active")
-        document.querySelector(".country-select").style.marginTop='-10px'
+        document.querySelector(".country-select").style.marginTop='-16px'
+        document.querySelector(".personal-info-wrapper").style.marginTop='6px'
 
         Address1.value=location.textContent
         
@@ -76,12 +77,9 @@ useEffect(()=>{
         let BorderElement=e.target.nextElementSibling;
         let Label=e.target.parentNode.previousElementSibling;
         let HelperElement=""
-        if(e.target.id=='password'){
-            HelperElement=e.target.parentNode.parentNode.nextElementSibling.nextElementSibling
-            e.target.parentNode.parentNode.nextElementSibling.style.display="block"
-        }else{
+       
             HelperElement=e.target.parentNode.parentNode.nextElementSibling
-        }
+   
         
         let NotCorrect=document.querySelector(".not-correct");
 
@@ -89,10 +87,16 @@ useEffect(()=>{
         BorderElement.style.border="1px solid rgba(0, 0, 0, 0.23)"
         Label.style.color="rgba(0, 0, 0, 0.23)"
 
+        if(e.target.id=="password"){
+            HelperElement.style.display="none"
+        }
         if(e.target.id!="Day"){
             
             HelperElement.textContent=""
             
+        }
+        if(e.target.id=="Day"){
+            HelperElement.style.display="none"
         }
         
         NotCorrect.style.display="none"
@@ -107,10 +111,11 @@ useEffect(()=>{
     }
     const HandleSelectOnBlur=e=>{
         
-        // let Label=e.target.parentNode.previousElementSibling;
-        // if(e.target.value!=""){
-        //     Label.classList.remove("active")
-        // }
+        let Label=e.target.parentNode.previousElementSibling;
+        let BorderElement=e.target.parentNode;
+
+        Label.style.color="#000"
+        BorderElement.style.border="1px solid #000 "
     }
     const CheckIsValid=e=>{
         let BorderElement=e.target.nextElementSibling;
@@ -121,13 +126,13 @@ useEffect(()=>{
         let HelperElement=""
 
 
-        if(e.target.id=='password'){
-            HelperElement=e.target.parentNode.parentNode.nextElementSibling.nextElementSibling
+        // if(e.target.id=='password'){
+        //     HelperElement=e.target.parentNode.parentNode.nextElementSibling.nextElementSibling
 
             
-        }else{
+        // }else{
             HelperElement=e.target.parentNode.parentNode.nextElementSibling
-        }
+        // }
 
     
         
@@ -146,7 +151,7 @@ useEffect(()=>{
             }else if(HelperElement.classList[1]=="password-helper"){
                 HelperElement.textContent="Please enter the password"
                 if(e.target.id=="password"){
-                    // e.target.parentNode.parentNode.nextElementSibling.style.display="none"
+                    
                 }
             }
             
@@ -154,12 +159,12 @@ useEffect(()=>{
             Label.style.color="#000"
             BorderElement.style.border="1px solid #000"
             if(e.target.id=="Day"){
-
-     HelperElement.textContent="Your birthday"
-     HelperElement.style.color="rgb(127, 122, 123);"
+      
+ 
+     
         }else{
                    
-          
+            HelperElement=e.target.parentNode.parentNode.nextElementSibling
             HelperElement.textContent=""
         }
         }
@@ -202,9 +207,9 @@ useEffect(()=>{
             
         }
         else if (ElementId=="Day"){
-            HelperElement.textContent="Invalid day";
+            HelperElement.style.display="block"
             
-            HelperElement.style.color="rgb(246, 91, 78)"
+            
             
         }
         else if (ElementId=="year"){
@@ -232,7 +237,7 @@ useEffect(()=>{
                 <form action="" autoComplete="off"> 
                     <p className="create-account-message" >Create a new account below <br/>
 or <Link>sign in</Link></p>
-<p className="welcom-message" style={{display:'none'}}>{FirstName} welcome to Cyber Volunteers</p>
+<p className="welcom-message" style={{display:'none'}}>{FirstName}, welcome to Cyber Volunteers</p>
 <p className="helper">Create a new Cyber Volunteers account.</p>
 
 
@@ -267,7 +272,9 @@ id="email" label="Email" variant="outlined" style={{width:"100%"}}/>
     
     <TextField  onBlur={CheckIsValid} className="password" onChange={HandlePasswordValidation} id="password" label="Password" variant="outlined" style={{width:"100%"}} type="password"  onFocus={RemoveMessages}/>
 
-    <div className="password-ui-strong" style={{marginTop:10}}>
+    <span className="helping-text password-helper" style={{marginBottom:"0px",display:"none",marginTop:7,fontSize:13,paddingLeft:12,color:"#F65B4E"}} ></span>
+    
+    <div className="password-ui-strong" style={{marginTop:10,marginBottom:10}}>
     <div className="bars" style={{marginBottom:5}}>
         <span className="bar" id="bar-1"></span>
         <span className="bar" id="bar-2"></span>
@@ -280,7 +287,6 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
     
 
 
-<span className="helping-text password-helper" style={{marginBottom:"10px",display:"inline-block",marginTop:7,fontSize:13,paddingLeft:12,color:"#F65B4E"}} ></span>
 
 
 
@@ -297,7 +303,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 <span className="helping-text not-correct" style={{marginBottom:"10px",display:"none",marginTop:7,fontSize:13,paddingLeft:0,color:"#F65B4E"}} >Email or password is not recognised</span>
 
 
-<div className="checkbox-wrapper" style={{marginBottom:20}}>
+<div className="checkbox-wrapper password-checkbox-wrapper" style={{marginBottom:20}}>
     <input type="checkbox" name="" id="show-password-checkbox" style={{display:"none"}} />
     <label htmlFor="show-password-checkbox" id="forget-password-wrapper" onClick={ShowPasswords}>
     <label htmlFor="show-password-checkbox" className="custom-checkbox custom-checkbox-box show-password-label" >
@@ -353,7 +359,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
            document.querySelector(".address-wrapper").style.display="none"
            document.querySelector(".result-wrapper").style.display="none"
            document.querySelector(".expand-address").classList.add("active")
-           document.querySelector(".country-select").style.marginTop='-10px'
+           document.querySelector(".country-select").style.marginTop='-16px'
 
            
        }} style={{display:"block",color:"#F85220",fontSize:"15px",textAlign:"center",borderTop:'1px solid #ddd',padding:"10px 0px"}}>Enter address manually</Link>
@@ -403,10 +409,11 @@ onFocus={RemoveMessages}  className="address" id="town" autocomplete="off" onCha
       </FormControl>
 </div>
 
-<div className="grid-col-3">
-<div className="day-wrapper" style={{marginTop:16}}>
+<div className="grid-col-3 personal-info-wrapper">
+<div className="day-wrapper" style={{marginTop:18}}>
 <TextField  onBlur={CheckIsValid}
 onFocus={RemoveMessages}   className="Day" onChange={HandleSecondStepText}  id="Day" label="Day" variant="outlined" style={{width:"100%"}} type="text"/>
+<span className="helping-text day-helper" style={{display:"none",marginTop:7,fontSize:13,color:"#F65B4E"}} >Invalid Day</span>
 <small style={{fontSize:12,color:"#7F7A7B"}}>Your birthday</small>
 </div>
 <div className="Month-select select-box">
@@ -416,7 +423,7 @@ onFocus={RemoveMessages}   className="Day" onChange={HandleSecondStepText}  id="
           native
           onChange={HandleSecondStepText} 
           id="month-select"
-         
+          onBlur={HandleSelectOnBlur}
         >
               <option disabled selected value="" style={{display:"none"}}></option>
             {months.map(EachMonth=>(
@@ -441,9 +448,9 @@ onFocus={RemoveMessages} onChange={HandleSecondStepText}   className="address" i
 </div>
 </div>
 
-<div className="checkbox-wrapper" style={{marginBottom:20,marginTop:16}}>
+<div className="checkbox-wrapper" style={{marginBottom:20,marginTop:18}}>
     <input type="checkbox" name="" onChange={HandleSecondStepText}  id="AggrementCheckbox" style={{display:"none"}} />
-   <label htmlFor="AggrementCheckbox">
+   <label >
 
    <label htmlFor="AggrementCheckbox" className="custom-checkbox custom-checkbox-box" onClick={ShowPasswords} style={{minWidth:20}}>
     <i class="fas fa-check"></i>

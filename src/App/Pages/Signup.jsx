@@ -73,7 +73,7 @@ useEffect(()=>{
         })
     }
     const RemoveMessages=e=>{
-        
+        let ElementId=e.target.id
         let BorderElement=e.target.nextElementSibling;
         let Label=e.target.parentNode.previousElementSibling;
         let HelperElement=""
@@ -98,7 +98,11 @@ useEffect(()=>{
         if(e.target.id=="Day"){
             HelperElement.style.display="none"
         }
-        
+        if (ElementId=="address1"||ElementId=="address2"||ElementId=="postcode"||ElementId=="town"){
+            HelperElement.parentNode.style.marginBottom="0px" 
+        }
+
+  
         NotCorrect.style.display="none"
 
     }
@@ -200,11 +204,11 @@ useEffect(()=>{
         }
         else if (ElementId=="postcode"){
             HelperElement.textContent="Invalid postcode";
-            
+            HelperElement.parentNode.style.marginBottom="10px"
         }
         else if (ElementId=="town"){
             HelperElement.textContent="Invalid town";
-            
+            HelperElement.parentNode.style.marginBottom="10px"
         }
         else if (ElementId=="Day"){
             HelperElement.style.display="block"

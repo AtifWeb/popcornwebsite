@@ -4,7 +4,7 @@ import React,{useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../Assets/img/logo.svg'
 import '../../Assets/styles/css/Signin.css'
-import {countries,months} from '../../Assets/js/Utils'
+import {countries,months,smallMonths} from '../../Assets/js/Utils'
 import { HandleEmailValidation ,HandlePasswordValidation,HandleTextValidation,HandleConfirmPasswordValidation,HandleSecondStepText,HandleSecondStepOnBlur} from '../../Assets/js/ValidationSignUp';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
@@ -12,6 +12,7 @@ import '../../Assets/styles/css/Signup.css'
 
 import { makeStyles } from '@material-ui/core/styles';
 import { InputLabel } from '@material-ui/core';
+import { LaptopWindowsTwoTone } from '@material-ui/icons';
 const useStyles = makeStyles((theme) => ({
     formControl: {
       margin: theme.spacing(1),
@@ -26,11 +27,30 @@ function Signup() {
     const classes=useStyles()
     const [FirstName,setFirstName]=useState()
     const [LastName,setLastName]=useState()
+    const [monthsState,setmonths]=useState([])
+    const [countryState,setcountry]=useState([])
+
   
 useEffect(()=>{
 
-    console.log(document.querySelector(".typing-start-result .row"))
+    setmonths(months)
+    setcountry(countries)
 
+
+
+    window.addEventListener("load",(e)=>{
+        if(window.innerWidth<500){
+            setmonths(smallMonths)
+            
+          }
+    })
+
+    window.addEventListener("resize",(e)=>{
+      if(window.innerWidth<500){
+        setmonths(smallMonths)
+        
+      }
+    })
 
 
     document.querySelector("#fname").addEventListener("change",(e)=>{
@@ -415,7 +435,8 @@ onFocus={RemoveMessages}  className="address" id="town" autocomplete="off" onCha
           onFocus={HandleSelectOnFocus}
         >
        <option disabled selected value="" style={{display:"none"}}></option>
-          {countries.map(Eachcountry=>(
+          {
+countryState.map(Eachcountry=>(
                 <option value={Eachcountry.code}>{Eachcountry.name}</option>
             ))}
 
@@ -440,7 +461,7 @@ onFocus={RemoveMessages}   className="Day" onChange={HandleSecondStepText}  id="
           onBlur={HandleSelectOnBlur}
         >
               <option disabled selected value="" style={{display:"none"}}></option>
-            {months.map(EachMonth=>(
+            {monthsState.map(EachMonth=>(
         
         
                 <option value={EachMonth}>

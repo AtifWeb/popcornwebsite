@@ -46,29 +46,6 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
 
     }
 
-    export const HandleSecondStepOnBlur=(e)=>{
-        let label=e.target.parentNode.previousElementSibling;
-        let BorderElement=e.target.nextElementSibling
-      
-        if(e.target.id=="address"){
-           
-          
-         if(e.target.value.length>0){
-            AddressStreet=e.target.value
-          
-            label.style.color="#000"
-            BorderElement.style.borderColor="#000"
-            // document.querySelector(".expand-address").classList.add("active")
-            
-         }else{
-            label.style.color="rgba(0, 0, 0, 0.54)"
-            BorderElement.style.borderColor="rgba(0, 0, 0, 0.23)"
-            e.target.nextElementSibling.style.borderBottomLeftRadius="5px"
-            e.target.nextElementSibling.style.borderBottomRightRadius="5px"
-            document.querySelector(".result-wrapper").style.display="none"
-        }
-    }
-    }
 
     export const HandleSecondStepText=e=>{
    

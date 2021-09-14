@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom'
 import logo from '../../Assets/img/logo.svg'
 import '../../Assets/styles/css/Signin.css'
 import {countries,months,smallMonths} from '../../Assets/js/Utils'
-import { HandleEmailValidation ,HandlePasswordValidation,HandleTextValidation,HandleConfirmPasswordValidation,HandleSecondStepText,HandleSecondStepOnBlur} from '../../Assets/js/ValidationSignUp';
+import { HandleEmailValidation ,HandlePasswordValidation,HandleTextValidation,HandleConfirmPasswordValidation,HandleSecondStepText} from '../../Assets/js/ValidationSignUp';
+import { HandleSecondStepOnBlur,HandleSecondStepOnFocuse} from '../../Assets/js/AddressWorking';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import '../../Assets/styles/css/Signup.css'
@@ -30,6 +31,7 @@ function Signup() {
     const [monthsState,setmonths]=useState([])
     const [countryState,setcountry]=useState([])
 
+  
   
 useEffect(()=>{
 
@@ -276,7 +278,7 @@ or <Link>sign in</Link></p>
 
 
 
-<div className="input-collection">
+<div className="input-collection" >
 <TextField
 onBlur={CheckIsValid}
 onFocus={RemoveMessages}
@@ -365,11 +367,7 @@ ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
 
 <div className="step-2">
 <div style={{position:"relative"}} className="address-wrapper">
-<TextField   className="address" autocomplete="off" id="address" onFocus={e=>{
-        e.target.nextElementSibling.style.borderBottomLeftRadius=0
-        e.target.nextElementSibling.style.borderBottomRightRadius=0
-    document.querySelector(".result-wrapper").style.display="block"
-    }} onBlur={HandleSecondStepOnBlur} onChange={HandleSecondStepText} 
+<TextField   className="address" autocomplete="off" id="address" onFocus={HandleSecondStepOnFocuse} onBlur={HandleSecondStepOnBlur} onChange={HandleSecondStepText} 
     label="Enter you street address" variant="outlined" style={{width:"100%",marginTop:20}} type="text"/>
     <small style={{    fontSize: "12px",
     color:" rgb(127, 122, 123)",position:"absolute",width:"100%",left:"0%"}} className="available-message">Cyber Volunteers is only available in the UK</small>
@@ -425,7 +423,7 @@ onFocus={RemoveMessages}  className="address" id="town" autocomplete="off" onCha
 </div>
 <div className="country-select select-box" autocomplete="off">
 <FormControl className={classes.formControl}>
-<InputLabel htmlFor="age-native-simple">Country/Region</InputLabel>
+<InputLabel htmlFor="age-native-simple" style={{pointerEvents:"none"}}>Country/Region</InputLabel>
         <Select
           native
           onChange={HandleSecondStepText} 
@@ -434,7 +432,7 @@ onFocus={RemoveMessages}  className="address" id="town" autocomplete="off" onCha
           onBlur={HandleSelectOnBlur}
           onFocus={HandleSelectOnFocus}
         >
-       <option disabled selected value="" style={{display:"none"}}></option>
+       <option  selected value="" style={{display:"none"}}></option>
           {
 countryState.map(Eachcountry=>(
                 <option value={Eachcountry.code}>{Eachcountry.name}</option>
@@ -453,7 +451,7 @@ onFocus={RemoveMessages}   className="Day" onChange={HandleSecondStepText}  id="
 </div>
 <div className="Month-select select-box">
 <FormControl className={classes.formControl}>
-<InputLabel htmlFor="age-native-simple">Month</InputLabel>
+<InputLabel htmlFor="age-native-simple" style={{pointerEvents:"none"}}>Month</InputLabel>
         <Select
           native
           onChange={HandleSecondStepText} 

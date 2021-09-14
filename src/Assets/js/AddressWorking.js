@@ -5,6 +5,16 @@
         e.target.nextElementSibling.style.borderBottomLeftRadius=0
         e.target.nextElementSibling.style.borderBottomRightRadius=0
     document.querySelector(".result-wrapper").style.display="block"
+
+    document.querySelector(".result-wrapper").addEventListener("mouseenter",e=>{
+        ResultWrapper=true
+        console.log("enter")
+    })
+    document.querySelector(".result-wrapper").addEventListener("mouseleave",e=>{
+        ResultWrapper=false
+        console.log("leave")
+    })
+    
     }
 
    export const HandleSecondStepOnBlur=(e)=>{
@@ -12,14 +22,7 @@
         let BorderElement=e.target.nextElementSibling
       
 
-        document.querySelector(".result-wrapper").addEventListener("mouseenter",e=>{
-            ResultWrapper=true
-            console.log("enter")
-        })
-        document.querySelector(".result-wrapper").addEventListener("mouseleave",e=>{
-            ResultWrapper=false
-            console.log("leave")
-        })
+    
         if(e.target.id=="address"){
            if(ResultWrapper==false){
             document.querySelector(".result-wrapper").style.display="none"

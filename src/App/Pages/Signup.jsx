@@ -763,8 +763,7 @@ function Signup() {
                   <Link
                     to="/termsOfService"
                     style={{
-                      color: "rgb(116, 112, 113)",
-                      textDecoration: "underline",
+                      color: "#F85220",
                     }}
                   >
                     terms of service
@@ -773,8 +772,7 @@ function Signup() {
                   <Link
                     to="/privacyPolicy"
                     style={{
-                      color: "rgb(116, 112, 113)",
-                      textDecoration: "underline",
+                      color: "#F85220",
                     }}
                   >
                     privacy policy

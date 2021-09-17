@@ -468,6 +468,9 @@ select:-webkit-autofill {
   .day-wrapper small {
     font-size: 8px;
   }
+  .personal-info-wrapper {
+    grid-gap: 3px !important;
+  }
 }
 @media screen and (max-width: 300px) {
   .available-message {

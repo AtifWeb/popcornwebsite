@@ -759,7 +759,26 @@ function Signup() {
                   }}
                 >
                   By creating an account you agree that you've read and agree
-                  with the terms of service and privacy policy
+                  with the{" "}
+                  <Link
+                    to="/termsOfService"
+                    style={{
+                      color: "rgb(116, 112, 113)",
+                      textDecoration: "underline",
+                    }}
+                  >
+                    terms of service
+                  </Link>{" "}
+                  and{" "}
+                  <Link
+                    to="/privacyPolicy"
+                    style={{
+                      color: "rgb(116, 112, 113)",
+                      textDecoration: "underline",
+                    }}
+                  >
+                    privacy policy
+                  </Link>
                 </label>
               </label>
             </div>

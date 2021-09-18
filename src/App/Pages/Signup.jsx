@@ -650,7 +650,7 @@ function Signup() {
             </div>
 
             <div className="grid-col-3 personal-info-wrapper">
-              <div className="day-wrapper" style={{ marginTop: 18 }}>
+              <div className="day-wrapper" style={{ marginTop: 16 }}>
                 <TextField
                   onBlur={CheckIsValid}
                   onFocus={RemoveMessages}
@@ -763,7 +763,7 @@ function Signup() {
                   <Link
                     to="/termsOfService"
                     style={{
-                      color: "#F85220",
+                      color: "rgb(116, 112, 113)",
                     }}
                   >
                     terms of service
@@ -772,7 +772,7 @@ function Signup() {
                   <Link
                     to="/privacyPolicy"
                     style={{
-                      color: "#F85220",
+                      color: "rgb(116, 112, 113)",
                     }}
                   >
                     privacy policy

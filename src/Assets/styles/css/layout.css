@@ -471,6 +471,9 @@ select:-webkit-autofill {
   .personal-info-wrapper {
     grid-gap: 3px !important;
   }
+  .Month-select .MuiSelect-icon {
+    z-index: 999 !important;
+  }
 }
 @media screen and (max-width: 300px) {
   .available-message {

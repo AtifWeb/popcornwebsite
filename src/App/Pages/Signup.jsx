@@ -143,6 +143,10 @@ function Signup() {
     if (e.target.id == "year") {
       document.querySelector(".birthday").classList.remove("active");
     }
+    if (e.target.id == "year") {
+      document.querySelector(".birthday").classList.remove("active");
+    }
+    HelperElement.classList.remove("day-active");
   };
 
   const HandleSelectOnFocus = (e) => {
@@ -183,13 +187,17 @@ function Signup() {
         e.target.id == "email" ||
         e.target.id == "fname" ||
         e.target.id == "lname" ||
-        e.target.id == "fname" ||
+        e.target.id == "fname"
+      ) {
+        HelperElement.style.marginBottom = "20px";
+      }
+      if (
         e.target.id == "address1" ||
         e.target.id == "address2" ||
         e.target.id == "postcode" ||
         e.target.id == "town"
       ) {
-        HelperElement.style.marginBottom = "20px";
+        HelperElement.style.marginBottom = "9px";
       }
 
       if (e.target.id != "password" || e.target.id != "email") {
@@ -246,9 +254,15 @@ function Signup() {
         HelperElement.parentNode.style.marginBottom = "10px";
       } else if (ElementId == "Day") {
         HelperElement.style.display = "block";
+        HelperElement.classList.add("day-active");
+        document.querySelector(".birthday").classList.remove("active");
       } else if (ElementId == "year") {
         HelperElement.textContent = "Invalid year";
-        document.querySelector(".birthday").classList.add("active");
+
+        console.log(document.querySelector(".day-active"));
+        if (document.querySelector(".day-active") == null) {
+          document.querySelector(".birthday").classList.add("active");
+        }
       }
     }
   };

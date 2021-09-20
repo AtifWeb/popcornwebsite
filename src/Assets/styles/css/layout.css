@@ -267,7 +267,7 @@ select:-webkit-autofill {
   border-bottom: none !important;
 }
 .select-box .MuiInput-root select {
-  padding-left: 1rem !important;
+  padding-left: 0.7rem !important;
   height: 100%;
 }
 .select-box .jss1 {
@@ -373,10 +373,20 @@ select:-webkit-autofill {
   grid-column: span 1;
 }
 .country-select {
-  margin-top: 10px;
+  margin-top: 15px;
+}
+.country-select.active {
+  margin-top: 2px;
+}
+.birthday.active {
+  display: inline-block;
+  margin-top: 18px;
 }
 .available-message {
   bottom: -18px;
+}
+.personal-info-wrapper {
+  grid-gap: 5px;
 }
 @media screen and (max-width: 800px) {
   .Header .header-content > img {

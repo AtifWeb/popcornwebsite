@@ -72,7 +72,7 @@ function Signup() {
         document.querySelector(".expand-address").classList.add("active");
         document.querySelector(".country-select").style.marginTop = "-16px";
         document.querySelector(".personal-info-wrapper").style.marginTop =
-          "6px";
+          "5px";
 
         Address1.value = location.textContent;
       });
@@ -129,12 +129,20 @@ function Signup() {
       e.target.id == "email" ||
       e.target.id == "fname" ||
       e.target.id == "lname" ||
-      e.target.id == "fname"
+      e.target.id == "fname" ||
+      e.target.id == "address1" ||
+      e.target.id == "address2" ||
+      e.target.id == "postcode" ||
+      e.target.id == "town"
     ) {
       HelperElement.style.marginBottom = "10px";
     }
 
     NotCorrect.style.display = "none";
+
+    if (e.target.id == "year") {
+      document.querySelector(".birthday").classList.remove("active");
+    }
   };
 
   const HandleSelectOnFocus = (e) => {
@@ -175,7 +183,11 @@ function Signup() {
         e.target.id == "email" ||
         e.target.id == "fname" ||
         e.target.id == "lname" ||
-        e.target.id == "fname"
+        e.target.id == "fname" ||
+        e.target.id == "address1" ||
+        e.target.id == "address2" ||
+        e.target.id == "postcode" ||
+        e.target.id == "town"
       ) {
         HelperElement.style.marginBottom = "20px";
       }
@@ -206,6 +218,7 @@ function Signup() {
         BorderElement.style.border = "1px solid red";
         Label.style.color = "red";
         HelperElement.textContent = "Invalid Email";
+        HelperElement.style.marginBottom = "20px";
       }
     } else if (e.target.value == "") {
       let ElementId = e.target.id;
@@ -235,6 +248,7 @@ function Signup() {
         HelperElement.style.display = "block";
       } else if (ElementId == "year") {
         HelperElement.textContent = "Invalid year";
+        document.querySelector(".birthday").classList.add("active");
       }
     }
   };
@@ -372,7 +386,7 @@ function Signup() {
               id="ConfirmPassword"
               label="Confirm Password"
               variant="outlined"
-              style={{ width: "100%" }}
+              style={{ width: "100%", marginTop: ".6rem" }}
               type="password"
               onFocus={RemoveMessages}
             />
@@ -673,7 +687,10 @@ function Signup() {
                 >
                   Invalid Day
                 </span>
-                <small style={{ fontSize: 12, color: "#7F7A7B" }}>
+                <small
+                  style={{ fontSize: 12, color: "#7F7A7B" }}
+                  className="birthday"
+                >
                   Your birthday
                 </small>
               </div>
@@ -763,7 +780,7 @@ function Signup() {
                   <Link
                     to="/termsOfService"
                     style={{
-                      color: "rgb(116, 112, 113)",
+                      color: "#000",
                     }}
                   >
                     terms of service
@@ -772,7 +789,7 @@ function Signup() {
                   <Link
                     to="/privacyPolicy"
                     style={{
-                      color: "rgb(116, 112, 113)",
+                      color: "#000",
                     }}
                   >
                     privacy policy

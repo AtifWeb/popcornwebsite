@@ -45,6 +45,10 @@
 
   border-bottom-right-radius: 5px;
 }
+.typing-start-result {
+  max-height: 250px;
+  overflow: auto;
+}
 .result-wrapper p {
   padding: 0.5rem 1rem;
 }

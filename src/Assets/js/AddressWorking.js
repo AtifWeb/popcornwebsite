@@ -24,11 +24,12 @@ export const HandleSecondStepOnFocuse = (e) => {
 export const HandleSecondStepOnBlur = (e) => {
   let label = e.target.parentNode.previousElementSibling;
   let BorderElement = e.target.nextElementSibling;
-
+  console.log(ResultWrapper, "results");
   if (e.target.id == "address") {
     document.querySelector(".country-select").classList.remove("active");
     if (ResultWrapper == false) {
       document.querySelector(".result-wrapper").style.display = "none";
+
       e.target.nextElementSibling.style.borderBottomLeftRadius = "5px";
       e.target.nextElementSibling.style.borderBottomRightRadius = "5px";
     }

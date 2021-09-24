@@ -45,7 +45,8 @@
 
   border-bottom-right-radius: 5px;
 }
-.typing-start-result {
+
+.secondpart {
   max-height: 250px;
   overflow: auto;
 }

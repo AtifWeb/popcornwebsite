@@ -62,19 +62,45 @@ function Signup() {
     document.querySelector("#lname").addEventListener("change", (e) => {
       setLastName(e.target.value);
     });
-    document
-      .querySelector(".typing-start-result .row")
-      .addEventListener("click", (e) => {
-        let location = e.target.querySelector("small");
-        let Address1 = document.querySelector("#address1");
-        document.querySelector(".address-wrapper").style.display = "none";
-        document.querySelector(".result-wrapper").style.display = "none";
-        document.querySelector(".expand-address").classList.add("active");
-        document.querySelector(".country-select").style.marginTop = "-16px";
-        document.querySelector(".personal-info-wrapper").style.marginTop =
-          "5px";
 
-        Address1.value = location.textContent;
+    document
+      .querySelectorAll(".typing-start-result .firstpart .row")
+      .forEach((Each) =>
+        Each.addEventListener("click", () => {
+          document.querySelector(
+            ".typing-start-result .firstpart"
+          ).style.display = "none";
+
+          document.querySelector(
+            ".typing-start-result .secondpart"
+          ).style.display = "block";
+
+          document.querySelector("#address").focus();
+        })
+      );
+
+    document
+      .querySelectorAll(".typing-start-result .secondpart .row")
+      .forEach((Each) => {
+        Each.addEventListener("click", (e) => {
+          let location = e.target.querySelector("small");
+          let Address1 = document.querySelector("#address1");
+          let Adress = document.querySelector("#address");
+          let label = Address1.parentNode.previousElementSibling;
+          let BorderElement = Address1.nextElementSibling;
+
+          label.style.color = "#000";
+          BorderElement.style.borderColor = "#000";
+
+          document.querySelector(".address-wrapper").style.display = "none";
+          document.querySelector(".result-wrapper").style.display = "none";
+          document.querySelector(".expand-address").classList.add("active");
+          document.querySelector(".country-select").style.marginTop = "-16px";
+          document.querySelector(".personal-info-wrapper").style.marginTop =
+            "5px";
+
+          Address1.value = location.textContent;
+        });
       });
   }, []);
   const HandleNext = (e) => {
@@ -518,77 +544,113 @@ function Signup() {
             >
               <p>e.g. “SW12 7EU” or “64 London Road”</p>
               <div className="typing-start-result" style={{ display: "none" }}>
-                <div className="row">
-                  <div className="left-presentation">
-                    <h5>Atif Asim</h5>
-                    <small>Pakistan</small>
+                <div className="firstpart">
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                    <p>75 results</p>
                   </div>
-                  <p>75 results</p>
-                </div>
-                <div className="row">
-                  <div className="left-presentation">
-                    <h5>Atif Asim</h5>
-                    <small>Pakistan</small>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                    <p>75 results</p>
                   </div>
-                  <p>75 results</p>
-                </div>
-                <div className="row">
-                  <div className="left-presentation">
-                    <h5>Atif Asim</h5>
-                    <small>Pakistan</small>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                    <p>75 results</p>
                   </div>
-                  <p>75 results</p>
-                </div>
-                <div className="row">
-                  <div className="left-presentation">
-                    <h5>Atif Asim</h5>
-                    <small>Pakistan</small>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                    <p>75 results</p>
                   </div>
-                  <p>75 results</p>
-                </div>
-                <div className="row">
-                  <div className="left-presentation">
-                    <h5>Atif Asim</h5>
-                    <small>Pakistan</small>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                    <p>75 results</p>
                   </div>
-                  <p>75 results</p>
+
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                    <p>75 results</p>
+                  </div>
+
+                  <Link
+                    to="#"
+                    class="manual-address"
+                    onClick={(e) => {
+                      e.preventDefault();
+
+                      document.querySelector(".address-wrapper").style.display =
+                        "none";
+                      document.querySelector(".result-wrapper").style.display =
+                        "none";
+                      document
+                        .querySelector(".expand-address")
+                        .classList.add("active");
+                      document.querySelector(
+                        ".country-select"
+                      ).style.marginTop = "-16px";
+                    }}
+                    style={{
+                      display: "block",
+                      color: "#F85220",
+                      fontSize: "15px",
+                      textAlign: "center",
+                      borderTop: "1px solid #ddd",
+                      padding: "10px 0px",
+                    }}
+                  >
+                    Enter address manually
+                  </Link>
                 </div>
 
-                <div className="row">
-                  <div className="left-presentation">
-                    <h5>Atif Asim</h5>
-                    <small>Pakistan</small>
+                <div className="secondpart" style={{ display: "none" }}>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
                   </div>
-                  <p>75 results</p>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                  </div>
                 </div>
-
-                <Link
-                  to="#"
-                  class="manual-address"
-                  onClick={(e) => {
-                    e.preventDefault();
-
-                    document.querySelector(".address-wrapper").style.display =
-                      "none";
-                    document.querySelector(".result-wrapper").style.display =
-                      "none";
-                    document
-                      .querySelector(".expand-address")
-                      .classList.add("active");
-                    document.querySelector(".country-select").style.marginTop =
-                      "-16px";
-                  }}
-                  style={{
-                    display: "block",
-                    color: "#F85220",
-                    fontSize: "15px",
-                    textAlign: "center",
-                    borderTop: "1px solid #ddd",
-                    padding: "10px 0px",
-                  }}
-                >
-                  Enter address manually
-                </Link>
               </div>
             </div>
 

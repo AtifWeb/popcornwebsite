@@ -522,6 +522,17 @@ function Signup() {
               />
               <small
                 style={{
+                  display: "none",
+                  marginTop: "7px",
+                  fontSize: "13px",
+                  color: "rgb(246, 91, 78)",
+                }}
+                className="address-error"
+              >
+                Invalid Address
+              </small>
+              <small
+                style={{
                   fontSize: "12px",
                   color: " rgb(127, 122, 123)",
                   position: "absolute",

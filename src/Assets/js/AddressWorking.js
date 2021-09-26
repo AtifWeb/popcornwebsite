@@ -18,6 +18,8 @@ export const HandleSecondStepOnFocuse = (e) => {
       console.log("leave");
     });
 
+  document.querySelector(".address-error").style.display = "none";
+
   document.querySelector(".country-select").classList.add("active");
 };
 
@@ -25,9 +27,11 @@ export const HandleSecondStepOnBlur = (e) => {
   let label = e.target.parentNode.previousElementSibling;
   let BorderElement = e.target.nextElementSibling;
   console.log(ResultWrapper, "results");
+
   if (e.target.id == "address") {
     document.querySelector(".country-select").classList.remove("active");
     if (ResultWrapper == false) {
+      document.querySelector(".address-error").style.display = "block";
       document.querySelector(".result-wrapper").style.display = "none";
 
       e.target.nextElementSibling.style.borderBottomLeftRadius = "5px";

@@ -26,24 +26,28 @@ export const HandleSecondStepOnFocuse = (e) => {
 export const HandleSecondStepOnBlur = (e) => {
   let label = e.target.parentNode.previousElementSibling;
   let BorderElement = e.target.nextElementSibling;
-  console.log(ResultWrapper, "results");
+  let Address = document.querySelector("#address");
+  let Addresslabel = Address.parentNode.previousElementSibling;
+  let AddressBorderElement = Address.nextElementSibling;
 
   if (e.target.id == "address") {
     document.querySelector(".country-select").classList.remove("active");
     if (ResultWrapper == false) {
       document.querySelector(".address-error").style.display = "block";
+      Addresslabel.style.color = "red ";
+      AddressBorderElement.style.borderColor = "red ";
       document.querySelector(".result-wrapper").style.display = "none";
 
       e.target.nextElementSibling.style.borderBottomLeftRadius = "5px";
       e.target.nextElementSibling.style.borderBottomRightRadius = "5px";
     }
     if (e.target.value.length > 0) {
-      label.style.color = "#000";
-      BorderElement.style.borderColor = "#000";
+      // label.style.color = "#000";
+      // BorderElement.style.borderColor = "#000";
       // document.querySelector(".expand-address").classList.add("active")
     } else {
-      label.style.color = "rgba(0, 0, 0, 0.54)";
-      BorderElement.style.borderColor = "rgba(0, 0, 0, 0.23)";
+      Addresslabel.style.color = "red ";
+      AddressBorderElement.style.borderColor = "red ";
     }
   }
 };

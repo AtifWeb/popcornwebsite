@@ -83,6 +83,7 @@ function Signup() {
       .querySelectorAll(".typing-start-result .secondpart .row")
       .forEach((Each) => {
         Each.addEventListener("click", (e) => {
+          e.target.classList.add("blue_bg");
           let location = e.target.querySelector("small");
           let Address1 = document.querySelector("#address1");
           let Adress = document.querySelector("#address");
@@ -91,14 +92,17 @@ function Signup() {
 
           label.style.color = "#000";
           BorderElement.style.borderColor = "#000";
-
-          document.querySelector(".address-wrapper").style.display = "none";
-          document.querySelector(".result-wrapper").style.display = "none";
-          document.querySelector(".expand-address").classList.add("active");
-          document.querySelector(".country-select").style.marginTop = "-16px";
-          document.querySelector(".personal-info-wrapper").style.marginTop =
-            "5px";
-
+          setTimeout(() => {
+            e.target.classList.remove("blue_bg");
+          }, 200);
+          setTimeout(() => {
+            document.querySelector(".address-wrapper").style.display = "none";
+            document.querySelector(".result-wrapper").style.display = "none";
+            document.querySelector(".expand-address").classList.add("active");
+            document.querySelector(".country-select").style.marginTop = "-16px";
+            document.querySelector(".personal-info-wrapper").style.marginTop =
+              "5px";
+          }, 500);
           Address1.value = location.textContent;
         });
       });

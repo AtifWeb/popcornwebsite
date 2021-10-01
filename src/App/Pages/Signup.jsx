@@ -66,16 +66,23 @@ function Signup() {
     document
       .querySelectorAll(".typing-start-result .firstpart .row")
       .forEach((Each) =>
-        Each.addEventListener("click", () => {
-          document.querySelector(
-            ".typing-start-result .firstpart"
-          ).style.display = "none";
+        Each.addEventListener("click", (e) => {
+          e.target.classList.add("blue_bg");
+          setTimeout(() => {
+            e.target.classList.remove("blue_bg");
+          }, 200);
 
-          document.querySelector(
-            ".typing-start-result .secondpart"
-          ).style.display = "block";
+          setTimeout(() => {
+            document.querySelector(
+              ".typing-start-result .firstpart"
+            ).style.display = "none";
 
-          document.querySelector("#address").focus();
+            document.querySelector(
+              ".typing-start-result .secondpart"
+            ).style.display = "block";
+
+            document.querySelector("#address").focus();
+          }, 500);
         })
       );
 

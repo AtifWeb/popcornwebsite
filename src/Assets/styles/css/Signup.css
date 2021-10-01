@@ -51,17 +51,21 @@
   overflow: auto;
 }
 @media screen and (max-width: 1200px) {
-  .secondpart .row {
+  .secondpart .row,
+  .firstpart .row {
     transition: 0.05s ease all;
   }
-  .secondpart .row.blue_bg {
+  .secondpart .row.blue_bg,
+  .firstpart .row.blue_bg {
     background-color: #b4deed;
   }
 }
-.secondpart .row.blue_bg:hover {
+.secondpart .row.blue_bg:hover,
+.firstpart .row.blue_bg:hover {
   background-color: #b4deed;
 }
-.secondpart .row > * {
+.secondpart .row > *,
+.firstpart .row > * {
   pointer-events: none;
 }
 .result-wrapper p {

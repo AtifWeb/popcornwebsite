@@ -1,0 +1,33 @@
+.LocalHeader {
+  background-color: #f75524;
+  padding: 1rem 0rem;
+}
+.list_wrapper {
+  display: flex;
+  align-items: center;
+}
+.item_link {
+  color: #fff;
+  margin-right: 5rem;
+}
+.item_link.active {
+  font-weight: 600;
+  text-decoration: underline;
+}
+@media screen and (max-width: 650px) {
+  .item_link {
+    margin-right: 2rem;
+  }
+}
+@media screen and (max-width: 460px) {
+  .LocalHeader {
+    overflow: auto;
+  }
+  ul li:first-child .item_link {
+    min-width: 80px;
+  }
+  .item_link {
+    min-width: 160px;
+    display: block;
+  }
+}

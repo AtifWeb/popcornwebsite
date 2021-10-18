@@ -23,6 +23,11 @@ import "../../Assets/styles/css/Signup.css";
 import { makeStyles } from "@material-ui/core/styles";
 import { InputLabel } from "@material-ui/core";
 import { LaptopWindowsTwoTone } from "@material-ui/icons";
+import "../../Assets/styles/css/SelectBox.css";
+import "../../Assets/styles/css/resultsWrapper.css";
+import "../../Assets/styles/css/header.css";
+import "../../Assets/styles/css/Form.css";
+import "../../Assets/styles/css/body.css";
 const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
@@ -305,7 +310,7 @@ function Signup() {
   };
 
   return (
-    <div className="SignIn SignUp">
+    <div className=" SignUp">
       <div className="sign-in-header">
         <img src={logo} alt="" />
       </div>
@@ -854,7 +859,7 @@ function Signup() {
                   </Select>
                 </FormControl>
               </div>
-              <div className="text-field-wrapper">
+              <div className="text-field-wrapper" style={{ marginTop: 16 }}>
                 <TextField
                   onBlur={CheckIsValid}
                   onFocus={RemoveMessages}
@@ -863,7 +868,7 @@ function Signup() {
                   id="year"
                   label="Year"
                   variant="outlined"
-                  style={{ width: "100%", marginTop: 16 }}
+                  style={{ width: "100%" }}
                   type="text"
                 />
                 <span

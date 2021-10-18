@@ -1,22 +1,23 @@
 import React from "react";
 
 import "./App.css";
-import Home from "./App/Pages/Home";
-import './Assets/styles/css/layout.css'
+
+import "./Assets/styles/css/layout.css";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Index from "./App/Pages/Index";
-import SignIn from "./App/Pages/SignIn";
-import Signup from "./App/Pages/Signup";
+
+import { Welcome } from "./App/Pages/Welcome";
+import { GeneralAccount } from "./App/Pages/GeneralAccount";
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Switch>
           <Route path="/" exact>
-            <Signup />
+            <Welcome />
           </Route>
-
-          
+          <Route path="/GeneralAccount" exact>
+            <GeneralAccount />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>

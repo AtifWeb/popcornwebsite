@@ -10,7 +10,16 @@ input:-webkit-autofill,
 select:-webkit-autofill {
   -webkit-background-clip: text !important;
 }
-
+.head img {
+  width: 50px;
+  border-radius: 50%;
+}
+.badge {
+  background-color: #fff;
+  margin-right: 1rem;
+  padding: 0.2rem 0.7rem;
+  color: #f85220;
+}
 .burger-icon {
   display: none;
 }

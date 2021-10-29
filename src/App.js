@@ -12,7 +12,11 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
+          {" "}
           <Route path="/" exact>
+            <Signup />
+          </Route>
+          <Route path="/welcome" exact>
             <Welcome />
           </Route>
           <Route path="/GeneralAccount" exact>

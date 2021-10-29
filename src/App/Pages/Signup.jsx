@@ -318,7 +318,7 @@ function Signup() {
         <form action="" className="outer-form">
           <p className="create-account-message">
             Create a new account below <br />
-            or <Link>sign in</Link>
+            or <Link to="/welcome">sign in</Link>
           </p>
           <p className="welcom-message" style={{ display: "none" }}>
             {FirstName}, welcome to Cyber Volunteers

@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import { Welcome } from "./App/Pages/Welcome";
 import { GeneralAccount } from "./App/Pages/GeneralAccount";
+import Signup from "./App/Pages/Signup";
 function App() {
   return (
     <div className="App">

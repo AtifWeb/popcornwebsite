@@ -6,6 +6,9 @@
   display: flex;
   align-items: center;
 }
+.LocalHeader > ul li:first-child {
+  display: none;
+}
 .item_link {
   color: #fff;
   margin-right: 5rem;
@@ -20,14 +23,22 @@
   }
 }
 @media screen and (max-width: 460px) {
-  .LocalHeader {
-    overflow: auto;
+  .LocalHeader > ul li:first-child {
+    display: block;
+  }
+  .list_wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  ul li {
+    width: 100%;
+  }
+  ul .item_link {
+    padding: 1rem 0rem;
+    display: block;
+    text-align: left;
   }
   ul li:first-child .item_link {
-    min-width: 80px;
-  }
-  .item_link {
-    min-width: 160px;
-    display: block;
+    padding-top: 0rem;
   }
 }

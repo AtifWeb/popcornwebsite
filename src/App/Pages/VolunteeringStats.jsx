@@ -14,7 +14,7 @@ export const VolunteeringStats = () => {
       {/* Header */}
       <Header />
 
-      <LocalHeader list={LocalHeaderItems} active="General" />
+      <LocalHeader list={LocalHeaderItems} active="Volunteering Stats" />
 
       <div className={styles._container}>
         <h1 className={`${styles.main_heading} ${stylesRelate.main_heading}`}>

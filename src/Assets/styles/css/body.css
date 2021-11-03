@@ -3,3 +3,16 @@
   display: flex;
   justify-content: center;
 }
+* {
+  scroll-behavior: smooth;
+}
+@media screen and (max-width: 460px) {
+  .local-header {
+    height: 55px;
+    overflow: hidden;
+    transition: 0.3s ease all;
+  }
+  .local-header.dropdown {
+    height: 220px;
+  }
+}

@@ -18,7 +18,5 @@
 }
 @media screen and (max-width: 380px) {
   .button {
-    width: 100% !important;
-    font-size: 13px !important;
   }
 }

@@ -67,22 +67,20 @@ function Header() {
             <li className="drop-down lend-wrapper about-wrapper">
               <div className="head dflex-align-center">
                 {" "}
-                <div className="badge">$0</div>
+                <div className="badge">0</div>
                 <img src={after_login} />
               </div>
               <ul className="body">
                 <li>
-                  <Link>Portfolio</Link>
+                  <Link>General</Link>
                 </li>
                 <li>
-                  <Link>My team</Link>
+                  <Link>Personal Information</Link>
                 </li>
                 <li>
-                  <Link>Donations</Link>
+                  <Link>Volunteering stats, </Link>
                 </li>
-                <li>
-                  <Link>Settings</Link>
-                </li>
+
                 <li>
                   <Link>Sign out</Link>
                 </li>

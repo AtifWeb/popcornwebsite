@@ -8,12 +8,11 @@ export const SignOut = () => {
       <div className={styles.buttonWrapper}>
         <Button
           style={{
-            width: 200,
             backgroundColor: "transparent",
             color: "#333",
             borderColor: "#484848",
-            fontSize: "16px",
           }}
+          outline={true}
         >
           Sign Out
         </Button>

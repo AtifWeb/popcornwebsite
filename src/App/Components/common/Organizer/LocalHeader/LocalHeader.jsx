@@ -19,9 +19,13 @@ export const LocalHeader = ({ list, active }) => {
               onClick={(e) => HandleDropDown(e, Item.value)}
               className={`${styles.item_link} ${
                 active === Item.value && styles.active
-              }`}
+              }
+              
+              
+              `}
             >
-              {Item.value}
+              {Item.value === "dropdown" ? active : Item.value}
+              {Item.value === "dropdown" && <i class="fas fa-chevron-down"></i>}
             </Link>
           </li>
         ))}

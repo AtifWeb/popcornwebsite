@@ -9,7 +9,9 @@ export const PersonalInfo = () => {
       <p className={styles.helper_message}>
         Your personal information is incomplete. Tell charities more about
         yourself by completing your{" "}
-        <span className={styles.highlighted_text}>account information.</span>
+        <a href="#" className={styles.highlighted_text}>
+          account information.
+        </a>
       </p>{" "}
       <small className={styles.info_message}>* denotes a required field</small>
       {Fields.map((Field) => (
@@ -26,13 +28,12 @@ export const PersonalInfo = () => {
       <div className={styles.button_wrapper}>
         <Button
           style={{
-            width: 200,
             marginTop: 30,
             backgroundColor: "transparent",
             color: "#333",
             borderColor: "#484848",
-            fontSize: "16px",
           }}
+          outline={true}
         >
           Edit Personal Info
         </Button>

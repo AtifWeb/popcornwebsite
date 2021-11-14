@@ -12,6 +12,8 @@
 .item_link {
   color: #fff;
   margin-right: 5rem;
+  display: flex;
+  justify-content: space-between;
 }
 .item_link.active {
   font-weight: 600;
@@ -23,6 +25,9 @@
   }
 }
 @media screen and (max-width: 460px) {
+  .item_link {
+    margin: 0px !important;
+  }
   .LocalHeader > ul li:first-child {
     display: block;
   }
@@ -35,7 +40,7 @@
   }
   ul .item_link {
     padding: 1rem 0rem;
-    display: block;
+
     text-align: left;
   }
   ul li:first-child .item_link {

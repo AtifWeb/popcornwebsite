@@ -21,14 +21,24 @@
     justify-content: center;
     width: 100%;
   }
+  .buttonWrapper > *:first-child {
+    margin-right: 10px;
+  }
 }
 @media screen and (max-width: 380px) {
   .sub_heading {
     font-size: 1.2rem;
   }
 }
-@media screen and (max-width: 330px) {
+@media screen and (max-width: 380px) {
   .buttonWrapper {
     flex-direction: column;
+  }
+  .buttonWrapper > * {
+    width: 200px !important;
+  }
+  .buttonWrapper > *:first-child {
+    margin-right: 0px;
+    margin-bottom: 10px;
   }
 }

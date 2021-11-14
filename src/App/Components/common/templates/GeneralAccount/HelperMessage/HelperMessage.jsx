@@ -17,12 +17,15 @@ export const HelperMessage = () => {
           a new one
         </span>
         . Or change your
-        <span className={styles.highlighted_text}> email address</span>
+        <a href="#" className={styles.highlighted_text}>
+          {" "}
+          email address
+        </a>
       </p>
       {clicked && (
         <Danger
           text="We've sent a new verification email to mytechlife96@gmail.com. Please check your email to verify your account"
-          style={{ marginTop: 10 }}
+          style={{ marginTop: 10, background: "#F75524" }}
         />
       )}
     </div>

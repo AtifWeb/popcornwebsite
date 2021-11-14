@@ -152,7 +152,7 @@ select:-webkit-autofill {
 }
 .Header ul li.lend-wrapper .body {
   grid-template-columns: 1fr !important;
-  width: 170px !important;
+  width: 200px !important;
   z-index: 222;
 }
 .Header ul li.lend-wrapper .body li {

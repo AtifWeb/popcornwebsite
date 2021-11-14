@@ -19,6 +19,7 @@
 
 .highlighted_text {
   color: #f75524;
+  text-decoration: none;
 }
 
 .info_message {
@@ -34,7 +35,7 @@
 .fieldWrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 0.4rem 0rem;
+  padding: 0.8rem 0rem;
   border-bottom: 1px solid #d8d8d9;
 }
 .fieldWrapperlabel {

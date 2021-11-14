@@ -10,9 +10,11 @@
   .local-header {
     height: 55px;
     overflow: hidden;
-    transition: 0.3s ease all;
   }
   .local-header.dropdown {
     height: 220px;
+  }
+  .local-header.dropdown i {
+    transform: rotate(180deg);
   }
 }

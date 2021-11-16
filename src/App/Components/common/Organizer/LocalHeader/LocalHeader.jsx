@@ -25,7 +25,9 @@ export const LocalHeader = ({ list, active }) => {
               `}
             >
               {Item.value === "dropdown" ? active : Item.value}
-              {Item.value === "dropdown" && <i class="fas fa-chevron-down"></i>}
+              {Item.value === "dropdown" && (
+                <i class={`fas fa-chevron-down ${styles.arrow}`}></i>
+              )}
             </Link>
           </li>
         ))}

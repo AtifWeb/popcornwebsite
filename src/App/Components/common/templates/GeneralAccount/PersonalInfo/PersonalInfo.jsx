@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "../../../Atom/button/Button";
 import styles from "./PersonalInfo.module.css";
 import { Fields } from "./types";
 export const PersonalInfo = () => {
+  const AddAddintional = (EachRight) => {
+    if (EachRight.offsetWidth < EachRight.scrollWidth) {
+      EachRight.classList.add("active");
+    } else {
+      EachRight.classList.remove("active");
+    }
+  };
+  useEffect(() => {
+    let FeildRights = document.querySelectorAll(".feild_right");
+
+    FeildRights.forEach((EachRight) => {
+      AddAddintional(EachRight);
+    });
+
+    window.addEventListener("resize", (e) => {
+      FeildRights.forEach((EachRight) => {
+        AddAddintional(EachRight);
+      });
+    });
+  }, []);
   return (
     <div className={styles.PersonalInfo}>
       <h2 className={styles.sub_heading}>Your Personal Information.</h2>
@@ -17,12 +37,9 @@ export const PersonalInfo = () => {
       {Fields.map((Field) => (
         <div className={styles.fieldWrapper}>
           <label className={styles.fieldWrapperlabel}>{Field.left}</label>
-          <input
-            type={`${Field.left === "Password*" ? "password" : "text"}`}
-            value={Field.right}
-            readOnly
-            className={styles.fieldWrapperinput}
-          />
+          <p className={`${styles.fieldWrapperinput} feild_right`}>
+            {Field.right}
+          </p>
         </div>
       ))}
       <div className={styles.button_wrapper}>

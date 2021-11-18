@@ -8,7 +8,7 @@
   border: 1px solid #fa562b;
   border-radius: 2px;
   border-bottom-width: 2px !important;
-  font-size: 16px;
+  font-size: 17px;
   padding-left: 1rem;
   padding-right: 1rem;
   transition: 0.3s ease all;
@@ -22,9 +22,6 @@
   color: #e9552f !important;
 }
 @media screen and (max-width: 650px) {
-  .button {
-    font-size: 1.2rem;
-  }
 }
 @media screen and (max-width: 450px) {
   .button {

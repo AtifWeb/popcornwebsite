@@ -13,10 +13,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 60%;
   margin: 1.5rem auto 0px auto;
 }
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 650px) {
   .buttonWrapper {
     justify-content: center;
     width: 100%;
@@ -25,6 +25,7 @@
     margin-right: 10px;
   }
 }
+
 @media screen and (max-width: 380px) {
   .sub_heading {
     font-size: 1.2rem;

@@ -13,7 +13,7 @@ export const Fields = [
   },
   {
     left: "Password*",
-    right: "dots",
+    right: "**********",
   },
   {
     left: "Address*",

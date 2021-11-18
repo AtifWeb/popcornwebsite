@@ -10,6 +10,7 @@ import { GeneralAccount } from "./App/Pages/GeneralAccount";
 import Signup from "./App/Pages/Signup";
 import { VolunteeringStats } from "./App/Pages/VolunteeringStats";
 import { PersonalInformation } from "./App/Pages/PersonalInformation";
+import { ForgetPassword } from "./App/Pages/ForgetPassword";
 function App() {
   return (
     <div className="App">
@@ -17,7 +18,7 @@ function App() {
         <Switch>
           {" "}
           <Route path="/" exact>
-            <Signup />
+            <ForgetPassword />
           </Route>
           <Route path="/welcome" exact>
             <Welcome />

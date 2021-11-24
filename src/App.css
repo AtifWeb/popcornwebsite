@@ -7,6 +7,24 @@
   width: 1000px;
   margin: 0rem auto;
 }
+
+.skill_save_one,
+.skill_save_two {
+  pointer-events: none !important;
+}
+
+.skill_save_one.active,
+.skill_save_two.active {
+  pointer-events: all !important;
+  background-color: #f75524 !important;
+  color: #fff !important;
+  border-color: #7a2a12 !important;
+}
+
+.skill_save_one:hover,
+.skill_save_two:hover {
+  color: #fff !important;
+}
 body {
   background-color: #ffffff;
 }

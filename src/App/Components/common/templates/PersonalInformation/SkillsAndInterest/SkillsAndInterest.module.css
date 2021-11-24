@@ -7,6 +7,14 @@
   padding: 1rem 0rem;
   border-bottom: 1px solid #d8d8d9;
 }
+.helperMessage {
+  display: inline-block;
+  margin-top: 7px;
+  font-size: 13px;
+  display: none;
+  padding-left: 12px;
+  color: rgb(246, 91, 78);
+}
 .inputWrappers {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -39,16 +47,17 @@
 .textArea {
   height: 250px;
   outline: none;
-  border: 1px solid #727373;
+  font-size: 16px;
   padding: 1rem;
   resize: none;
   width: 100%;
-
+  border: 1px solid #cecece;
+  color: rgba(0, 0, 0, 0.87);
   border-radius: 5px;
 }
-
+.textArea:hover,
 .textArea:focus {
-  border-color: #f75524;
+  border-color: #212121;
 }
 @media screen and (max-width: 610px) {
   .buttonsWrapper {

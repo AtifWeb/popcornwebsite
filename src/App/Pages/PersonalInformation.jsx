@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../../Assets/styles/pages/GeneralAccount.module.css";
 import stylesRelate from "../../Assets/styles/pages/PersonalInformation.module.css";
 import Header from "../Components/Header";
@@ -19,6 +19,7 @@ export const PersonalInformation = () => {
     e.target.id == "Email_link" && setActive("Email_link");
     e.target.id == "Password_link" && setActive("Password_link");
   };
+
   return (
     <div className={styles.GeneralAccount}>
       {/* Header */}

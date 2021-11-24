@@ -74,6 +74,9 @@
 .link p:last-child {
   color: #1f69d4;
 }
+.link p:last-child > i {
+  padding-top: 2px;
+}
 @media screen and (max-width: 610px) {
   .link {
     width: 95%;

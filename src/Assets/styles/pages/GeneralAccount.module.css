@@ -3,6 +3,10 @@
 
   margin: 1.5rem auto;
 }
+._container > * + * {
+  position: relative;
+  z-index: 2;
+}
 .main_heading {
   font-weight: 400;
 

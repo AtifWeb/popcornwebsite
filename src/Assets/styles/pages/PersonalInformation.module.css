@@ -16,6 +16,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 1000px;
+  z-index: 1;
 }
 .sidebar_nav li {
   margin-bottom: 1rem;

@@ -20,6 +20,9 @@ function App() {
           <Route path="/" exact>
             <ForgetPassword />
           </Route>
+          <Route path="/Signup" exact>
+            <Signup />
+          </Route>
           <Route path="/welcome" exact>
             <Welcome />
           </Route>

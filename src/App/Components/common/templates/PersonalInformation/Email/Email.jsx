@@ -15,7 +15,9 @@ export const Email = () => {
       <Link className={styles.link}>
         <p>Email</p>
 
-        <p>Change Email</p>
+        <p>
+          Change Email <i class="fas fa-angle-right"></i>
+        </p>
       </Link>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./FloatingInput.module.css";
-export const FloatingInput = ({ type, label }) => {
+export const FloatingInput = ({ type, label, onChange = null }) => {
   const [active, setactive] = useState(false);
   const HandleBlurPosition = (e) => {
     e.target.value != "" ? setactive(true) : setactive(false);
@@ -10,6 +10,7 @@ export const FloatingInput = ({ type, label }) => {
       <input
         type={type}
         className={`${styles.input} ${active && styles.activeinput} `}
+        onChange={onChange}
         onBlur={HandleBlurPosition}
       />{" "}
       <label

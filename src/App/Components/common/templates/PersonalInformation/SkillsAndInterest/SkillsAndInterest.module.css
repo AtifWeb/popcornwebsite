@@ -47,7 +47,7 @@
 .textArea {
   height: 250px;
   outline: none;
-  font-size: 16px;
+  font-size: 18px;
   padding: 1rem;
   resize: none;
   width: 100%;
@@ -73,7 +73,7 @@
   }
 }
 @media screen and (max-width: 340px) {
-  .buttonsWrapper button {
-    font-size: 12px !important;
+  .buttonsWrapper {
+    grid-template-columns: 1fr;
   }
 }

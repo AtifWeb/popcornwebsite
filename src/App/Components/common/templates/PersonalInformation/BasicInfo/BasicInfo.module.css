@@ -74,7 +74,7 @@
   }
 }
 @media screen and (max-width: 340px) {
-  .buttonsWrapper button {
-    font-size: 12px !important;
+  .buttonsWrapper {
+    grid-template-columns: 1fr;
   }
 }

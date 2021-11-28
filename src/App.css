@@ -18,12 +18,14 @@
   pointer-events: all !important;
   background-color: #f75524 !important;
   color: #fff !important;
-  border-color: #7a2a12 !important;
+  border: none;
+  border-bottom: 1px solid #e9552f !important;
 }
 
 .skill_save_one:hover,
 .skill_save_two:hover {
   color: #fff !important;
+  background-color: #e9552f !important;
 }
 body {
   background-color: #ffffff;
@@ -32,4 +34,6 @@ body {
   .w-1000 {
     width: 95%;
   }
+}
+@media screen and (max-width: 430px) {
 }

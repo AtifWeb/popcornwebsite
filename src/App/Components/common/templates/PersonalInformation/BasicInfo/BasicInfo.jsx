@@ -38,12 +38,26 @@ export const BasicInfo = () => {
     window.addEventListener("load", (e) => {
       if (window.innerWidth < 500) {
         setmonths(smallMonths);
+        document.querySelector(
+          "#month_select_control .MuiInputBase-root"
+        ).style.width = "26vw";
+      } else {
+        document.querySelector(
+          "#month_select_control .MuiInputBase-root"
+        ).style.width = "100%";
       }
     });
 
     window.addEventListener("resize", (e) => {
       if (window.innerWidth < 500) {
         setmonths(smallMonths);
+        document.querySelector(
+          "#month_select_control .MuiInputBase-root"
+        ).style.width = "26vw";
+      } else {
+        document.querySelector(
+          "#month_select_control .MuiInputBase-root"
+        ).style.width = "100%";
       }
     });
   }, []);
@@ -181,8 +195,14 @@ export const BasicInfo = () => {
           <small className={styles.helperMessage}>Invalid Day</small>
         </div>
         <div className={styles.grid_one}>
-          <div className="country-select select-box" style={{ marginTop: -15 }}>
-            <FormControl className={classes.formControl}>
+          <div
+            className="country-select month_select select-box"
+            style={{ marginTop: -15 }}
+          >
+            <FormControl
+              className={classes.formControl}
+              id="month_select_control"
+            >
               <InputLabel
                 htmlFor="age-native-simple"
                 style={{ pointerEvents: "none" }}
@@ -197,7 +217,7 @@ export const BasicInfo = () => {
                   window.sessionStorage.setItem("month", true);
                   HandleAllCheck();
                 }}
-                id="country-select"
+                id="month-select"
                 onBlur={HandleSelectOnBlur}
                 onFocus={HandleSelectOnFocus}
               >

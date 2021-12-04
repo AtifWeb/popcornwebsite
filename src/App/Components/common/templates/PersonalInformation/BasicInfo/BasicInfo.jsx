@@ -76,7 +76,7 @@ export const BasicInfo = () => {
   return (
     <div className={`${styles.BasicInfo} basic_info`} id="basic_info">
       <h2 className={styles.heading_2}>Basic Info</h2>
-
+      <p className={styles.paraTop}>* denotes a required field</p>
       <div className={styles.inputWrappers}>
         <div className={`${styles.grid_two} first_input`}>
           <FloatingInput

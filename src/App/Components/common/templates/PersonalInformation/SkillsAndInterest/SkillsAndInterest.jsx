@@ -54,6 +54,13 @@ export const SkillsAndInterest = () => {
             placeholder="Your Skills and Interests."
             cols="30"
             rows="10"
+            onBlur={(e) => {
+              if (e.target.value != "") {
+                e.target.style.borderColor = "#212121";
+              } else {
+                e.target.style.borderColor = "#cecece";
+              }
+            }}
             className={styles.textArea}
           ></textarea>
         </div>

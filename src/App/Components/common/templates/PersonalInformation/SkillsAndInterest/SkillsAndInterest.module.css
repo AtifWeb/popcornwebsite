@@ -48,7 +48,7 @@
   height: 250px;
   outline: none;
   font-size: 16.5px;
-  padding: 1rem;
+  padding: 0.8rem 1rem;
   resize: none;
   width: 100%;
   border: 1px solid #cecece;
@@ -57,7 +57,7 @@
 }
 .textArea:hover,
 .textArea:focus {
-  border-color: #212121;
+  border-color: #212121 !important;
 }
 @media screen and (max-width: 610px) {
   .buttonsWrapper {

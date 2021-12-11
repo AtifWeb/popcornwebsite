@@ -7,7 +7,12 @@
   width: 1000px;
   margin: 0rem auto;
 }
-
+label + .MuiInput-formControl {
+  margin-top: 15px !important;
+}
+.select-box .MuiFormControl-root label {
+  top: 8px !important;
+}
 .skill_save_one,
 .skill_save_two {
   pointer-events: none !important;
@@ -19,7 +24,7 @@
   background-color: #f75524 !important;
   color: #fff !important;
   border: none;
-  border-bottom: 1px solid #e9552f !important;
+  border-bottom: 2px solid #8f341d !important;
 }
 
 .skill_save_one:hover,
@@ -35,5 +40,13 @@ body {
     width: 95%;
   }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 350px) {
+  .select-box label {
+    z-index: 2 !important;
+  }
+  .MuiSelect-icon {
+    z-index: 3 !important;
+    background-color: #fff;
+    right: 2px !important;
+  }
 }

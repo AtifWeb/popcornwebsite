@@ -17,7 +17,7 @@ function App() {
       <BrowserRouter>
         <Switch>
           {" "}
-          <Route path="/" exact>
+          <Route path="/PersonalInformation" exact>
             <ForgetPassword />
           </Route>
           <Route path="/Signup" exact>
@@ -32,7 +32,7 @@ function App() {
           <Route path="/VolunteeringStats" exact>
             <VolunteeringStats />
           </Route>
-          <Route path="/PersonalInformation" exact>
+          <Route path="/" exact>
             <PersonalInformation />
           </Route>
         </Switch>

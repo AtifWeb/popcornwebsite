@@ -24,13 +24,14 @@ label + .MuiInput-formControl {
   background-color: #f75524 !important;
   color: #fff !important;
   border: none;
-  border-bottom: 2px solid #8f341d !important;
+  border-bottom: 1px solid #df3f0e !important;
+  box-shadow: 0 0.125rem #df3f0e !important;
 }
 
 .skill_save_one:hover,
 .skill_save_two:hover {
   color: #fff !important;
-  background-color: #e9552f !important;
+  background-color: #df3f0e !important;
 }
 body {
   background-color: #ffffff;

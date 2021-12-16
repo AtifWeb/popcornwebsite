@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./SkillsAndInterest.module.css";
 import { FloatingInput } from "../../../Atom/FloatingInput/FloatingInput";
 import { Button } from "../../../Atom/button/Button";
 import { EventHandle } from "../BasicInfo/input_handle";
 
 export const SkillsAndInterest = () => {
+  const [TextAreaActive, setTextAreaActive] = useState(false);
   useEffect(() => {
     EventHandle();
 
@@ -47,13 +48,24 @@ export const SkillsAndInterest = () => {
           <FloatingInput type="text" label="Languages" />{" "}
           <small className={styles.helperMessage}>Invalid Languages</small>
         </div>{" "}
-        <div className={styles.grid_three}>
+        <div
+          className={`${styles.grid_three} ${styles.textareaWrapper} ${
+            TextAreaActive == true && styles.text_area_active
+          }`}
+        >
           <textarea
             name=""
             id=""
-            placeholder="Your Skills and Interests."
             cols="30"
             rows="10"
+            onChange={(e) => {
+              console.log(e.target.value);
+              if (e.target.value != "") {
+                setTextAreaActive(true);
+              } else {
+                setTextAreaActive(false);
+              }
+            }}
             onBlur={(e) => {
               if (e.target.value != "") {
                 e.target.style.borderColor = "#212121";
@@ -63,6 +75,7 @@ export const SkillsAndInterest = () => {
             }}
             className={styles.textArea}
           ></textarea>
+          <label htmlFor="">Your Skills and Interests.</label>
         </div>
       </div>
 

@@ -3,24 +3,20 @@ import { HeaderNoOption } from "../Components/common/Organizer/Header/HeaderNoOp
 import styles from "../../Assets/styles/pages/Welcome.module.css";
 import { Button } from "../Components/common/Atom/button/Button";
 import { useHistory } from "react-router-dom";
-export const Welcome = () => {
+export const Welcome = ({ headtext, simpletext, buttonText, linkButton }) => {
   const history = useHistory();
   return (
     <div className={styles.Welcome}>
       <HeaderNoOption />
 
       <div className={styles._container}>
-        <h1 className={styles.main_heading}>Welcome to Cyber Volunteer</h1>
-        <p className={styles.main_para}>
-          You have created a Cyber Volunteers account. A verification email has
-          been sent to mytechlife86@gmail.com. Please verify your email to be
-          able to sign up for volunteering opportunities.
-        </p>
+        <h1 className={styles.main_heading}>{headtext}</h1>
+        <p className={styles.main_para}>{simpletext}</p>
         <Button
           style={{ width: 220 }}
-          onclick={(e) => history.push("/GeneralAccount")}
+          onclick={(e) => history.push(linkButton)}
         >
-          GO TO MY ACCOUNT
+          {buttonText}
         </Button>
       </div>
     </div>

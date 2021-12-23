@@ -19,8 +19,6 @@
   font-size: 22px;
 }
 ._container {
-  width: 520px;
-
   margin: 4rem auto;
   text-align: center;
   display: flex;
@@ -34,10 +32,12 @@
   font-weight: 400;
   margin-bottom: 1.5rem;
   font-size: 1.8rem;
+  width: 95%;
 }
 .main_para {
   font-size: 18px;
   line-height: 1.7rem;
+  width: 520px;
   margin-bottom: 1rem;
 }
 .span_new {
@@ -50,7 +50,7 @@
   }
 }
 @media screen and (max-width: 550px) {
-  ._container {
+  .main_para {
     width: 95%;
   }
 }

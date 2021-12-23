@@ -14,6 +14,8 @@ import { ForgetPassword } from "./App/Pages/ForgetPassword";
 import AdminAccount from "./App/Pages/AdminAccount";
 import OrganizationInfomation from "./App/Pages/OrganizationInfomation";
 import OrganizationAccount from "./App/Pages/OrganizationAccount";
+import OrganizationLogo from "./App/Pages/OrganizationLogo";
+import OrganizationMission from "./App/Pages/OrganizationMission";
 function App() {
   return (
     <div className="App">
@@ -21,7 +23,7 @@ function App() {
         <Switch>
           {" "}
           <Route path="/PersonalInformation" exact>
-            <ForgetPassword />
+            <PersonalInformation />
           </Route>
           <Route path="/Signup" exact>
             <Signup />
@@ -34,6 +36,12 @@ function App() {
           </Route>
           <Route path="/OrganizationAccount" exact>
             <OrganizationAccount />
+          </Route>
+          <Route path="/OrganizationMission" exact>
+            <OrganizationMission />
+          </Route>
+          <Route path="/OrganizationLogo" exact>
+            <OrganizationLogo />
           </Route>
           <Route path="/welcome" exact>
             <Welcome

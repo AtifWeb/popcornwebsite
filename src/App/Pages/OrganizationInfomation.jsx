@@ -192,7 +192,7 @@ function OrganizationInfomation() {
         <img src={logo} alt="" />
       </div>
       <div className="body-area">
-        <form action="" className="outer-form" style={{ border: "none" }}>
+        <form action="" className="outer-form">
           <p className="create-account-message">
             Let’s get some basic info about your organisation
           </p>
@@ -279,7 +279,7 @@ function OrganizationInfomation() {
             <span
               className="helping-text text-helper"
               style={{
-                marginBottom: "10px",
+                marginBottom: "20px",
                 display: "inline-block",
                 marginTop: 7,
                 fontSize: 13,
@@ -301,7 +301,7 @@ function OrganizationInfomation() {
             <span
               className="helping-text text-helper"
               style={{
-                marginBottom: "10px",
+                marginBottom: "20px",
                 display: "inline-block",
                 marginTop: 7,
                 fontSize: 13,

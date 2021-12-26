@@ -29,6 +29,8 @@ const useStyles = makeStyles((theme) => ({
 function OrganizationMission() {
   const classes = useStyles();
   const [TextAreaActive, setTextAreaActive] = useState(false);
+  const [TextAreaActive2, setTextAreaActive2] = useState(false);
+  const [TextAreaActive3, setTextAreaActive3] = useState(false);
   const [safeguarding, setsafeguarding] = useState(false);
   const [trainingExp, settrainingExp] = useState(false);
   const [adults, setadults] = useState(false);
@@ -146,6 +148,8 @@ function OrganizationMission() {
         HelperElement.textContent = "Invalid Name";
       } else if (ElementId == "email_name") {
         HelperElement.textContent = "Invalid Email";
+      }else if (ElementId=="Description"){
+        HelperElement.textContent="Invalid Organization Description"
       }
     }
   };
@@ -156,7 +160,7 @@ function OrganizationMission() {
         <img src={logo} alt="" />
       </div>
       <div className="body-area">
-        <form action="" className="outer-form" style={{ border: "none" }}>
+        <form action="" className="outer-form">
           <p className="create-account-message">
             Tell us about your organisation and your mission
           </p>
@@ -169,9 +173,13 @@ function OrganizationMission() {
           >
             <textarea
               name=""
-              id=""
+              id="Description"
               cols="30"
               rows="10"
+              onFocus={e=>{
+                let HelperElement=e.target.nextElementSibling.nextElementSibling
+                HelperElement.textContent=""
+              }}
               onChange={(e) => {
                 if (e.target.value != "") {
                   setTextAreaActive(true);
@@ -180,20 +188,35 @@ function OrganizationMission() {
                 }
               }}
               onBlur={(e) => {
+                let HelperElement=e.target.nextElementSibling.nextElementSibling
                 if (e.target.value != "") {
                   e.target.style.borderColor = "#212121";
+                  
                 } else {
                   e.target.style.borderColor = "#cecece";
+                  HelperElement.textContent="Invalid Organization Description"
                 }
+            
               }}
               className={styles.textArea}
             ></textarea>
             <label htmlFor="">Organisation Description</label>
+         
+                        <span   style={{
+                          marginBottom: "10px",
+                          display: "inline-block",
+                          marginTop: 7,
+                          fontSize: 13,
+                          paddingLeft: 12,
+                          color: "#F65B4E",
+                        }}></span>
+                        
+                   
           </div>
 
           <div
             className={`${styles.grid_three} ${styles.textareaWrapper} ${
-              TextAreaActive == true && styles.text_area_active
+              TextAreaActive2 == true && styles.text_area_active
             }`}
             style={{ marginTop: "1rem" }}
           >
@@ -202,23 +225,40 @@ function OrganizationMission() {
               id=""
               cols="30"
               rows="10"
+              onFocus={e=>{
+                let HelperElement=e.target.nextElementSibling.nextElementSibling
+                HelperElement.textContent=""
+              }}
               onChange={(e) => {
                 if (e.target.value != "") {
-                  setTextAreaActive(true);
+                  setTextAreaActive2(true);
                 } else {
-                  setTextAreaActive(false);
+                  setTextAreaActive2(false);
                 }
               }}
               onBlur={(e) => {
+                let HelperElement=e.target.nextElementSibling.nextElementSibling
                 if (e.target.value != "") {
                   e.target.style.borderColor = "#212121";
+                  
                 } else {
                   e.target.style.borderColor = "#cecece";
+                  HelperElement.textContent="Invalid Mission Statement"
                 }
               }}
               className={styles.textArea}
             ></textarea>
             <label htmlFor="">Mission Statement</label>
+            
+                        <span   style={{
+                          marginBottom: "10px",
+                          display: "inline-block",
+                          marginTop: 7,
+                          fontSize: 13,
+                          paddingLeft: 12,
+                          color: "#F65B4E",
+                        }}></span>
+                     
           </div>
 
           <div className="input-collection" style={{ marginTop: 0 }}>
@@ -279,7 +319,7 @@ function OrganizationMission() {
               <>
                 <div
                   className="organization_logo_desc"
-                  style={{ marginTop: "1rem" }}
+                  style={{ marginTop: ".5rem" }}
                 >
                   <p style={{ fontSize: 15, color: "#666666" }}>
                     Does your organisation have safeguarding policies and
@@ -338,7 +378,7 @@ function OrganizationMission() {
                     fontSize: 15,
                     color: "#666666",
                     marginTop: "1rem",
-                    marginBottom: "1.5rem",
+                    marginBottom: "1rem",
                   }}
                 >
                   Please provide a link to your safeguarding policy below:
@@ -368,7 +408,7 @@ function OrganizationMission() {
 
                 <div
                   className="organization_logo_desc"
-                  style={{ marginTop: "1rem" }}
+                  style={{ marginTop: ".5rem" }}
                 >
                   <p style={{ fontSize: 15, color: "#666666" }}>
                     Do all staff and volunteers who work with young people
@@ -450,7 +490,7 @@ function OrganizationMission() {
                       style={{
                         fontSize: 15,
                         color: "#666666",
-                        marginBottom: "1.5rem",
+                        marginBottom: "1rem",
                       }}
                     >
                       If your answer is ‘Other’, please explain below:
@@ -459,7 +499,7 @@ function OrganizationMission() {
                     <div
                       className={`${styles.grid_three} ${
                         styles.textareaWrapper
-                      } ${TextAreaActive == true && styles.text_area_active}`}
+                      } ${TextAreaActive3 == true && styles.text_area_active}`}
                       style={{ marginTop: "1rem" }}
                     >
                       <textarea
@@ -467,31 +507,49 @@ function OrganizationMission() {
                         id=""
                         cols="30"
                         rows="10"
+                        onFocus={e=>{
+                          let HelperElement=e.target.nextElementSibling.nextElementSibling
+                          HelperElement.textContent=""
+                        }}
                         onChange={(e) => {
                           if (e.target.value != "") {
-                            setTextAreaActive(true);
+                            setTextAreaActive3(true);
                           } else {
-                            setTextAreaActive(false);
+                            setTextAreaActive3(false);
                           }
                         }}
                         onBlur={(e) => {
+                          let HelperElement=e.target.nextElementSibling.nextElementSibling
                           if (e.target.value != "") {
                             e.target.style.borderColor = "#212121";
+                            
                           } else {
                             e.target.style.borderColor = "#cecece";
+                            HelperElement.textContent="Invalid Explanation"
                           }
                         }}
                         className={styles.textArea}
                         style={{ height: "100px" }}
                       ></textarea>
                       <label htmlFor="">Explanation</label>
+                   
+                        <span   style={{
+                          marginBottom: "10px",
+                          display: "inline-block",
+                          marginTop: 7,
+                          fontSize: 13,
+                          paddingLeft: 12,
+                          color: "#F65B4E",
+                        }}></span>
+                      
+              
                     </div>
                   </>
                 )}
 
                 <div
                   className="organization_logo_desc"
-                  style={{ marginTop: "1rem" }}
+                  style={{ marginTop: ".5rem" }}
                 >
                   <p style={{ fontSize: 15, color: "#666666" }}>
                     Does your charity have an appointed safeguarding lead?
@@ -551,7 +609,7 @@ function OrganizationMission() {
                         fontSize: 15,
                         color: "#666666",
                         marginTop: "1rem",
-                        marginBottom: "1.5rem",
+                        marginBottom: "1rem",
                       }}
                     >
                       Name of safeguarding lead:
@@ -584,7 +642,7 @@ function OrganizationMission() {
                         fontSize: 15,
                         color: "#666666",
 
-                        marginBottom: "1.5rem",
+                        marginBottom: "1rem",
                       }}
                     >
                       Email of safeguarding lead:
@@ -615,7 +673,7 @@ function OrganizationMission() {
                 )}
                 <div
                   className="organization_logo_desc"
-                  style={{ marginTop: "1rem" }}
+                  style={{ marginTop: ".5rem" }}
                 >
                   <p style={{ fontSize: 15, color: "#666666" }}>
                     Does your organisation have a system for managing concerns
@@ -667,7 +725,7 @@ function OrganizationMission() {
 
                 <div
                   className="organization_logo_desc"
-                  style={{ marginTop: "1rem" }}
+                  style={{ marginTop: ".5rem" }}
                 >
                   <p style={{ fontSize: 15, color: "#666666" }}>
                     Does your organisation have clear policies about DBS

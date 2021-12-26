@@ -315,7 +315,7 @@ function AdminAccount() {
         <img src={logo} alt="" />
       </div>
       <div className="body-area">
-        <form action="" className="outer-form" style={{ border: "none" }}>
+        <form action="" className="outer-form">
           <p className="create-account-message">
             Now Just Create an admin account
           </p>
@@ -419,7 +419,7 @@ function AdminAccount() {
 
             <div
               className="password-ui-strong"
-              style={{ marginTop: 10, marginBottom: 10 }}
+              style={{ marginTop: 10, marginBottom: 20 }}
             >
               <div className="bars" style={{ marginBottom: 5 }}>
                 <span className="bar" id="bar-1"></span>

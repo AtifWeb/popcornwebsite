@@ -177,7 +177,7 @@ function OrganizationAccount() {
         <img src={logo} alt="" />
       </div>
       <div className="body-area">
-        <form action="" className="outer-form" style={{ border: "none" }}>
+        <form action="" className="outer-form" >
           <p className="create-account-message">
             Create your Organisation’s account <br />
             below or <Link to="/welcome">sign in</Link>

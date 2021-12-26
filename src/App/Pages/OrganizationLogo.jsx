@@ -161,7 +161,9 @@ function OrganizationLogo() {
       if (ElementId == "fname") {
         HelperElement.textContent = "Invalid Facebook URL";
       } else if (ElementId == "lname") {
-        HelperElement.textContent = "Invalid Organisation Type";
+        HelperElement.textContent = "Invalid Linkedin URL";
+      }else if (ElementId=="tname"){
+        HelperElement.textContent="Invalid Twitter URL"
       }
     }
   };
@@ -172,7 +174,7 @@ function OrganizationLogo() {
         <img src={logo} alt="" />
       </div>
       <div className="body-area">
-        <form action="" className="outer-form" style={{ border: "none" }}>
+        <form action="" className="outer-form" >
           <p className="create-account-message">
             Upload your Organisation’s Logo
           </p>{" "}
@@ -218,7 +220,7 @@ function OrganizationLogo() {
             <div className="desc_wrapper">
               <div
                 className="checkbox-wrapper password-checkbox-wrapper"
-                style={{ marginBottom: 20 }}
+                style={{ marginBottom: 10 }}
               >
                 <input
                   type="radio"
@@ -242,7 +244,7 @@ function OrganizationLogo() {
               </div>
               <div
                 className="checkbox-wrapper password-checkbox-wrapper"
-                style={{ marginBottom: 20 }}
+                style={{ marginBottom: 10 }}
               >
                 <input
                   type="radio"
@@ -269,7 +271,7 @@ function OrganizationLogo() {
                 <TextField
                   onBlur={CheckIsValid}
                   onFocus={RemoveMessages}
-                  // onChange={HandleTextValidation}
+              
                   id="fname"
                   label="Facebook URL"
                   autocomplete="on"
@@ -280,6 +282,50 @@ function OrganizationLogo() {
                   className="helping-text text-helper"
                   style={{
                     marginBottom: "10px",
+                    display: "inline-block",
+                    marginTop: 7,
+                    fontSize: 13,
+                    paddingLeft: 12,
+                    color: "#F65B4E",
+                  }}
+                ></span>
+
+<TextField
+                  onBlur={CheckIsValid}
+                  onFocus={RemoveMessages}
+           
+                  id="lname"
+                  label="Linkdin URL"
+                  autocomplete="on"
+                  variant="outlined"
+                  style={{ width: "100%" }}
+                />
+                <span
+                  className="helping-text text-helper"
+                  style={{
+                    marginBottom: "10px",
+                    display: "inline-block",
+                    marginTop: 7,
+                    fontSize: 13,
+                    paddingLeft: 12,
+                    color: "#F65B4E",
+                  }}
+                ></span>
+
+<TextField
+                  onBlur={CheckIsValid}
+                  onFocus={RemoveMessages}
+                  
+                  id="tname"
+                  label="Twitter URL"
+                  autocomplete="on"
+                  variant="outlined"
+                  style={{ width: "100%" }}
+                />
+                <span
+                  className="helping-text text-helper"
+                  style={{
+                    marginBottom: "20px",
                     display: "inline-block",
                     marginTop: 7,
                     fontSize: 13,

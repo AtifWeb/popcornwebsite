@@ -13,7 +13,7 @@ export const Welcome = ({ headtext, simpletext, buttonText, linkButton }) => {
         <h1 className={styles.main_heading}>{headtext}</h1>
         <p className={styles.main_para}>{simpletext}</p>
         <Button
-          style={{ width: 220 }}
+          style={{ width: 220,    paddingTop: '1rem' }}
           onclick={(e) => history.push(linkButton)}
         >
           {buttonText}

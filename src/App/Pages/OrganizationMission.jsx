@@ -6,7 +6,7 @@ import logo from "../../Assets/img/logo.svg";
 import "../../Assets/styles/css/Signin.css";
 import { countries, months, smallMonths } from "../../Assets/js/Utils";
 import { HandleTextValidation } from "../../Assets/js/ValidationOrganizationInfo";
-
+import {ValidateValue} from "../../Assets/js/ValidateOrganizationMisson"
 import "../../Assets/styles/css/Signup.css";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -187,6 +187,7 @@ function OrganizationMission() {
                 } else {
                   setTextAreaActive(false);
                 }
+                ValidateValue(e)
               }}
               onBlur={(e) => {
                 let HelperElement =
@@ -223,7 +224,7 @@ function OrganizationMission() {
           >
             <textarea
               name=""
-              id=""
+              id="mission_statement"
               cols="30"
               rows="10"
               onFocus={(e) => {
@@ -237,6 +238,8 @@ function OrganizationMission() {
                 } else {
                   setTextAreaActive2(false);
                 }
+
+                ValidateValue(e)
               }}
               onBlur={(e) => {
                 let HelperElement =
@@ -282,7 +285,12 @@ function OrganizationMission() {
                     type="radio"
                     name="charity"
                     id="yes-charity"
-                    onClick={(e) => setadults(true)}
+                    onClick={(e) => {
+                      
+                      setadults(true)
+                    
+                      ValidateValue(e)
+                    }}
                     style={{ display: "none" }}
                   />
                   <label htmlFor="yes-charity" id="forget-password-wrapper">
@@ -303,7 +311,12 @@ function OrganizationMission() {
                     type="radio"
                     name="charity"
                     id="No-charity"
-                    onClick={(e) => setadults(false)}
+                    onClick={(e) => {
+                      
+                      setadults(false)
+                      ValidateValue(e)
+                    }
+                    }
                     style={{ display: "none" }}
                   />
                   <label htmlFor="No-charity" id="forget-No-wrapper">
@@ -337,6 +350,8 @@ function OrganizationMission() {
                       <input
                         type="radio"
                         name="organisation"
+                        onClick={e=>ValidateValue(e)}
+
                         id="yes-organisation"
                         style={{ display: "none" }}
                       />
@@ -360,7 +375,7 @@ function OrganizationMission() {
                       <input
                         type="radio"
                         name="organisation"
-                        id="No-organisation"
+                        id="No-organisation"    onClick={e=>ValidateValue(e)}
                         style={{ display: "none" }}
                       />
                       <label htmlFor="No-organisation" id="forget-No-wrapper">
@@ -390,7 +405,10 @@ function OrganizationMission() {
                 <TextField
                   onBlur={CheckIsValid}
                   onFocus={RemoveMessages}
-                  onChange={HandleTextValidation}
+                  onChange={e=>{
+                    HandleTextValidation(e)
+                    ValidateValue(e)
+                  }}
                   id="fname"
                   label="Link"
                   autocomplete="on"
@@ -426,7 +444,11 @@ function OrganizationMission() {
                         type="radio"
                         name="training"
                         id="yes-training"
-                        onClick={(e) => settrainingExp(false)}
+                        onClick={(e) => {
+                          settrainingExp(false)
+                        
+                          ValidateValue(e)
+                        }}
                         style={{ display: "none" }}
                       />
                       <label
@@ -449,7 +471,12 @@ function OrganizationMission() {
                       <input
                         type="radio"
                         name="training"
-                        onClick={(e) => settrainingExp(false)}
+                        onClick={(e) => {
+                          settrainingExp(false)
+                          ValidateValue(e)
+                  
+                        
+                        }}
                         id="No-training"
                         style={{ display: "none" }}
                       />
@@ -471,7 +498,12 @@ function OrganizationMission() {
                       <input
                         type="radio"
                         name="training"
-                        onClick={(e) => settrainingExp(true)}
+                        onClick={(e) => {
+                          
+                          settrainingExp(true)
+                        
+                          ValidateValue(e)
+                        }}
                         id="Other-training"
                         style={{ display: "none" }}
                       />
@@ -507,7 +539,7 @@ function OrganizationMission() {
                     >
                       <textarea
                         name=""
-                        id=""
+                        id="explain"
                         cols="30"
                         rows="10"
                         onFocus={(e) => {
@@ -521,6 +553,7 @@ function OrganizationMission() {
                           } else {
                             setTextAreaActive3(false);
                           }
+                          ValidateValue(e)
                         }}
                         onBlur={(e) => {
                           let HelperElement =
@@ -567,7 +600,12 @@ function OrganizationMission() {
                         type="radio"
                         name="appointed"
                         id="yes-appointed"
-                        onClick={(e) => setsafeguarding(true)}
+                        onClick={(e) => {
+                          
+                          setsafeguarding(true)
+                        
+                          ValidateValue(e)
+                        }}
                         style={{ display: "none" }}
                       />
                       <label
@@ -591,8 +629,12 @@ function OrganizationMission() {
                         type="radio"
                         name="appointed"
                         id="No-appointed"
-                        onClick={(e) => setsafeguarding(false)}
-                        style={{ display: "none" }}
+                        onClick={(e) =>{
+
+                        setsafeguarding(false)
+                        ValidateValue(e)
+                      }
+                      }  style={{ display: "none" }}
                       />
                       <label htmlFor="No-appointed" id="forget-No-wrapper">
                         <label
@@ -622,8 +664,11 @@ function OrganizationMission() {
                     <TextField
                       onBlur={CheckIsValid}
                       onFocus={RemoveMessages}
-                      onChange={HandleTextValidation}
-                      id="lname"
+                      onChange={e=>{
+                        HandleTextValidation(e)
+                        ValidateValue(e)
+                      }}
+                      id="safeguarding-lead"
                       label="Name"
                       autocomplete="on"
                       variant="outlined"
@@ -655,7 +700,10 @@ function OrganizationMission() {
                     <TextField
                       onBlur={CheckIsValid}
                       onFocus={RemoveMessages}
-                      onChange={HandleTextValidation}
+                      onChange={e=>{
+                        HandleTextValidation(e)
+                        ValidateValue(e)
+                      }}
                       id="email_name"
                       label="Email"
                       autocomplete="on"
@@ -692,6 +740,9 @@ function OrganizationMission() {
                         type="radio"
                         name="system"
                         id="yes-system"
+                        onClick={e=>{
+                          ValidateValue(e)
+                        }}
                         style={{ display: "none" }}
                       />
                       <label htmlFor="yes-system" id="forget-password-wrapper">
@@ -712,6 +763,9 @@ function OrganizationMission() {
                         type="radio"
                         name="system"
                         id="No-system"
+                        onClick={e=>{
+                          ValidateValue(e)
+                        }}
                         style={{ display: "none" }}
                       />
                       <label htmlFor="No-system" id="forget-No-wrapper">
@@ -742,7 +796,10 @@ function OrganizationMission() {
                     >
                       <input
                         type="radio"
-                        name="charity"
+                        name="charitys"
+                        onClick={e=>{
+                          ValidateValue(e)
+                        }}
                         id="yes-Disclosure"
                         style={{ display: "none" }}
                       />
@@ -765,8 +822,11 @@ function OrganizationMission() {
                     >
                       <input
                         type="radio"
-                        name="charity"
+                        name="charitys"
                         id="No-Disclosure"
+                        onClick={e=>{
+                          ValidateValue(e)
+                        }}
                         style={{ display: "none" }}
                       />
                       <label htmlFor="No-Disclosure" id="forget-No-wrapper">
@@ -798,7 +858,7 @@ function OrganizationMission() {
             )}
 
             <div className="button-wrapper width_100_button">
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="primary" className={`disable next_button`}>
                 NEXT
               </Button>
             </div>

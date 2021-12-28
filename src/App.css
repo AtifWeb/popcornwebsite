@@ -7,6 +7,9 @@
   width: 1000px;
   margin: 0rem auto;
 }
+.MuiInputLabel-formControl{
+top: -2px !important;
+}
 label + .MuiInput-formControl {
   margin-top: 15px !important;
 }

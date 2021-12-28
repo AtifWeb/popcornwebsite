@@ -21,6 +21,7 @@ export const HandleSecondStepOnFocuse = (e) => {
   document.querySelector(".address-error").style.display = "none";
 
   document.querySelector(".country-select").classList.add("active");
+
 };
 
 export const HandleSecondStepOnBlur = (e) => {

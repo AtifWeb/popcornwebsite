@@ -1,11 +1,18 @@
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import React, { useEffect, useState } from "react";
-
+import {Link} from 'react-router-dom'
+import {
+  HandleSecondStepOnBlur,
+  HandleSecondStepOnFocuse,
+} from "../../Assets/js/AddressWorking";
 import logo from "../../Assets/img/logo.svg";
 import "../../Assets/styles/css/Signin.css";
 import { countries, months, smallMonths } from "../../Assets/js/Utils";
 import { HandleTextValidation } from "../../Assets/js/ValidationOrganizationInfo";
+import {
+  HandleSecondStepTextInfomation,
+} from "../../Assets/js/ValidationSignUp";
 
 import "../../Assets/styles/css/Signup.css";
 
@@ -49,12 +56,8 @@ function OrganizationInfomation() {
       }
     });
 
-    document.querySelector("#fname").addEventListener("change", (e) => {
-      setFirstName(e.target.value);
-    });
-    document.querySelector("#lname").addEventListener("change", (e) => {
-      setLastName(e.target.value);
-    });
+
+
 
     document
       .querySelectorAll(".typing-start-result .firstpart .row")
@@ -64,6 +67,8 @@ function OrganizationInfomation() {
           setTimeout(() => {
             e.target.classList.remove("blue_bg");
           }, 200);
+
+        
 
           setTimeout(() => {
             document.querySelector(
@@ -94,14 +99,14 @@ function OrganizationInfomation() {
           BorderElement.style.borderColor = "#000";
           setTimeout(() => {
             e.target.classList.remove("blue_bg");
+        
           }, 200);
           setTimeout(() => {
             document.querySelector(".address-wrapper").style.display = "none";
             document.querySelector(".result-wrapper").style.display = "none";
             document.querySelector(".expand-address").classList.add("active");
-            document.querySelector(".country-select").style.marginTop = "-16px";
-            document.querySelector(".personal-info-wrapper").style.marginTop =
-              "5px";
+    
+            document.querySelector(".country-select").style.margin=0
           }, 500);
           Address1.value = location.textContent;
         });
@@ -198,33 +203,276 @@ function OrganizationInfomation() {
           </p>
 
           <div className="input-collection">
-            <TextField
-              onBlur={CheckIsValid}
-              onFocus={RemoveMessages}
-              onChange={HandleTextValidation}
-              id="fname"
-              label="Address"
-              autocomplete="on"
-              variant="outlined"
-              style={{ width: "100%" }}
-            />
-            <span
-              className="helping-text text-helper"
-              style={{
-                marginBottom: "10px",
-                display: "inline-block",
-                marginTop: 7,
-                fontSize: 13,
-                paddingLeft: 12,
-                color: "#F65B4E",
-              }}
-            ></span>
 
+          <form
+              autoComplete="off"
+              style={{
+                position: "relative",
+                backgroundColor: "transparent",
+                width: "100%",
+                border: "none",
+                padding: 0,
+              }}
+              className="address-wrapper"
+            >
+              <TextField
+                className="address"
+                id="address"
+                autocomplete="off"
+                onFocus={HandleSecondStepOnFocuse}
+                onBlur={HandleSecondStepOnBlur}
+                onChange={HandleSecondStepTextInfomation}
+                label="Enter you street address"
+                variant="outlined"
+                style={{ width: "100%", marginTop: 20 }}
+                type="text"
+              />
+              <small
+                style={{
+                  display: "none",
+                  marginTop: "7px",
+                  fontSize: "13px",
+                  color: "rgb(246, 91, 78)",
+                }}
+                className="address-error"
+              >
+                Invalid Address
+              </small>
+              <small
+                style={{
+                  fontSize: "12px",
+                  color: " rgb(127, 122, 123)",
+                  position: "absolute",
+                  width: "100%",
+                  left: "0%",
+                }}
+                className="available-message"
+              >
+                Cyber Volunteers is only available in the UK
+              </small>
+            </form>
+
+            <div
+              className="result-wrapper"
+              style={{
+                position: "relative",
+                zIndex: 2222,
+                backgroundColor: "#fff",
+              }}
+            >
+              <p>e.g. “SW12 7EU” or “64 London Road”</p>
+              <div className="typing-start-result" style={{ display: "none" }}>
+                <div className="firstpart">
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                    <p>75 results</p>
+                  </div>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                    <p>75 results</p>
+                  </div>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                    <p>75 results</p>
+                  </div>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                    <p>75 results</p>
+                  </div>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                    <p>75 results</p>
+                  </div>
+
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                    <p>75 results</p>
+                  </div>
+
+                  <Link
+                    to="#"
+                    class="manual-address"
+                    onClick={(e) => {
+                      e.preventDefault();
+
+                      document.querySelector(".address-wrapper").style.display =
+                        "none";
+                      document.querySelector(".result-wrapper").style.display =
+                        "none";
+                      document
+                        .querySelector(".expand-address")
+                        .classList.add("active");
+                    }}
+                    style={{
+                      display: "block",
+                      color: "#F85220",
+                      fontSize: "15px",
+                      textAlign: "center",
+                      borderTop: "1px solid #ddd",
+                      padding: "10px 0px",
+                    }}
+                  >
+                    Enter address manually
+                  </Link>
+                </div>
+
+                <div className="secondpart" style={{ display: "none" }}>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                  </div>
+                  <div className="row">
+                    <div className="left-presentation">
+                      <h5>Atif Asim</h5>
+                      <small>Pakistan</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="expand-address" style={{ marginTop: 20 }}>
+              <div className="text-field-wrapper">
+                <TextField
+                  className="address"
+                  id="address1"
+                  onChange={HandleSecondStepTextInfomation}
+                  
+                  onBlur={CheckIsValid}
+                  onFocus={RemoveMessages}
+                  label="Address Line 1"
+                  variant="outlined"
+                  style={{ width: "100%" }}
+                  type="text"
+                />
+                <span
+                  className="helping-text password-helper"
+                  style={{
+                    display: "inline-block",
+                    marginTop: 7,
+                    fontSize: 13,
+                    paddingLeft: 12,
+                    color: "#F65B4E",
+                  }}
+                ></span>
+              </div>
+              <div className="text-field-wrapper">
+                <TextField
+                  onBlur={CheckIsValid}
+                  onFocus={RemoveMessages}
+                  className="address"
+                  id="address2"
+                  onChange={HandleSecondStepTextInfomation}
+
+                  label="Address Line 2"
+                  variant="outlined"
+                  style={{ width: "100%" }}
+                  type="text"
+                />
+                <span
+                  className="helping-text password-helper"
+                  style={{
+                    display: "inline-block",
+                    marginTop: 7,
+                    fontSize: 13,
+                    paddingLeft: 12,
+                    color: "#F65B4E",
+                  }}
+                ></span>
+              </div>
+              <div className="text-field-wrapper">
+                <TextField
+                  onBlur={CheckIsValid}
+                  onFocus={RemoveMessages}
+                  className="address"
+                  id="postcode"
+                  onChange={HandleSecondStepTextInfomation}
+
+                  label="Postcode"
+                  variant="outlined"
+                  style={{ width: "100%" }}
+                  type="text"
+                />
+                <span
+                  className="helping-text password-helper"
+                  style={{
+                    display: "inline-block",
+                    marginTop: 7,
+                    fontSize: 13,
+                    paddingLeft: 12,
+                    color: "#F65B4E",
+                  }}
+                ></span>
+              </div>
+              <div className="text-field-wrapper">
+                <TextField
+                  onBlur={CheckIsValid}
+                  onFocus={RemoveMessages}
+                  className="address"
+                  id="town"
+                  onChange={HandleSecondStepTextInfomation}
+                  label="Town/City"
+                  variant="outlined"
+                  style={{ width: "100%" }}
+                  type="text"
+                />
+                <span
+                  className="helping-text password-helper"
+                  style={{
+                    display: "inline-block",
+                    marginTop: 7,
+                    fontSize: 13,
+                    paddingLeft: 12,
+                    color: "#F65B4E",
+                  }}
+                ></span>
+              </div>
+            </div>
+            <div className="country-select" style={{marginTop:35}}>
             <TextField
               onBlur={CheckIsValid}
               onFocus={RemoveMessages}
-              onChange={HandleTextValidation}
-              id="lname"
+           
+              onChange={HandleSecondStepTextInfomation}
+              id="country-select"
               label="Country/Region"
               variant="outlined"
               autocomplete="on"
@@ -241,7 +489,7 @@ function OrganizationInfomation() {
                 color: "#F65B4E",
               }}
             ></span>
-
+</div>
             <div
               className="checkbox-wrapper password-checkbox-wrapper"
               style={{ marginBottom: 20 }}
@@ -269,7 +517,7 @@ function OrganizationInfomation() {
             <TextField
               onBlur={CheckIsValid}
               onFocus={RemoveMessages}
-              onChange={HandleTextValidation}
+              onChange={HandleSecondStepTextInfomation}
               id="URL"
               label="Website URL"
               variant="outlined"
@@ -291,7 +539,7 @@ function OrganizationInfomation() {
             <TextField
               onBlur={CheckIsValid}
               onFocus={RemoveMessages}
-              onChange={HandleTextValidation}
+              onChange={HandleSecondStepTextInfomation} 
               id="PHONE"
               label="Phone"
               variant="outlined"
@@ -311,7 +559,7 @@ function OrganizationInfomation() {
             ></span>
 
             <div className="button-wrapper width_100_button">
-              <Button variant="contained" color="primary" className={`disable`}>
+              <Button variant="contained" color="primary"  className={`disable create-account-label`}>
                 NEXT
               </Button>
             </div>

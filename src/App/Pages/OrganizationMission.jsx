@@ -148,8 +148,8 @@ function OrganizationMission() {
         HelperElement.textContent = "Invalid Name";
       } else if (ElementId == "email_name") {
         HelperElement.textContent = "Invalid Email";
-      }else if (ElementId=="Description"){
-        HelperElement.textContent="Invalid Organization Description"
+      } else if (ElementId == "Description") {
+        HelperElement.textContent = "Invalid Organization Description";
       }
     }
   };
@@ -176,9 +176,10 @@ function OrganizationMission() {
               id="Description"
               cols="30"
               rows="10"
-              onFocus={e=>{
-                let HelperElement=e.target.nextElementSibling.nextElementSibling
-                HelperElement.textContent=""
+              onFocus={(e) => {
+                let HelperElement =
+                  e.target.nextElementSibling.nextElementSibling;
+                HelperElement.textContent = "";
               }}
               onChange={(e) => {
                 if (e.target.value != "") {
@@ -188,46 +189,47 @@ function OrganizationMission() {
                 }
               }}
               onBlur={(e) => {
-                let HelperElement=e.target.nextElementSibling.nextElementSibling
+                let HelperElement =
+                  e.target.nextElementSibling.nextElementSibling;
                 if (e.target.value != "") {
                   e.target.style.borderColor = "#212121";
-                  
                 } else {
                   e.target.style.borderColor = "#cecece";
-                  HelperElement.textContent="Invalid Organization Description"
+                  HelperElement.textContent =
+                    "Invalid Organization Description";
                 }
-            
               }}
               className={styles.textArea}
             ></textarea>
             <label htmlFor="">Organisation Description</label>
-         
-                        <span   style={{
-                          marginBottom: "10px",
-                          display: "inline-block",
-                          marginTop: 7,
-                          fontSize: 13,
-                          paddingLeft: 12,
-                          color: "#F65B4E",
-                        }}></span>
-                        
-                   
+
+            <span
+              style={{
+                marginBottom: "10px",
+                display: "inline-block",
+                marginTop: 7,
+                fontSize: 13,
+                paddingLeft: 12,
+                color: "#F65B4E",
+              }}
+            ></span>
           </div>
 
           <div
             className={`${styles.grid_three} ${styles.textareaWrapper} ${
               TextAreaActive2 == true && styles.text_area_active
             }`}
-            style={{ marginTop: "1rem" }}
+            style={{ marginTop: ".5rem" }}
           >
             <textarea
               name=""
               id=""
               cols="30"
               rows="10"
-              onFocus={e=>{
-                let HelperElement=e.target.nextElementSibling.nextElementSibling
-                HelperElement.textContent=""
+              onFocus={(e) => {
+                let HelperElement =
+                  e.target.nextElementSibling.nextElementSibling;
+                HelperElement.textContent = "";
               }}
               onChange={(e) => {
                 if (e.target.value != "") {
@@ -237,34 +239,35 @@ function OrganizationMission() {
                 }
               }}
               onBlur={(e) => {
-                let HelperElement=e.target.nextElementSibling.nextElementSibling
+                let HelperElement =
+                  e.target.nextElementSibling.nextElementSibling;
                 if (e.target.value != "") {
                   e.target.style.borderColor = "#212121";
-                  
                 } else {
                   e.target.style.borderColor = "#cecece";
-                  HelperElement.textContent="Invalid Mission Statement"
+                  HelperElement.textContent = "Invalid Mission Statement";
                 }
               }}
               className={styles.textArea}
             ></textarea>
             <label htmlFor="">Mission Statement</label>
-            
-                        <span   style={{
-                          marginBottom: "10px",
-                          display: "inline-block",
-                          marginTop: 7,
-                          fontSize: 13,
-                          paddingLeft: 12,
-                          color: "#F65B4E",
-                        }}></span>
-                     
+
+            <span
+              style={{
+                marginBottom: "10px",
+                display: "inline-block",
+                marginTop: 7,
+                fontSize: 13,
+                paddingLeft: 12,
+                color: "#F65B4E",
+              }}
+            ></span>
           </div>
 
           <div className="input-collection" style={{ marginTop: 0 }}>
             <div
               className="organization_logo_desc"
-              style={{ marginTop: "1rem" }}
+              style={{ marginTop: ".5rem" }}
             >
               <p style={{ fontSize: 15, color: "#666666" }}>
                 Does your charity work with under 18s or adults to which
@@ -507,9 +510,10 @@ function OrganizationMission() {
                         id=""
                         cols="30"
                         rows="10"
-                        onFocus={e=>{
-                          let HelperElement=e.target.nextElementSibling.nextElementSibling
-                          HelperElement.textContent=""
+                        onFocus={(e) => {
+                          let HelperElement =
+                            e.target.nextElementSibling.nextElementSibling;
+                          HelperElement.textContent = "";
                         }}
                         onChange={(e) => {
                           if (e.target.value != "") {
@@ -519,30 +523,30 @@ function OrganizationMission() {
                           }
                         }}
                         onBlur={(e) => {
-                          let HelperElement=e.target.nextElementSibling.nextElementSibling
+                          let HelperElement =
+                            e.target.nextElementSibling.nextElementSibling;
                           if (e.target.value != "") {
                             e.target.style.borderColor = "#212121";
-                            
                           } else {
                             e.target.style.borderColor = "#cecece";
-                            HelperElement.textContent="Invalid Explanation"
+                            HelperElement.textContent = "Invalid Explanation";
                           }
                         }}
                         className={styles.textArea}
                         style={{ height: "100px" }}
                       ></textarea>
                       <label htmlFor="">Explanation</label>
-                   
-                        <span   style={{
+
+                      <span
+                        style={{
                           marginBottom: "10px",
                           display: "inline-block",
                           marginTop: 7,
                           fontSize: 13,
                           paddingLeft: 12,
                           color: "#F65B4E",
-                        }}></span>
-                      
-              
+                        }}
+                      ></span>
                     </div>
                   </>
                 )}
@@ -776,6 +780,19 @@ function OrganizationMission() {
                       </label>
                     </div>
                   </div>
+                  <small
+                    style={{
+                      fontSize: "13px",
+                      marginBottom: "1.2rem",
+                      display: "block",
+                      color: "#F80000",
+                    }}
+                  >
+                    * You need to have all the above things in place if you wish
+                    to use Cyber Volunteers to advertise volunteer work with
+                    under 18s or adults to which safeguarding applies - if you
+                    wish to enquire further email hello@cybervolunteers.org.uk
+                  </small>
                 </div>
               </>
             )}

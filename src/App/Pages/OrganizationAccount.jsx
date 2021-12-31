@@ -225,7 +225,7 @@ function OrganizationAccount() {
             <span
               className="helping-text text-helper"
               style={{
-                marginBottom: "10px",
+                marginBottom: "20px",
                 display: "inline-block",
                 marginTop: 7,
                 fontSize: 13,

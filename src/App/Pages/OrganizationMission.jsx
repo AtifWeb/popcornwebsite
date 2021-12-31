@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function OrganizationMission() {
+function   OrganizationMission() {
   const classes = useStyles();
   const [TextAreaActive, setTextAreaActive] = useState(false);
   const [TextAreaActive2, setTextAreaActive2] = useState(false);
@@ -180,6 +180,7 @@ function OrganizationMission() {
                 let HelperElement =
                   e.target.nextElementSibling.nextElementSibling;
                 HelperElement.textContent = "";
+                    e.target.nextElementSibling.style.color="#212121"
               }}
               onChange={(e) => {
                 if (e.target.value != "") {
@@ -194,8 +195,10 @@ function OrganizationMission() {
                   e.target.nextElementSibling.nextElementSibling;
                 if (e.target.value != "") {
                   e.target.style.borderColor = "#212121";
+                  e.target.nextElementSibling.style.color="#212121"
                 } else {
-                  e.target.style.borderColor = "#cecece";
+                  e.target.style.borderColor = "red";
+                  e.target.nextElementSibling.style.color="red"
                   HelperElement.textContent =
                     "Invalid Organization Description";
                 }
@@ -220,7 +223,7 @@ function OrganizationMission() {
             className={`${styles.grid_three} ${styles.textareaWrapper} ${
               TextAreaActive2 == true && styles.text_area_active
             }`}
-            style={{ marginTop: ".5rem" }}
+           
           >
             <textarea
               name=""
@@ -231,6 +234,7 @@ function OrganizationMission() {
                 let HelperElement =
                   e.target.nextElementSibling.nextElementSibling;
                 HelperElement.textContent = "";
+                    e.target.nextElementSibling.style.color="#212121"
               }}
               onChange={(e) => {
                 if (e.target.value != "") {
@@ -243,13 +247,16 @@ function OrganizationMission() {
               }}
               onBlur={(e) => {
                 let HelperElement =
-                  e.target.nextElementSibling.nextElementSibling;
-                if (e.target.value != "") {
-                  e.target.style.borderColor = "#212121";
-                } else {
-                  e.target.style.borderColor = "#cecece";
-                  HelperElement.textContent = "Invalid Mission Statement";
-                }
+                e.target.nextElementSibling.nextElementSibling;
+              if (e.target.value != "") {
+                e.target.style.borderColor = "#212121";
+                e.target.nextElementSibling.style.color="#212121"
+              } else {
+                e.target.style.borderColor = "red";
+                e.target.nextElementSibling.style.color="red"
+                HelperElement.textContent =
+                  "Invalid Organization Description";
+              }
               }}
               className={styles.textArea}
             ></textarea>
@@ -270,7 +277,7 @@ function OrganizationMission() {
           <div className="input-collection" style={{ marginTop: 0 }}>
             <div
               className="organization_logo_desc"
-              style={{ marginTop: ".5rem" }}
+              style={{ marginTop: "0rem" }}
             >
               <p style={{ fontSize: 15, color: "#666666" }}>
                 Does your charity work with under 18s or adults to which
@@ -279,7 +286,7 @@ function OrganizationMission() {
               <div className="desc_wrapper">
                 <div
                   className="checkbox-wrapper password-checkbox-wrapper"
-                  style={{ marginBottom: 20 }}
+                  style={{ marginBottom: 27 }}
                 >
                   <input
                     type="radio"
@@ -305,7 +312,7 @@ function OrganizationMission() {
                 </div>
                 <div
                   className="checkbox-wrapper password-checkbox-wrapper"
-                  style={{ marginBottom: 20 }}
+                  style={{ marginBottom: 27 }}
                 >
                   <input
                     type="radio"
@@ -335,7 +342,7 @@ function OrganizationMission() {
               <>
                 <div
                   className="organization_logo_desc"
-                  style={{ marginTop: ".5rem" }}
+                  style={{ marginTop: "0rem" }}
                 >
                   <p style={{ fontSize: 15, color: "#666666" }}>
                     Does your organisation have safeguarding policies and
@@ -395,7 +402,7 @@ function OrganizationMission() {
                   style={{
                     fontSize: 15,
                     color: "#666666",
-                    marginTop: "1rem",
+                    marginTop: "0rem",
                     marginBottom: "1rem",
                   }}
                 >
@@ -429,7 +436,7 @@ function OrganizationMission() {
 
                 <div
                   className="organization_logo_desc"
-                  style={{ marginTop: ".5rem" }}
+                  style={{ marginTop: "0rem" }}
                 >
                   <p style={{ fontSize: 15, color: "#666666" }}>
                     Do all staff and volunteers who work with young people
@@ -546,6 +553,7 @@ function OrganizationMission() {
                           let HelperElement =
                             e.target.nextElementSibling.nextElementSibling;
                           HelperElement.textContent = "";
+                          e.target.nextElementSibling.style.color="#212121"
                         }}
                         onChange={(e) => {
                           if (e.target.value != "") {
@@ -557,13 +565,16 @@ function OrganizationMission() {
                         }}
                         onBlur={(e) => {
                           let HelperElement =
-                            e.target.nextElementSibling.nextElementSibling;
-                          if (e.target.value != "") {
-                            e.target.style.borderColor = "#212121";
-                          } else {
-                            e.target.style.borderColor = "#cecece";
-                            HelperElement.textContent = "Invalid Explanation";
-                          }
+                          e.target.nextElementSibling.nextElementSibling;
+                        if (e.target.value != "") {
+                          e.target.style.borderColor = "#212121";
+                          e.target.nextElementSibling.style.color="#212121"
+                        } else {
+                          e.target.style.borderColor = "red";
+                          e.target.nextElementSibling.style.color="red"
+                          HelperElement.textContent =
+                            "Invalid Organization Description";
+                        }
                         }}
                         className={styles.textArea}
                         style={{ height: "100px" }}
@@ -586,7 +597,7 @@ function OrganizationMission() {
 
                 <div
                   className="organization_logo_desc"
-                  style={{ marginTop: ".5rem" }}
+                  style={{ marginTop: "0rem" }}
                 >
                   <p style={{ fontSize: 15, color: "#666666" }}>
                     Does your charity have an appointed safeguarding lead?
@@ -654,7 +665,7 @@ function OrganizationMission() {
                       style={{
                         fontSize: 15,
                         color: "#666666",
-                        marginTop: "1rem",
+                        marginTop: "0rem",
                         marginBottom: "1rem",
                       }}
                     >
@@ -725,7 +736,7 @@ function OrganizationMission() {
                 )}
                 <div
                   className="organization_logo_desc"
-                  style={{ marginTop: ".5rem" }}
+                  style={{ marginTop: "0rem" }}
                 >
                   <p style={{ fontSize: 15, color: "#666666" }}>
                     Does your organisation have a system for managing concerns
@@ -783,7 +794,7 @@ function OrganizationMission() {
 
                 <div
                   className="organization_logo_desc"
-                  style={{ marginTop: ".5rem" }}
+                  style={{ marginTop: "0rem" }}
                 >
                   <p style={{ fontSize: 15, color: "#666666" }}>
                     Does your organisation have clear policies about DBS
@@ -843,7 +854,7 @@ function OrganizationMission() {
                   <small
                     style={{
                       fontSize: "13px",
-                      marginBottom: "1.2rem",
+                      marginBottom: "27px",
                       display: "block",
                       color: "#F80000",
                     }}

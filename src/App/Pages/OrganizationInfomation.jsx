@@ -2,6 +2,9 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import React, { useEffect, useState } from "react";
 import {Link} from 'react-router-dom'
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import { InputLabel } from "@material-ui/core";
 import {
   HandleSecondStepOnBlur,
   HandleSecondStepOnFocuse,
@@ -105,14 +108,24 @@ function OrganizationInfomation() {
             document.querySelector(".address-wrapper").style.display = "none";
             document.querySelector(".result-wrapper").style.display = "none";
             document.querySelector(".expand-address").classList.add("active");
-    
-            document.querySelector(".country-select").style.margin=0
+            document.querySelector(".country-select").style.marginTop = "-16px";
           }, 500);
           Address1.value = location.textContent;
         });
       });
   }, []);
+  const HandleSelectOnFocus = (e) => {
+    let Label = e.target.parentNode.previousElementSibling;
 
+    Label.setAttribute("id", "active");
+    console.log(Label);
+  };
+  const HandleSelectOnBlur = (e) => {
+    let Label = e.target.parentNode.previousElementSibling;
+    let BorderElement = e.target.parentNode;
+    Label.style.color = "#000";
+    BorderElement.style.border = "1px solid #000";
+  };
   const RemoveMessages = (e) => {
     let BorderElement = e.target.nextElementSibling;
     let Label = e.target.parentNode.previousElementSibling;
@@ -231,6 +244,8 @@ function OrganizationInfomation() {
                 style={{
                   display: "none",
                   marginTop: "7px",
+                  marginBottom:"10px",
+                  paddingLeft:12,
                   fontSize: "13px",
                   color: "rgb(246, 91, 78)",
                 }}
@@ -466,33 +481,38 @@ function OrganizationInfomation() {
                 ></span>
               </div>
             </div>
-            <div className="country-select" style={{marginTop:35}}>
-            <TextField
-              onBlur={CheckIsValid}
-              onFocus={RemoveMessages}
-           
-              onChange={HandleSecondStepTextInfomation}
-              id="country-select"
-              label="Country/Region"
-              variant="outlined"
-              autocomplete="on"
-              style={{ width: "100%" }}
-            />
-            <span
-              className="helping-text text-helper"
-              style={{
-                marginBottom: "10px",
-                display: "inline-block",
-                marginTop: 7,
-                fontSize: 13,
-                paddingLeft: 12,
-                color: "#F65B4E",
-              }}
-            ></span>
-</div>
+            <div className="country-select select-box">
+              <FormControl className={classes.formControl}>
+                <InputLabel
+                  htmlFor="age-native-simple"
+                  style={{ pointerEvents: "none" }}
+                >
+                  Country/Region
+                </InputLabel>
+                <Select
+                        onChange={HandleSecondStepTextInfomation}
+                  
+                        
+                  native
+        
+                  id="country-select"
+                  onBlur={HandleSelectOnBlur}
+                  onFocus={HandleSelectOnFocus}
+                >
+                  <option
+                    selected
+                    value=""
+                    style={{ display: "none" }}
+                  ></option>
+                  {countryState.map((Eachcountry) => (
+                    <option value={Eachcountry.code}>{Eachcountry.name}</option>
+                  ))}
+                </Select>
+              </FormControl>
+            </div>
             <div
               className="checkbox-wrapper password-checkbox-wrapper"
-              style={{ marginBottom: 20 }}
+              style={{ marginBottom: 20 ,marginTop:20}}
             >
               <input
                 type="checkbox"
@@ -527,7 +547,7 @@ function OrganizationInfomation() {
             <span
               className="helping-text text-helper"
               style={{
-                marginBottom: "20px",
+                marginBottom: "10px",
                 display: "inline-block",
                 marginTop: 7,
                 fontSize: 13,

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import logo from "../../Assets/img/logo.svg";
 import "../../Assets/styles/css/Signin.css";
 import { countries, months, smallMonths } from "../../Assets/js/Utils";
-import { HandleTextValidation } from "../../Assets/js/ValidationOrganizationType";
+import { HandleValidation } from "../../Assets/js/HandleValidation";
 
 import "../../Assets/styles/css/Signup.css";
 
@@ -220,21 +220,24 @@ function OrganizationLogo() {
             <div className="desc_wrapper">
               <div
                 className="checkbox-wrapper password-checkbox-wrapper"
-                style={{ marginBottom: 10 }}
+                style={{ marginBottom: 20}}
               >
                 <input
                   type="radio"
-                  onClick={(e) => setsocial(true)}
+                  onClick={(e) => {
+                    setsocial(true)
+                    HandleValidation(e)
+                  }}
                   name="selection"
-                  id="show-password-checkbox"
+                  id="yes-selection-checkbox"
                   style={{ display: "none" }}
                 />
                 <label
-                  htmlFor="show-password-checkbox"
+                  htmlFor="yes-selection-checkbox"
                   id="forget-password-wrapper"
                 >
                   <label
-                    htmlFor="show-password-checkbox"
+                    htmlFor="yes-selection-checkbox"
                     className="custom-checkbox custom-checkbox-box show-password-label"
                   >
                     <i class="fas fa-check"></i>
@@ -244,18 +247,21 @@ function OrganizationLogo() {
               </div>
               <div
                 className="checkbox-wrapper password-checkbox-wrapper"
-                style={{ marginBottom: 10 }}
+                style={{ marginBottom: 20}}
               >
                 <input
                   type="radio"
                   name="selection"
-                  id="No-checkbox"
-                  onClick={(e) => setsocial(false)}
+                  id="no-selection-checkbox"
+                  onClick={(e) =>{
+                    setsocial(false)
+                    HandleValidation(e)
+                  }}
                   style={{ display: "none" }}
                 />
-                <label htmlFor="No-checkbox" id="forget-No-wrapper">
+                <label htmlFor="no-selection-checkbox" id="forget-No-wrapper">
                   <label
-                    htmlFor="No-checkbox"
+                    htmlFor="no-selection-checkbox"
                     className="custom-checkbox custom-checkbox-box show-password-label"
                   >
                     <i class="fas fa-check"></i>
@@ -271,7 +277,9 @@ function OrganizationLogo() {
                 <TextField
                   onBlur={CheckIsValid}
                   onFocus={RemoveMessages}
-              
+              onChange={e=>{
+                HandleValidation(e)
+              }}
                   id="fname"
                   label="Facebook URL"
                   autocomplete="on"
@@ -281,7 +289,7 @@ function OrganizationLogo() {
                 <span
                   className="helping-text text-helper"
                   style={{
-                    marginBottom: "10px",
+                    marginBottom: 10,
                     display: "inline-block",
                     marginTop: 7,
                     fontSize: 13,
@@ -293,7 +301,9 @@ function OrganizationLogo() {
 <TextField
                   onBlur={CheckIsValid}
                   onFocus={RemoveMessages}
-           
+                  onChange={e=>{
+                    HandleValidation(e)
+                  }}
                   id="lname"
                   label="Linkdin URL"
                   autocomplete="on"
@@ -303,7 +313,7 @@ function OrganizationLogo() {
                 <span
                   className="helping-text text-helper"
                   style={{
-                    marginBottom: "10px",
+                    marginBottom:10,
                     display: "inline-block",
                     marginTop: 7,
                     fontSize: 13,
@@ -315,7 +325,9 @@ function OrganizationLogo() {
 <TextField
                   onBlur={CheckIsValid}
                   onFocus={RemoveMessages}
-                  
+                  onChange={e=>{
+                    HandleValidation(e)
+                  }}
                   id="tname"
                   label="Twitter URL"
                   autocomplete="on"
@@ -325,7 +337,7 @@ function OrganizationLogo() {
                 <span
                   className="helping-text text-helper"
                   style={{
-                    marginBottom: "20px",
+                    marginBottom: 10,
                     display: "inline-block",
                     marginTop: 7,
                     fontSize: 13,
@@ -338,12 +350,15 @@ function OrganizationLogo() {
 
             <div
               className="checkbox-wrapper password-checkbox-wrapper"
-              style={{ marginBottom: 20 }}
+              style={{ marginBottom: 27 }}
             >
               <input
                 type="checkbox"
                 name="aggreement"
                 id="aggreement"
+                onClick={e=>{
+                  HandleValidation(e)
+                }}
                 style={{ display: "none" }}
               />
               <label htmlFor="aggreement">
@@ -386,7 +401,7 @@ function OrganizationLogo() {
             </div>
 
             <div className="button-wrapper width_100_button">
-              <Button variant="contained" color="primary">
+              <Button variant="contained" color="primary" id="create-account-button" className="disable">
                 CREATE YOUR ACCOUNT
               </Button>
             </div>

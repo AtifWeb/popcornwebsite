@@ -419,7 +419,7 @@ function AdminAccount() {
 
             <div
               className="password-ui-strong"
-              style={{ marginTop: 10, marginBottom: 20 }}
+              style={{ marginTop: 10, marginBottom: 18 }}
             >
               <div className="bars" style={{ marginBottom: 5 }}>
                 <span className="bar" id="bar-1"></span>
@@ -476,7 +476,7 @@ function AdminAccount() {
 
             <div
               className="checkbox-wrapper password-checkbox-wrapper"
-              style={{ marginBottom: 20 }}
+              style={{ marginBottom: 27 }}
             >
               <input
                 type="checkbox"

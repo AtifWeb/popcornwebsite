@@ -48,6 +48,7 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
 
     const HandleOrganizationInformationValidation=()=>{
         let CountrySelect=document.querySelector("#country-select");
+
         let AddressLine1Value=document.querySelector("#address1");
         let AddressLine=document.querySelector("#address");
         let URL=document.querySelector("#URL");
@@ -86,9 +87,9 @@ export const  EmailValidation=(event, selector, EffectSelector)=> {
         }else if (e.target.id=="town"){
             city=e.target.value
         }else if (e.target.id=="country-select"){
-            country=e.target.value
-           
+          
             let BorderElement=e.target.parentNode;
+            BorderElement.style.border="1px solid #000 "
            
 
         
